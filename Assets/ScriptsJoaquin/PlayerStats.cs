@@ -189,7 +189,7 @@ public class PlayerStats : MonoBehaviour
 
     void RecuperarResistencia()
     {
-        if (resistenciaActual < resistenciaMaxima && rb.velocity.magnitude == 0)
+        if (resistenciaActual < resistenciaMaxima && rb.velocity.x == 0)
         {
             resistenciaActual += resistenciaRecuperacion * Time.deltaTime;
         }
@@ -325,6 +325,13 @@ public class PlayerStats : MonoBehaviour
                 }
             }
         }
+
+
+        //if (other.CompareTag("ZonaDeMuerte"))
+        //{
+        //    gameObject.SetActive(false);
+        //    SceneManager.LoadScene(escenaMuertePorCordura);
+        //}
     }
 }
 
