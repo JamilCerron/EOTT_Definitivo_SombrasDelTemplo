@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Jugador : Personaje
 {
@@ -43,7 +41,7 @@ public class Jugador : Personaje
     //Correr
     protected override void Correr()
     {
-        if(Input.GetKey(KeyCode.LeftShift) && EstaEnSuelo())
+        if (Input.GetKey(KeyCode.LeftShift) && EstaEnSuelo())
         {
             velocidad = 8.5f;
         }
@@ -55,16 +53,16 @@ public class Jugador : Personaje
     //Saltar
     protected override void Saltar()
     {
-        if(Input.GetButtonDown("Jump") && EstaEnSuelo())
-        { 
-            rb.AddForce(new Vector3(0,fuerzaSalto,0) , ForceMode.Impulse);
-        
+        if (Input.GetButtonDown("Jump") && EstaEnSuelo())
+        {
+            rb.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode.Impulse);
+
         }
     }
     //Agacharse
     protected override void Agacharse()
     {
-       if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             transform.localScale = new Vector3(transform.localScale.x, 0.35f, transform.localScale.z);
             agachado = true;
@@ -80,7 +78,7 @@ public class Jugador : Personaje
     {
         ContadorObjetos += value;
         ContadorTumi += value;
-        
+
     }
 
     //Vida
@@ -90,7 +88,7 @@ public class Jugador : Personaje
 
         if (vida > Maxvida)
         {
-           vida = Maxvida;
+            vida = Maxvida;
 
         }
 
@@ -164,7 +162,7 @@ public class Jugador : Personaje
         {
             enSuelo = true;
         }
-        
+
 
     }
 
@@ -191,13 +189,13 @@ public class Jugador : Personaje
         if (other.gameObject.CompareTag("Cruz"))
         {
             ContadorObjetos++;
-            
+
 
             // Destruir el objeto de munición (opcional)
             Destroy(other.gameObject);
         }
 
-        if(other.gameObject.CompareTag("Tumi"))
+        if (other.gameObject.CompareTag("Tumi"))
         {
             ContadorTumi++;
             Destroy(other.gameObject);

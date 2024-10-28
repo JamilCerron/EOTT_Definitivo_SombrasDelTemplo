@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
-     [SerializeField] protected float velocidad = 5f;
-     [SerializeField]protected float fuerzaSalto = 7f;
-     public bool agachado =  false;
+    [SerializeField] protected float velocidad = 5f;
+    [SerializeField] protected float fuerzaSalto = 7f;
+    public bool agachado = false;
 
     protected Rigidbody rb;
     public bool enSuelo;
@@ -64,7 +62,7 @@ public class Personaje : MonoBehaviour
 
     protected virtual void CambioVida(int value)
     {
-       
+
     }
 
     protected virtual bool EstaEnSuelo()
@@ -77,5 +75,5 @@ public class Personaje : MonoBehaviour
         return !EstaEnSuelo();
     }
 
-   
+
 }

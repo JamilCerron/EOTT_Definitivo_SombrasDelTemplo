@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PPCamara : MonoBehaviour
 {
-    private  Transform camara;
+    private Transform camara;
     public Vector2 sensibilidad;
 
     // Start is called before the first frame update

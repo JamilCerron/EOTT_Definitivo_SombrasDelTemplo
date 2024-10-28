@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CambioArma : MonoBehaviour
@@ -69,7 +67,7 @@ public class CambioArma : MonoBehaviour
         SeleccionarArma();
     }
 
-     public void CambiarACrucifijo()
+    public void CambiarACrucifijo()
     {
         Debug.Log("Intentando cambiar a Crucifijo. ContadorCruz: " + playerStats.ContadorCruz);
         if (playerStats.ContadorCruz > 0)

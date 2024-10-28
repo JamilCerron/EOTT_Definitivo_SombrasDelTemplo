@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DisparoPlayer : Disparo
@@ -12,34 +10,34 @@ public class DisparoPlayer : Disparo
     public float MaxAlamcenBalas = 50f;
     public float fuerzaDisparo = 20f;
 
-    
+
 
     protected override void Disparar()
     {
-        if(BalasPlayer > 0)
+        if (BalasPlayer > 0)
         {
-           // Instanciar la bala en el punto de disparo
-           GameObject balaObj = Instantiate(PrefabBala, ShootPoint.position, Quaternion.identity);
+            // Instanciar la bala en el punto de disparo
+            GameObject balaObj = Instantiate(PrefabBala, ShootPoint.position, Quaternion.identity);
 
-           // Obtener el componente Bala (o BalaPlayer) y establecer la dirección
-           Bala bala = balaObj.GetComponent<Bala>();
-           bala.SetDirection(ShootPoint.forward);  // Establecer la dirección hacia adelante desde el ShootPoint
+            // Obtener el componente Bala (o BalaPlayer) y establecer la dirección
+            Bala bala = balaObj.GetComponent<Bala>();
+            bala.SetDirection(ShootPoint.forward);  // Establecer la dirección hacia adelante desde el ShootPoint
 
-           // Destruir la bala después de 3 segundos
-           Destroy(balaObj, 3f);
+            // Destruir la bala después de 3 segundos
+            Destroy(balaObj, 3f);
 
             //Restar Bala
             BalasPlayer--;
         }
-        
-        else if(BalasPlayer == 0 )
+
+        else if (BalasPlayer == 0)
         {
             Console.WriteLine("Sin Balas");
         }
     }
 
     // Método para recargar
-     protected override void Recarga()
+    protected override void Recarga()
     {
         if (AlmacenBala > 0 && BalasPlayer < 10)
         {

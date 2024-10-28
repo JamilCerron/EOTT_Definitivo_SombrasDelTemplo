@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bala : MonoBehaviour
@@ -16,10 +14,10 @@ public class Bala : MonoBehaviour
     protected virtual void Init()
     {
         rb = GetComponent<Rigidbody>();
-        
+
     }
 
-    public  void SetDirection(Vector3 direction)
+    public void SetDirection(Vector3 direction)
     {
         this.direction = direction.normalized;
         rb.velocity = this.direction * speed;
@@ -27,29 +25,29 @@ public class Bala : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-       
+
         if (collision.gameObject.CompareTag("Suelo"))
-        { 
-            Destroy(gameObject); 
+        {
+            Destroy(gameObject);
 
         }
 
-        if(collision.gameObject.CompareTag("Bacija"))
+        if (collision.gameObject.CompareTag("Bacija"))
         {
             Destroy(gameObject);
         }
 
-        if(collision.gameObject.CompareTag("Piedra"))
+        if (collision.gameObject.CompareTag("Piedra"))
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
-        
+
     }
 
-    
 
-        
-    
+
+
+
 
 }

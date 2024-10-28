@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.ConstrainedExecution;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -333,4 +328,4 @@ public class PlayerStats : MonoBehaviour
     }
 }
 
-    
+

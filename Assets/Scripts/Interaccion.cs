@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Interaccion : MonoBehaviour
@@ -9,11 +7,11 @@ public class Interaccion : MonoBehaviour
     public Vector3 estadoPrendidoPosition;
     protected bool puedeInteractuar = false;
 
-   // private bool estaPrendida = false;
+    // private bool estaPrendida = false;
 
     private void Update()
     {
-        if (puedeInteractuar &&  Input.GetKeyDown(KeyCode.E))
+        if (puedeInteractuar && Input.GetKeyDown(KeyCode.E))
         {
             Interactuar();
         }
@@ -28,7 +26,7 @@ public class Interaccion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             puedeInteractuar = true;
         }
@@ -36,9 +34,9 @@ public class Interaccion : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            puedeInteractuar=false;
+            puedeInteractuar = false;
 
         }
     }
