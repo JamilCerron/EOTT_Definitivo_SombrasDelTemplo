@@ -20,11 +20,12 @@ public class PerseguirJugador : MonoBehaviour
         if (jugador != null)
         {
             agente.SetDestination(jugador.position);
-            
-            if (agente.remainingDistance <= agente.stoppingDistance && !atacando)
+
+            if (!agente.pathPending && agente.remainingDistance <= agente.stoppingDistance && !atacando && Mathf.Abs(agente.transform.position.y - jugador.transform.position.y) <= 2.0f)
             {
                 StartCoroutine(RealizarAtaque());
             }
+
         }
     }
 
