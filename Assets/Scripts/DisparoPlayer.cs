@@ -55,16 +55,16 @@ public class DisparoPlayer : Disparo
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Ammo"))
-        {
-            // Aumentar el número de balas al recoger munición
-            AlmacenBala += 5;
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Ammo"))
+    //    {
+    //        // Aumentar el número de balas al recoger munición
+    //        AlmacenBala += 5;
 
-            // Destruir el objeto de munición (opcional)
-            Destroy(other.gameObject);
-        }
-    }
+    //        // Destruir el objeto de munición (opcional)
+    //        Destroy(other.gameObject);
+    //    }
+    //}
 
 }
