@@ -11,10 +11,13 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Objetos")]
     [SerializeField] public int ContadorCruz = 0;
+    [SerializeField] public int ContadorTumi = 0;
     [SerializeField] public float tiempoDeVidaCrucifijo = 0f; // Tiempo de vida actual del crucifijo
     public int tiempoMaximoCrucifijo = 5; // Tiempo máximo que dura el crucifijo
     public bool crucifijoActivo = false; // Estado del crucifijo
-    [SerializeField] public int ContadorTumi = 0;
+  //  [SerializeField] public int ContadorTumi = 0;
+    private bool DentroAreaCruz = false;
+    private bool DentroAreaTumi = false;            
 
     public CambioArma cambioArma; // Referencia a la clase CambioArma
 
@@ -68,27 +71,46 @@ public class PlayerStats : MonoBehaviour
         Saltar();
         Agachar();
 
-        // Reducir el tiempo de vida del crucifijo si está activo
-        if (crucifijoActivo && tiempoDeVidaCrucifijo > 0)
-        {
-            tiempoDeVidaCrucifijo -= Time.deltaTime;
+        //// Reducir el tiempo de vida del crucifijo si está activo
+        //if (crucifijoActivo && tiempoDeVidaCrucifijo > 0)
+        //{
+        //    tiempoDeVidaCrucifijo -= Time.deltaTime;
 
-            // Cambiar automáticamente a la escopeta cuando el tiempo se agote
-            if (tiempoDeVidaCrucifijo <= 0)
-            {
-                crucifijoActivo = false; // Desactivar el crucifijo
-                tiempoDeVidaCrucifijo = 0; // Asegúrate de que no haya tiempo residual
-                Debug.Log("El crucifijo ha expirado, cambiando a la escopeta.");
-                cambioArma.armaSeleccionada = 0; // Cambia al arma correspondiente
-                cambioArma.SeleccionarArma(); // Asegúrate de llamar a la función para seleccionar el arma
-            }
+        //    // Cambiar automáticamente a la escopeta cuando el tiempo se agote
+        //    if (tiempoDeVidaCrucifijo <= 0)
+        //    {
+        //        crucifijoActivo = false; // Desactivar el crucifijo
+        //        tiempoDeVidaCrucifijo = 0; // Asegúrate de que no haya tiempo residual
+        //        Debug.Log("El crucifijo ha expirado, cambiando a la escopeta.");
+        //        cambioArma.armaSeleccionada = 0; // Cambia al arma correspondiente
+        //        cambioArma.SeleccionarArma(); // Asegúrate de llamar a la función para seleccionar el arma
+        //    }
+        //}
+
+        if (DentroAreaCruz && Input.GetKeyDown(KeyCode.E))
+        {
+            // Incrementar el contador de la cruz
+            ContadorCruz++;
+
+            
+            // Destruir el objeto "Cruz"
+            Destroy(GameObject.FindGameObjectWithTag("Cruz"));
+
+            DentroAreaCruz = false;
+        }
+        else if (DentroAreaTumi && Input.GetKeyDown(KeyCode.E))
+        {
+            // Incrementar el contador de Tumi
+            ContadorTumi++;
+
+            Debug.Log("Contador de Tumi incrementado a: " + ContadorTumi);
+
+            // Destruir el objeto "Tumi"
+            Destroy(GameObject.FindGameObjectWithTag("Tumi"));
+
+            DentroAreaTumi = false;
         }
 
-        // Aquí puedes agregar la lógica para usar el crucifijo con un botón (ej. tecla "E")
-        if (Input.GetKeyDown(KeyCode.E) && ContadorCruz > 0 && !crucifijoActivo)
-        {
-            UsarCrucifijo();
-        }
 
         // Cambiar de arma con las teclas 1 y 2
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -298,34 +320,45 @@ public class PlayerStats : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Cruz"))
+        {    
+              // Verificar si el objeto tiene la etiqueta "Cruz"
+              if (other.CompareTag("Cruz"))
+              {
+                 DentroAreaCruz = true;
+              }
+        }
+
+        if (other.gameObject.CompareTag("Tumi"))
         {
-
-            if (other.gameObject.CompareTag("Cruz"))
+            // Verificar si el objeto tiene la etiqueta "Cruz"
+            if (other.CompareTag("Tumi"))
             {
-                // Verificar si el objeto tiene la etiqueta "Cruz"
-                if (other.CompareTag("Cruz"))
-                {
-                    // Incrementar el contador de la cruz
-                    ContadorCruz++;
-
-                    // Si ya hay un crucifijo activo, solo restablecer el tiempo
-                    if (crucifijoActivo)
-                    {
-                        tiempoDeVidaCrucifijo = tiempoMaximoCrucifijo; // Restablecer el tiempo
-                        Debug.Log("Tiempo de vida del crucifijo restablecido a: " + tiempoDeVidaCrucifijo);
-                    }
-                    else
-                    {
-                        // Si no hay crucifijo activo, activar y restablecer el tiempo
-                        UsarCrucifijo(); // Llamamos a la función para activar el crucifijo y restablecer el tiempo
-                    }
-
-                    // Destruir el objeto cruz
-                    Destroy(other.gameObject);
-                }
+                DentroAreaTumi = true;
             }
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Cruz"))
+        {
+            // Verificar si el objeto tiene la etiqueta "Cruz"
+            if (other.CompareTag("Cruz"))
+            {
+                DentroAreaCruz = false;
+            }
+        }
+
+        if(other.gameObject.CompareTag("Tumi"))
+        {
+            // Verificar si el objeto tiene la etiqueta "Cruz"
+            if (other.CompareTag("Tumi"))
+            {
+                DentroAreaTumi = false;
+            }
+        }
+    }
+
 }
 
 
