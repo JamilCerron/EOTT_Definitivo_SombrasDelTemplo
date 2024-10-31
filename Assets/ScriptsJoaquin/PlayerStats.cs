@@ -298,7 +298,10 @@ public class PlayerStats : MonoBehaviour
         return !EstaEnSuelo();
     }
 
-
+    public int FragmentosTumi()
+    {
+        return ContadorTumi;
+    }
 
 
     private void OnCollisionStay(Collision collision)

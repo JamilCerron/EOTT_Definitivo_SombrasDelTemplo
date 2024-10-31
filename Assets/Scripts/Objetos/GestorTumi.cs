@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,10 +8,11 @@ public class GestorTumi : MonoBehaviour
     public static GestorTumi instancia;
 
     private Tumi tumi;
-    public bool jugadorTieneTumiCompleto { get; set; } // Indica si el jugador tiene el Tumi
+    private bool tumiCompleto = false;
 
     [SerializeField] private string escenaVictoriaConTumi;
     [SerializeField] private string escenaVictoriaSinTumi;
+    [SerializeField] private int fragmentosTumi = 0;
 
     private void Awake()
     {
@@ -31,9 +32,22 @@ public class GestorTumi : MonoBehaviour
         }
     }
 
+    public void AñadirFragmentos(int cantidad)
+    {
+        if (fragmentosTumi >= 0 && fragmentosTumi <= 4)
+        {
+            fragmentosTumi += cantidad;
+        }
+
+        if (fragmentosTumi == 4)
+        {
+            tumiCompleto = true; // Marca que el jugador tiene el Tumi completo
+        }
+    }
+
     public void ComprobarVictoria()
     {
-        if (jugadorTieneTumiCompleto)
+        if (tumiCompleto)
         {
             SceneManager.LoadScene(escenaVictoriaConTumi);
         }
@@ -49,5 +63,10 @@ public class GestorTumi : MonoBehaviour
         {
             ComprobarVictoria();
         }
+    }
+
+    public int ObtenerFragmentos()
+    {
+        return fragmentosTumi;
     }
 }

@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -804,9 +803,10 @@ GameObject:
   - component: {fileID: 169750418}
   - component: {fileID: 169750417}
   - component: {fileID: 169750420}
+  - component: {fileID: 169750421}
   m_Layer: 0
   m_Name: Tumi
-  m_TagString: Untagged
+  m_TagString: Tumi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,12 +893,25 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.99999833, y: 7.326241, z: 6.44911}
   m_Center: {x: 0.00000006068944, y: -0.8889291, z: -2.7245557}
+--- !u!114 &169750421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169750415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa00701fdd36394695199d7328f0ba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueMark: {fileID: 2906576}
 --- !u!1 &191898158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,20 +1284,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2800687180827459579, guid: 99cacd4679a5e92479f5c3295d8b4551,
+        type: 3}
+      propertyPath: BalasPlayer
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5535934816510346246, guid: 99cacd4679a5e92479f5c3295d8b4551,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1714.107
+      value: 1719.62
       objectReference: {fileID: 0}
     - target: {fileID: 5535934816510346246, guid: 99cacd4679a5e92479f5c3295d8b4551,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 409.56
+      value: 408.9
       objectReference: {fileID: 0}
     - target: {fileID: 5535934816510346246, guid: 99cacd4679a5e92479f5c3295d8b4551,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2187.35
+      value: 2194.53
       objectReference: {fileID: 0}
     - target: {fileID: 5535934816510346246, guid: 99cacd4679a5e92479f5c3295d8b4551,
         type: 3}
@@ -8456,7 +8474,7 @@ GameObject:
   - component: {fileID: 1739127601}
   m_Layer: 0
   m_Name: GestorTumi
-  m_TagString: Untagged
+  m_TagString: GestorTumi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8475,6 +8493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escenaVictoriaConTumi: Victoria
   escenaVictoriaSinTumi: Victoria
+  fragmentosTumi: 0
 --- !u!4 &1739127602
 Transform:
   m_ObjectHideFlags: 0
@@ -9083,7 +9102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1841694689
 Transform:
   m_ObjectHideFlags: 0
@@ -9112,7 +9131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueMark: {fileID: 2906576}
-  fragmentosTumi: 0
 --- !u!135 &1841694691
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9128,7 +9146,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -10173,7 +10191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
+  m_IgnoreReversedGraphics: 0
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
