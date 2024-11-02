@@ -4,29 +4,28 @@ using UnityEngine;
 
 public class MovimientoJugador3D : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 3f;
     private Rigidbody rb;
+    private Vector3 movement;
 
-     void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
+       
     }
 
-     void FixedUpdate()
+     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3(horizontal, 0, vertical);
-
-        if (movement.magnitude > 1)
-        {
-            movement.Normalize();
-        }
-
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        movement.x = Input.GetAxis("Horizontal"); 
+        movement.z = Input.GetAxis("Vertical");
     }
 
+    void FixedUpdate()
+    {
+        Vector3 moveDirection = movement.normalized * speed * Time.fixedDeltaTime;
+
+        rb.MovePosition(rb.position + moveDirection);
+    }
 
 
 }

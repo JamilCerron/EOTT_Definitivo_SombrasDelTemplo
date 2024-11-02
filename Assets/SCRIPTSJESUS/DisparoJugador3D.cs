@@ -5,68 +5,46 @@ using UnityEngine;
 
 public class DisparoJugador3D : MonoBehaviour
 {
-    public GameObject balaprefab;
-    public Transform puntoDisparo;
-    public float tiempoEntreDisparos = 0.5f;
-    public float tiempoVidaBala = 2f;
-    public Camera cam;
-    private RaycastHit hit;
-
-    private bool puedeDisparar = true;
+    public GameObject bulletPrefab; 
+    public Transform firePoint; 
+    public float bulletSpeed = 20f;
 
     void Update()
     {
-        RotarHaciaMouse();
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-        if (Input.GetMouseButtonDown(0) && puedeDisparar)
+        if (Physics.Raycast(ray, out hit))
+        {
+            Vector3 direction = (hit.point - firePoint.position).normalized;
+            GirarFirePoint(direction);
+        }
+
+        if (Input.GetMouseButtonDown(0))
         {
             Disparar();
         }
     }
 
-    private void RotarHaciaMouse()
+    void Disparar()
     {
-        Vector3 mousePos = Input.mousePosition;
+       
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
         
-        Ray ray = cam.ScreenPointToRay(mousePos);
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            Vector3 targetPoint = hit.point;
-
-          
-            Vector3 direction = targetPoint - transform.position;
-            direction.y = 0; 
-
-            if (direction.sqrMagnitude > 0.01f) 
-            {
-                Quaternion targetRotation = Quaternion.LookRotation(direction); 
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f); 
-            }
-        }
-    }
-
-
-    private void Disparar()
-    {
-        GameObject bala = Instantiate(balaprefab, puntoDisparo.position, Quaternion.LookRotation((puntoDisparo.position - hit.point).normalized));
+        
+        rb.velocity = firePoint.forward * bulletSpeed;
 
        
-        Rigidbody balaRb = bala.GetComponent<Rigidbody>();
-        if (balaRb != null)
-        {
-            balaRb.AddForce((hit.point - puntoDisparo.position).normalized * 10f, ForceMode.Impulse);
-        }
-
-        Destroy(bala, tiempoVidaBala);
-        puedeDisparar = false;
-        StartCoroutine(CoolDownDisparo());
+        rb.useGravity = false;
     }
 
-    private IEnumerator CoolDownDisparo()
+    public void GirarFirePoint(Vector3 direccion)
     {
-        yield return new WaitForSeconds(tiempoEntreDisparos);
-        puedeDisparar = true;
+        firePoint.rotation = Quaternion.LookRotation(direccion);
     }
+
+
 }
