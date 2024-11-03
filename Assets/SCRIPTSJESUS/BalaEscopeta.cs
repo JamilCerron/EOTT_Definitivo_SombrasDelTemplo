@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class BalaEscopeta : MonoBehaviour
 {
-    public float speed = 20f;
-    
+    public float speed = 20f; 
+    public float tiempoVida = 2f;
 
-    public void Disparar(Vector3 direccion)
+    void Start()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.velocity = direccion.normalized * speed; //velocidad de la bala 
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, tiempoVida);
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
+
+
 }
