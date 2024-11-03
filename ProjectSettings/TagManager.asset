@@ -13,6 +13,7 @@ TagManager:
   - Enemigo01
   - GestorTumi
   - CajaDeMuerte
+  - Enemigo
   layers:
   - Default
   - TransparentFX
