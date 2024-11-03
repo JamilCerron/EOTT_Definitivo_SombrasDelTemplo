@@ -4,29 +4,59 @@ using UnityEngine;
 
 public class Enemigo : MonoBehaviour
 {
-    public bool estaAturdido = false; 
-    public float tiempoAturdimiento = 10f; 
-   
+    // Tag para identificar al enemigo 
+    public string enemytag = "Enemigo";
+    //Tiempo de aturdimiento despues de recibir un balazo
+    public float stunTime = 10f;
+    //referencia al componente de movimiento enemigo
+    private Rigidbody rb;
 
-    public void RecibirImpacto()
+    void Start()
     {
-        Debug.Log("Recibiendo impacto.");
-        if (!estaAturdido)
+        rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationZ;
+    }
+
+     void OnCollisionEnter(Collision collision,ContactPoint contact)
+    {
+        //Verifica si el objeto que colisiono es una bala
+        if (collision.gameObject.tag == "Bala")
         {
-            StartCoroutine(AturdirEnemigo());
+            //Verifica si el enemigo no esta ya aturdido 
+            if (!IsStunned())
+            {
+                //Aturde al enemigo
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                Stun();
+            }
         }
     }
 
-    IEnumerator AturdirEnemigo()
+   public  void Stun()
     {
-        estaAturdido = true;
+        //Imprime mensaje en consola
+        Debug.Log("Enemigo aturdido");
 
+        //Detiene el movimiento del enemigo
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
 
-        Debug.Log("Enemigo está aturdido");
+        //Espera durante el tiempo de aturdimiento
+        Invoke("Unstun", stunTime);
+    }
 
-        yield return new WaitForSeconds(tiempoAturdimiento);
+    void Unstun()
+    {
+        //Restablecer el movimiento el enemigo
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
 
-        Debug.Log("Enemigo ya no está aturdido");
-        estaAturdido = false;
+    }
+
+    bool IsStunned()
+    {
+        //Verifica si el enemigo esa aturdido 
+        return rb.velocity == Vector3.zero && rb.angularVelocity == Vector3.zero;
     }
 }

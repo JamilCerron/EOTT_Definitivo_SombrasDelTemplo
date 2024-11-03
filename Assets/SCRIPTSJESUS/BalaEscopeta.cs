@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BalaEscopeta : MonoBehaviour
 {
-    public float speed = 20f; 
+    public float speed = 20f;
     public float tiempoVida = 2f;
    
 
@@ -25,7 +25,7 @@ public class BalaEscopeta : MonoBehaviour
             Enemigo enemigo = collision.gameObject.GetComponent<Enemigo>();
             if (enemigo != null)
             {
-                enemigo.RecibirImpacto();
+                enemigo.Stun();
             }
 
             
