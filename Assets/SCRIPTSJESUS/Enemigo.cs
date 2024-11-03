@@ -17,7 +17,7 @@ public class Enemigo : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationZ;
     }
 
-     void OnCollisionEnter(Collision collision,ContactPoint contact)
+     void OnCollisionEnter(Collision collision)
     {
         //Verifica si el objeto que colisiono es una bala
         if (collision.gameObject.tag == "Bala")
