@@ -18,6 +18,8 @@ public class PersecucionEnemigo : MonoBehaviour
 
     private bool jugadorDetectado = false;
 
+    public Rigidbody rb;
+
      void Start()
     {
         //Establece la posicion inicial del enemigo
@@ -30,10 +32,20 @@ public class PersecucionEnemigo : MonoBehaviour
         if (Vector3.Distance(transform.position, jugador.transform.position)<= rangoDeteccion)
         {
             jugadorDetectado = true;
+
+            //Verificar si el enemigo esta Aturdido
+            Enemigo enemigo = GetComponent<Enemigo>();
+            if(enemigo!=null && !enemigo.IsStunned())
+            {
+                PerseguirJugador();
+            }
         }
         else
         {
             jugadorDetectado = false;
+
+            //Imprime mensaje en Consola
+            Debug.Log("Jugador salio del rango del enemigo");
         }
 
         //Si el jugador esta detectado, persiguelo
@@ -58,6 +70,9 @@ public class PersecucionEnemigo : MonoBehaviour
 
         //Rotar el enemigo hacia el jugador
         transform.rotation = Quaternion.LookRotation(direccion);
+
+        //Hacer que el enemigo ruede
+        rb.AddTorque(direccion * velocidadPersecucion * Time.deltaTime);
     }
 
     void VolverPosicionInicial()

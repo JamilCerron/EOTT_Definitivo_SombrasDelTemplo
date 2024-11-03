@@ -52,9 +52,12 @@ public class Enemigo : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
 
+        //Imprime mensaje en Consola
+        Debug.Log("Enemigo ya no esta aturdido");
+
     }
 
-    bool IsStunned()
+    public bool IsStunned()
     {
         //Verifica si el enemigo esa aturdido 
         return rb.velocity == Vector3.zero && rb.angularVelocity == Vector3.zero;
