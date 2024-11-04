@@ -18,6 +18,15 @@ public class Guardian : MonoBehaviour
     
     void Update()
     {
+        if (Vector3.Distance(transform.position, player.position) < detectionRange)
+        {
+            isChasing = true;
+        }
+        else
+        {
+            isChasing = false;
+        }
+
         if (isChasing)
         {
             ChasePlayer();
@@ -43,22 +52,7 @@ public class Guardian : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("PLAYER"))
-        {
-            isChasing = true;
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("PLAYER"))
-        {
-            isChasing = false;
-        }
-    }
-
+   
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
