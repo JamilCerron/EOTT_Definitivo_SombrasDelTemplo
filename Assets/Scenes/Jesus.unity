@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 45806936}
   m_Layer: 0
   m_Name: Jugador
-  m_TagString: Untagged
+  m_TagString: Jugador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,7 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53f82c2e06d39f428a919e119d939b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  velocidad: 8
+  vida: 100
 --- !u!136 &45806932
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -899,6 +900,7 @@ GameObject:
   - component: {fileID: 1783958247}
   - component: {fileID: 1783958248}
   - component: {fileID: 1783958249}
+  - component: {fileID: 1783958250}
   m_Layer: 0
   m_Name: ENEMIGO
   m_TagString: Enemigo
@@ -1061,6 +1063,22 @@ MonoBehaviour:
   velocidadPersecucion: 5
   rangoDeteccion: 10
   rb: {fileID: 1783958242}
+--- !u!114 &1783958250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783958241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e610317c401dae440855edb2ec10f019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugador: {fileID: 45806929}
+  "da\xF1oCabezazo": 10
+  velocidadEmpuje: 5
+  enemigo: {fileID: 1783958247}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

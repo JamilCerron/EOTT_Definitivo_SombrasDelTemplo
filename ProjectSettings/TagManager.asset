@@ -14,6 +14,8 @@ TagManager:
   - GestorTumi
   - CajaDeMuerte
   - Enemigo
+  - PLAYER
+  - Jugador
   layers:
   - Default
   - TransparentFX
