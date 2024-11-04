@@ -897,6 +897,7 @@ GameObject:
   - component: {fileID: 1783958243}
   - component: {fileID: 1783958242}
   - component: {fileID: 1783958247}
+  - component: {fileID: 1783958248}
   m_Layer: 0
   m_Name: Guardian
   m_TagString: Guardian
@@ -1033,6 +1034,19 @@ MonoBehaviour:
   speed: 4
   detectionRange: 8
   initialPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &1783958248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783958241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96cd8a8ed8bd3d942a8981d9e9061cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackForce: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
