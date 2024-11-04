@@ -7,55 +7,87 @@ public class Guardian : MonoBehaviour
     public Transform player;
     public float speed = 4f;
     public float detectionRange = 10f;
-    public Vector3 initialPosition;
-    private bool isChasing = false;
+    public float attackRange = 5f;
+    private Vector3 initialPosition;
+    private GuardianCabezazo guardianCabezazo;
+
+    private enum GuardianState { Idle, Chasing, Returning, Attacking }
+    private GuardianState currentState = GuardianState.Idle;
 
     void Start()
     {
         initialPosition = transform.position;
+        guardianCabezazo = GetComponent<GuardianCabezazo>();
     }
 
     
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.position) < detectionRange)
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        switch (currentState)
         {
-            isChasing = true;
-        }
-        else
-        {
-            isChasing = false;
+            case GuardianState.Idle:
+                if (distanceToPlayer <= detectionRange)
+                {
+                    currentState = GuardianState.Chasing;
+                    Debug.Log("Entrando en rango de detección: Persiguiendo al jugador");
+                }
+                break;
+
+            case GuardianState.Chasing:
+                if (distanceToPlayer <= attackRange)
+                {
+                    currentState = GuardianState.Attacking;
+                    Debug.Log("Entrando en rango de ataque: Iniciando ataque");
+                    guardianCabezazo.AttemptAttack();
+                }
+                else if (distanceToPlayer > detectionRange)
+                {
+                    currentState = GuardianState.Returning;
+                    Debug.Log("Jugador fuera de rango: Regresando a posición inicial");
+                }
+                else
+                {
+                    MoveTowards(player.position);
+                }
+                break;
+
+            case GuardianState.Attacking:
+                if (distanceToPlayer > attackRange)
+                {
+                    currentState = GuardianState.Chasing;
+                    Debug.Log("Fuera de rango de ataque: Volviendo a perseguir al jugador");
+                }
+                break;
+
+            case GuardianState.Returning:
+                if (Vector3.Distance(transform.position, initialPosition) < 0.1f)
+                {
+                    currentState = GuardianState.Idle;
+                    Debug.Log("Regresado a posición inicial: Estado Idle");
+                }
+                else
+                {
+                    MoveTowards(initialPosition);
+                }
+                break;
         }
 
-        if (isChasing)
-        {
-            ChasePlayer();
-        }
-        else
-        {
-            ReturnToInitialPosition();
-        }
     }
 
-    void ChasePlayer()
+    void MoveTowards(Vector3 targetPosition)
     {
-        Vector3 direction = (player.position - transform.position).normalized;
+        Vector3 direction = (targetPosition - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
     }
 
-    void ReturnToInitialPosition()
-    {
-        if (Vector3.Distance(transform.position, initialPosition) > 0.1f)
-        {
-            Vector3 direction = (initialPosition - transform.position).normalized;
-            transform.position += direction * speed * Time.deltaTime;
-        }
-    }
 
-   
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
