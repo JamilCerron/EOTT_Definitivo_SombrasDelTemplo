@@ -306,12 +306,12 @@ GameObject:
   - component: {fileID: 45806934}
   - component: {fileID: 45806933}
   - component: {fileID: 45806932}
-  - component: {fileID: 45806931}
   - component: {fileID: 45806930}
   - component: {fileID: 45806936}
+  - component: {fileID: 45806937}
   m_Layer: 0
   m_Name: Jugador
-  m_TagString: Jugador
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,7 +325,7 @@ Rigidbody:
   m_GameObject: {fileID: 45806929}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 2
+  m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -343,20 +343,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &45806931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45806929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c53f82c2e06d39f428a919e119d939b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 8
-  vida: 100
 --- !u!136 &45806932
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -455,13 +441,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 45806929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3184c5cef965b2e43bef009279b99837, type: 3}
+  m_Script: {fileID: 11500000, guid: 1993a9e43581f3b41a82727b2a7427b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6012186671773087934, guid: 2d527d338e85ebc4eba701face500e03,
+  speed: 5
+--- !u!114 &45806937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45806929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdefc75aa141ff46930fb9a61ebd7b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1623121436915415550, guid: 8bff9fff9764b96419ccf8810c460135,
     type: 3}
   firePoint: {fileID: 852383588}
-  bulletSpeed: 20
+  bulletSpeed: 10
 --- !u!1 &153841221
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,13 +896,9 @@ GameObject:
   - component: {fileID: 1783958244}
   - component: {fileID: 1783958243}
   - component: {fileID: 1783958242}
-  - component: {fileID: 1783958247}
-  - component: {fileID: 1783958248}
-  - component: {fileID: 1783958249}
-  - component: {fileID: 1783958250}
   m_Layer: 0
-  m_Name: ENEMIGO
-  m_TagString: Enemigo
+  m_Name: Guardian
+  m_TagString: Guardian
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -933,7 +928,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!135 &1783958243
 SphereCollider:
@@ -1021,64 +1016,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1783958247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783958241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 393df2a383f51e24685b6e07cbb5f015, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemytag: Enemigo
-  stunTime: 10
---- !u!114 &1783958248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783958241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b4e642c4226ca34696466cabfb2062b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1783958249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783958241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb7500b9a085c794eb580e7ce70f807f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jugador: {fileID: 45806929}
-  velocidadPersecucion: 5
-  rangoDeteccion: 10
-  rb: {fileID: 1783958242}
---- !u!114 &1783958250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783958241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e610317c401dae440855edb2ec10f019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jugador: {fileID: 45806929}
-  "da\xF1oCabezazo": 10
-  velocidadEmpuje: 5
-  enemigo: {fileID: 1783958247}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

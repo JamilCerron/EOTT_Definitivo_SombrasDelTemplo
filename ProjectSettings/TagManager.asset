@@ -16,6 +16,7 @@ TagManager:
   - Enemigo
   - PLAYER
   - Jugador
+  - Guardian
   layers:
   - Default
   - TransparentFX
