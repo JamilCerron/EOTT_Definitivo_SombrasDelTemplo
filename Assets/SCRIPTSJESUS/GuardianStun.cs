@@ -16,6 +16,7 @@ public class GuardianStun : MonoBehaviour
             if (stunTimer <= 0)
             {
                 isStunned = false;
+                Debug.Log("El guardián ya no está aturdido.");
             }
         }
     }
@@ -24,6 +25,7 @@ public class GuardianStun : MonoBehaviour
     {
         isStunned = true;
         stunTimer = stunDuration;
+        Debug.Log("El guardián ha sido aturdido durante " + stunDuration + " segundos.");
     }
 
     void OnTriggerEnter(Collider other)

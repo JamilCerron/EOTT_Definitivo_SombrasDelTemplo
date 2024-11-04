@@ -17,6 +17,7 @@ TagManager:
   - PLAYER
   - Jugador
   - Guardian
+  - BULLET
   layers:
   - Default
   - TransparentFX
