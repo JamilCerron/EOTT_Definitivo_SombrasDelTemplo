@@ -15,7 +15,11 @@ public class MoverJugador : MonoBehaviour
     {
         salud -= dano;
         Debug.Log("El jugador recibió " + dano + " de daño. Salud restante: " + salud);
-        // Aquí podrías agregar efectos visuales o sonidos de daño, si lo deseas.
+        if (salud <= 0)
+        {
+            // Aquí podrías agregar la lógica para cuando el jugador muere
+            Debug.Log("El jugador ha muerto");
+        }
     }
 
 

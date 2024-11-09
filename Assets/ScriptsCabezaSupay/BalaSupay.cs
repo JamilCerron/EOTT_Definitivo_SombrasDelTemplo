@@ -14,6 +14,7 @@ public class BalaSupay : MonoBehaviour
         if (rb != null)
         {
             rb.velocity = transform.forward * velocidad;
+            Debug.Log("Bala lanzada con velocidad: " + rb.velocity);
         }
     }
 
@@ -29,16 +30,21 @@ public class BalaSupay : MonoBehaviour
                 player.RecibirDanio(dano);
                 Debug.Log("El jugador recibió daño. Salud restante: " + player.salud);
             }
+            else
+            {
+                Debug.Log("El jugador no tiene el componente MoverJugador.");
 
-            // Destruir la bala después de colisionar
+            }
+
             Destroy(gameObject);
         }
-
         else
         {
-            // Si la bala colisiona con otro objeto que no es el jugador, también la destruye
+            // Si la bala colisiona con cualquier otra cosa, se destruye
+            Debug.Log("Bala destruida tras colisionar con: " + other.gameObject.name);
             Destroy(gameObject);
         }
-  
+
+
     }
 }
