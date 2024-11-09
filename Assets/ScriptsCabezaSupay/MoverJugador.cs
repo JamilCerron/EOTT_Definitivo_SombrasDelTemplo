@@ -41,7 +41,7 @@ public class MoverJugador : MonoBehaviour
         Vector3 movimiento = new Vector3(movimientoHorizontal, 0, movimientoVertical).normalized;
         transform.position += movimiento * velocidad * Time.deltaTime;
 
-        if (Input.GetButtonDown("Fire1")) 
+        if (Input.GetMouseButtonDown(0)) 
         {
             Disparar();
         }
