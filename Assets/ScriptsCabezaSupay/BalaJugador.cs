@@ -6,6 +6,7 @@ public class BalaJugador : MonoBehaviour
 {
     public float velocidad = 10f;
     public int dano = 1;
+    private bool haImpactado = false;
 
     private void Update()
     {
@@ -14,14 +15,18 @@ public class BalaJugador : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("ENEMIGO"))
+        if (!haImpactado && other.CompareTag("ENEMIGO"))
         {
+            haImpactado = true;
+
             CabezaSupay enemigo = other.GetComponent<CabezaSupay>();
             if (enemigo != null)
             {
-                enemigo.RecibirGolpe(dano);
+                enemigo.RecibirGolpe(1);
             }
-            Destroy(gameObject); // Destruye la bala después del impacto
+
+            // Destruye la bala después del impacto
+            Destroy(gameObject);
         }
     }
 }

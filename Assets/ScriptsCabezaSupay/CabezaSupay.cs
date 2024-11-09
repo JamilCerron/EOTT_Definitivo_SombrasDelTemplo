@@ -15,6 +15,7 @@ public class CabezaSupay : MonoBehaviour
     private int golpesRecibidos = 0;
     private bool puedeAtacar = true;
     private float tiempoProximoDisparo = 0f;
+    private bool golpeando = false;
 
     void Start()
     {
@@ -53,23 +54,54 @@ public class CabezaSupay : MonoBehaviour
 
     public void RecibirGolpe(int dano)
     {
-        golpesRecibidos += dano;
-        Debug.Log("Enemigo recibió un golpe. Golpes recibidos: " + golpesRecibidos);
-
-        if (golpesRecibidos >= 3)
+        if (!golpeando)  
         {
-            Debug.Log("Enemigo bajo la cabeza");
-            StartCoroutine(DesactivarTemporalmente());
-            golpesRecibidos = 0; // Reinicia el conteo de golpes
+            StartCoroutine(RegistrarGolpe(dano));
         }
     }
 
-    private IEnumerator DesactivarTemporalmente()
+    private IEnumerator RegistrarGolpe(int dano)
     {
-        puedeAtacar = false; // Desactiva el ataque
-        yield return new WaitForSeconds(10f); // Espera 10 segundos
-        puedeAtacar = true; // Reactiva el ataque
-        Debug.Log("El enemigo ha vuelto a atacar.");
+        golpeando = true;  
+
+        
+        golpesRecibidos += dano;
+        Debug.Log("Enemigo recibió un golpe. Golpes recibidos: " + golpesRecibidos);
+
+        
+        if (golpesRecibidos >= 3)
+        {
+            Debug.Log("Enemigo bajo la cabeza");
+            golpesRecibidos = 0;
+
+            // El enemigo deja de atacar por 10 segundos
+            puedeAtacar = false;
+            Debug.Log("Enemigo deja de atacar por 10 segundos...");
+
+            // Esperamos 10 segundos antes de que el enemigo vuelva a atacar
+            yield return new WaitForSeconds(10f);
+
+            // Después de los 10 segundos, el enemigo puede volver a atacar
+            puedeAtacar = true;
+            Debug.Log("ENEMIGO VUELVE A ATACAR");
+        }
+
+        
+        yield return new WaitForSeconds(0.1f);  
+
+        golpeando = false;  
+    }
+
+    public void IntentarAtacar()
+    {
+        if (puedeAtacar)
+        {
+            Debug.Log("El enemigo está atacando...");
+        }
+        else
+        {
+            Debug.Log("El enemigo no puede atacar aún. Esperando...");
+        }
     }
 
     void OnDrawGizmosSelected()
