@@ -11,7 +11,7 @@ public class MoverJugador : MonoBehaviour
     public int salud = 100;
 
 
-    public void RecibirDanio(int dano)
+    public void ReducirSalud(int dano)
     {
         salud -= dano;
         Debug.Log("El jugador recibió " + dano + " de daño. Salud restante: " + salud);

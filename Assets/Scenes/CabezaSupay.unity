@@ -566,7 +566,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -634,13 +634,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36cc0adc7936da649b3fdfdadfcb9232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangoDeDisparo: 10
   balaPrefab: {fileID: 2467281838272133010, guid: b93e3abe02d413c40a65e3e24b29f4c4,
     type: 3}
-  puntoDeDisparo: {fileID: 1477711881}
-  tiempoEntreDisparos: 2
-  impactosParaDesactivar: 3
-  tiempoDeReactivacion: 10
+  puntoDisparo: {fileID: 1477711881}
+  rangoDisparo: 10
+  tiempoEntreDisparos: 1.5
+  velocidadBala: 4
 --- !u!1 &978806616
 GameObject:
   m_ObjectHideFlags: 0

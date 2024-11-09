@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class CabezaSupay : MonoBehaviour
 {
-    public float rangoDeDisparo = 10f;  // Rango dentro del cual la Cabeza de Supay dispara
-    public GameObject balaPrefab;       // Prefab de la bala a disparar
-    public Transform puntoDeDisparo;    // Lugar desde donde se dispara la bala
-    public float tiempoEntreDisparos = 2f; // Tiempo entre disparos
-    public int impactosParaDesactivar = 3; // Cantidad de disparos que recibe antes de apagarse
-    public float tiempoDeReactivacion = 10f; // Tiempo antes de reactivarse
+    public GameObject balaPrefab;
+    public Transform puntoDisparo;
+    public float rangoDisparo = 10f;
+    public float tiempoEntreDisparos = 1.5f;
+    [SerializeField] float velocidadBala = 4f;
 
-    private int impactosRecibidos = 0;
-    private bool estaActiva = true;
     private Transform jugador;
-    private float tiempoUltimoDisparo;
+    private float tiempoProximoDisparo = 0f;
 
     void Start()
     {
@@ -23,55 +21,40 @@ public class CabezaSupay : MonoBehaviour
 
     void Update()
     {
-        if (estaActiva && jugador != null)
+        if (jugador != null)
         {
             float distancia = Vector3.Distance(transform.position, jugador.position);
 
-            if (distancia <= rangoDeDisparo && Time.time >= tiempoUltimoDisparo + tiempoEntreDisparos)
+            if (distancia <= rangoDisparo)
             {
-                Disparar();
-                tiempoUltimoDisparo = Time.time;
+                // Disparar si el tiempo entre disparos ha pasado
+                if (Time.time >= tiempoProximoDisparo)
+                {
+                    Disparar();
+                    tiempoProximoDisparo = Time.time + tiempoEntreDisparos;
+                }
             }
         }
     }
 
-    private void Disparar()
+    void Disparar()
     {
-        // Crear la bala y dispararla hacia el jugador
-        Instantiate(balaPrefab, puntoDeDisparo.position, Quaternion.LookRotation(jugador.position - puntoDeDisparo.position));
-        Debug.Log("Cabeza de Supay dispara al jugador.");
-    }
+       //Calcula la dirección desde el punto de disparo hacia el jugador
+        Vector3 direccionAlJugador = (jugador.position - puntoDisparo.position).normalized;
 
-    public void RecibirDisparo()
-    {
-        if (!estaActiva) return;
+        // Crea la bala
+        GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
 
-        impactosRecibidos++;
-        Debug.Log("Cabeza de Supay recibió un disparo. Impactos recibidos: " + impactosRecibidos);
+        bala.transform.rotation = Quaternion.LookRotation(direccionAlJugador);
 
-        if (impactosRecibidos >= impactosParaDesactivar)
-        {
-            StartCoroutine(DesactivarTemporalmente());
-        }
-    }
+        bala.GetComponent<Rigidbody>().velocity = direccionAlJugador * velocidadBala;
 
-    private IEnumerator DesactivarTemporalmente()
-    {
-        estaActiva = false;
-        Debug.Log("Cabeza de Supay bajó ligeramente la cabeza y se desactivó.");
-
-        yield return new WaitForSeconds(tiempoDeReactivacion);
-
-        estaActiva = true;
-        impactosRecibidos = 0;
-        Debug.Log("Cabeza de Supay se ha reactivado.");
     }
 
     void OnDrawGizmosSelected()
     {
-        // Color del Gizmo (rojo)
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, rangoDeDisparo);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, rangoDisparo);
     }
 
 }

@@ -4,47 +4,25 @@ using UnityEngine;
 
 public class BalaSupay : MonoBehaviour
 {
-    public float velocidad = 10f; // Velocidad de la bala
-    public int dano = 10; // Daño que causa la bala al jugador
+    public float velocidad = 10f;
+    public int dano = 20;
 
-    private void Start()
+    private void Update()
     {
-        // Mover la bala hacia adelante
-        Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb != null)
+        transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PLAYER"))
         {
-            rb.velocity = transform.forward * velocidad;
-            Debug.Log("Bala lanzada con velocidad: " + rb.velocity);
+            MoverJugador jugador = other.GetComponent<MoverJugador>();
+            if (jugador != null)
+            {
+                jugador.ReducirSalud(dano);
+            }
+            Destroy(gameObject); // Destruye la bala después del impacto
         }
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        // Verificar si la bala colisiona con el jugador
-        if (other.gameObject.CompareTag("PLAYER"))
-        {
-            // Llamar al método de daño en el jugador (si existe)
-            MoverJugador player = other.gameObject.GetComponent<MoverJugador>();
-            if (player != null)
-            {
-                player.RecibirDanio(dano);
-                Debug.Log("El jugador recibió daño. Salud restante: " + player.salud);
-            }
-            else
-            {
-                Debug.Log("El jugador no tiene el componente MoverJugador.");
-
-            }
-
-            Destroy(gameObject);
-        }
-        else
-        {
-            // Si la bala colisiona con cualquier otra cosa, se destruye
-            Debug.Log("Bala destruida tras colisionar con: " + other.gameObject.name);
-            Destroy(gameObject);
-        }
-
-
-    }
 }
