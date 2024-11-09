@@ -10,8 +10,10 @@ public class CabezaSupay : MonoBehaviour
     public float rangoDisparo = 10f;
     public float tiempoEntreDisparos = 1.5f;
     [SerializeField] float velocidadBala = 4f;
+     private Transform jugador;
 
-    private Transform jugador;
+    private int golpesRecibidos = 0;
+    private bool puedeAtacar = true;
     private float tiempoProximoDisparo = 0f;
 
     void Start()
@@ -21,7 +23,7 @@ public class CabezaSupay : MonoBehaviour
 
     void Update()
     {
-        if (jugador != null)
+        if (jugador != null && puedeAtacar)
         {
             float distancia = Vector3.Distance(transform.position, jugador.position);
 
@@ -39,16 +41,35 @@ public class CabezaSupay : MonoBehaviour
 
     void Disparar()
     {
-       //Calcula la dirección desde el punto de disparo hacia el jugador
         Vector3 direccionAlJugador = (jugador.position - puntoDisparo.position).normalized;
 
-        // Crea la bala
         GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
 
         bala.transform.rotation = Quaternion.LookRotation(direccionAlJugador);
 
         bala.GetComponent<Rigidbody>().velocity = direccionAlJugador * velocidadBala;
 
+    }
+
+    public void RecibirGolpe(int dano)
+    {
+        golpesRecibidos += dano;
+        Debug.Log("Enemigo recibió un golpe. Golpes recibidos: " + golpesRecibidos);
+
+        if (golpesRecibidos >= 3)
+        {
+            Debug.Log("Enemigo bajo la cabeza");
+            StartCoroutine(DesactivarTemporalmente());
+            golpesRecibidos = 0; // Reinicia el conteo de golpes
+        }
+    }
+
+    private IEnumerator DesactivarTemporalmente()
+    {
+        puedeAtacar = false; // Desactiva el ataque
+        yield return new WaitForSeconds(10f); // Espera 10 segundos
+        puedeAtacar = true; // Reactiva el ataque
+        Debug.Log("El enemigo ha vuelto a atacar.");
     }
 
     void OnDrawGizmosSelected()

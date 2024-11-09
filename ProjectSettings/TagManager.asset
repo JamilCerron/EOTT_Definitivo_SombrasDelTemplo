@@ -18,6 +18,7 @@ TagManager:
   - Jugador
   - Guardian
   - BULLET
+  - ENEMIGO
   layers:
   - Default
   - TransparentFX

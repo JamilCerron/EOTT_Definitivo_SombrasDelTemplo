@@ -365,7 +365,8 @@ Transform:
   m_LocalPosition: {x: -1.75, y: 2.58, z: -10.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 339299981}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 2.447, y: 21.332, z: 1.826}
 --- !u!114 &204980251
@@ -382,6 +383,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 9
   salud: 100
+  balaPrefab: {fileID: 7443779652324112652, guid: beb81878f29563f45a9bc97cefcd55a6,
+    type: 3}
+  firePoint: {fileID: 339299981}
+  velocidadBala: 4
 --- !u!54 &204980252
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -409,6 +414,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!1 &339299980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339299981}
+  m_Layer: 0
+  m_Name: PuntoDeDisparo
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &339299981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339299980}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0239276, y: -0.18468669, z: -0.011705012, w: 0.9824365}
+  m_LocalPosition: {x: -0.14, y: 0.06, z: 0.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 204980250}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442802926
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +567,7 @@ GameObject:
   - component: {fileID: 852236492}
   m_Layer: 0
   m_Name: CabezaSupay
-  m_TagString: Untagged
+  m_TagString: ENEMIGO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
