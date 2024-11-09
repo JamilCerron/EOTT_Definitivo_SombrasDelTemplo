@@ -8,6 +8,17 @@ public class MoverJugador : MonoBehaviour
 
     private Rigidbody rb;
 
+    public int salud = 100;
+
+
+    public void RecibirDanio(int dano)
+    {
+        salud -= dano;
+        Debug.Log("El jugador recibió " + dano + " de daño. Salud restante: " + salud);
+        // Aquí podrías agregar efectos visuales o sonidos de daño, si lo deseas.
+    }
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -19,7 +30,7 @@ public class MoverJugador : MonoBehaviour
         float movimientoVertical = Input.GetAxis("Vertical");
 
         Vector3 movimiento = new Vector3(movimientoHorizontal, 0, movimientoVertical).normalized;
-        rb.velocity = movimiento * velocidad;
+        transform.position += movimiento * velocidad * Time.deltaTime;
 
     }
 
