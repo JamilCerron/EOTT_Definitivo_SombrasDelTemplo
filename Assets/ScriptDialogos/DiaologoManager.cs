@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class DiaologoManager : MonoBehaviour
 {
     public GameObject dialogPanel; // Panel del cuadro de diálogo
-    public Text dialogText; // Texto del cuadro de diálogo
+    public TextMeshProUGUI dialogText; // Texto del cuadro de diálogo
     public string[] dialogLines; // Líneas de diálogo
     private int currentLine = 0;
 
@@ -34,13 +34,16 @@ public class DiaologoManager : MonoBehaviour
     private void AdvanceDialog()
     {
         currentLine++;
+        Debug.Log("Línea actual: " + currentLine); // Rastreo
         if (currentLine < dialogLines.Length)
         {
             dialogText.text = dialogLines[currentLine];
+            Debug.Log("Mostrando línea: " + dialogLines[currentLine]); // Rastreo
         }
         else
         {
             EndDialog();
+            Debug.Log("Diálogo terminado.");
         }
     }
 
