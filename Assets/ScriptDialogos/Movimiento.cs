@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Movimiento : MonoBehaviour
 {
-    [SerializeField] private float velocidad = 4f;
+    [SerializeField] private float velocidad = 15f;
 
      void Update()
     {
