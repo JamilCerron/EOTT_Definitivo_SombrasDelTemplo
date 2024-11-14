@@ -8,22 +8,21 @@ public class DialogueScript : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public string[] Lines;
     public float textSpeed = 0.2f;
+    public GameObject dialoguePanel; // Referencia al panel de diálogo
 
     int index;
+    private bool playerInRange = false; // Para detectar si el jugador está cerca
 
-
-        
-   
     void Start()
     {
         dialogueText.text = string.Empty;
-        StartDialogue();
+        dialoguePanel.SetActive(false);
     }
 
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (playerInRange && Input.GetMouseButtonDown(0))
         {
             if(dialogueText.text == Lines[index])
             {
@@ -39,6 +38,7 @@ public class DialogueScript : MonoBehaviour
 
     public void StartDialogue()
     {
+        dialoguePanel.SetActive(true); // Mostrar panel
         index = 0;
         StartCoroutine(WriteLine());
 
@@ -66,6 +66,26 @@ public class DialogueScript : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) // Detectar colisión con el jugador
+    {
+        if (other.CompareTag("PLAYER"))
+        {
+            playerInRange = true;
+            StartDialogue();
+        }
+    }
+
+    private void OnTriggerExit(Collider other) // Finalizar interacción al salir del rango
+    {
+        if (other.CompareTag("PLAYER"))
+        {
+            playerInRange = false;
+            dialoguePanel.SetActive(false);
+            StopAllCoroutines();
+            dialogueText.text = string.Empty;
         }
     }
 }

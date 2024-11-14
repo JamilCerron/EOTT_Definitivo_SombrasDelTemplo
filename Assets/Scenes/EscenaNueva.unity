@@ -228,37 +228,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &143183386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 143183388}
-  m_Layer: 0
-  m_Name: DialogManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &143183388
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143183386}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.62, y: 6.6532774, z: -0.6653369}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313059023
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +346,7 @@ GameObject:
   - component: {fileID: 313655546}
   m_Layer: 0
   m_Name: Jugador
-  m_TagString: Player
+  m_TagString: PLAYER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -812,14 +781,13 @@ GameObject:
   - component: {fileID: 603287514}
   - component: {fileID: 603287516}
   - component: {fileID: 603287515}
-  - component: {fileID: 603287517}
   m_Layer: 5
   m_Name: DialogePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &603287514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -878,29 +846,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603287513}
   m_CullTransparentMesh: 1
---- !u!114 &603287517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603287513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e3cbe6b6aba554095fb8156d673cc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: {fileID: 1476769949}
-  Lines:
-  - "Bueno, seg\xFAn la documentaci\xF3n y los mapas que analizamos junto a mi equipo
-    sobre el Paititi y la leyenda que se cuenta, en estas coordenadas y catacumbas
-    deber\xEDa haberse enterrado el gran tesoro del Supay. "
-  - "Todo deber\xEDa ser relativamente simple, ya saben: entrar en unas desoladas
-    catacumbas, explorar todo el lugar, encontrar el tesoro y salir.\u201D\u201COh,
-    no, no. Maldici\xF3n. Ahora tendr\xE9 que encontrar una ruta alternativa de regreso
-    a la superficie."
-  - Presiona WASD para moverte
-  textSpeed: 0.2
 --- !u!1 &712704429
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,9 +931,10 @@ GameObject:
   - component: {fileID: 1047176546}
   - component: {fileID: 1047176545}
   - component: {fileID: 1047176544}
+  - component: {fileID: 1047176548}
   m_Layer: 0
   m_Name: NPC1
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1073,12 +1019,36 @@ Transform:
   m_GameObject: {fileID: 1047176543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.22, y: 6.78, z: -0.5720786}
+  m_LocalPosition: {x: -14.22, y: 6.829, z: -0.5720786}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1047176548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047176543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e3cbe6b6aba554095fb8156d673cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 1476769949}
+  Lines:
+  - "Bueno, seg\xFAn la documentaci\xF3n y los mapas que analizamos junto a mi equipo
+    sobre el Paititi y la leyenda que se cuenta, en estas coordenadas y catacumbas
+    deber\xEDa haberse enterrado el gran tesoro del Supay. "
+  - "Todo deber\xEDa ser relativamente simple, ya saben: entrar en unas desoladas
+    catacumbas, explorar todo el lugar, encontrar el tesoro y salir.\u201D\u201COh,
+    no, no. Maldici\xF3n. Ahora tendr\xE9 que encontrar una ruta alternativa de regreso
+    a la superficie."
+  - 'Presiona WASD para moverte '
+  textSpeed: 0.1
+  dialoguePanel: {fileID: 603287513}
 --- !u!1 &1476769948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,4 +1358,3 @@ SceneRoots:
   - {fileID: 1047176547}
   - {fileID: 313059024}
   - {fileID: 1545472843}
-  - {fileID: 143183388}
