@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/PrototipoNivel1/PrototipoNivel1JAMIL.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Victoria.unity
+    path: Assets/Scenes/VictoriaConTumi.unity
     guid: f4a9634a8bf3de842a1b25dbdecb3689
   m_configObjects: {}
