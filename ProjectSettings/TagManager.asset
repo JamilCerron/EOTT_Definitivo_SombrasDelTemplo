@@ -13,6 +13,13 @@ TagManager:
   - Enemigo01
   - GestorTumi
   - CajaDeMuerte
+  - Enemigo
+  - PLAYER
+  - Jugador
+  - Guardian
+  - BULLET
+  - ENEMIGO
+  - NPC
   layers:
   - Default
   - TransparentFX
