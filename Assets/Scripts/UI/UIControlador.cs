@@ -22,7 +22,7 @@ public class UIControlador : MonoBehaviour
 
     [SerializeField] private GameObject jugador;
     private PlayerStats jugadorStats;
-    private Tumi tumi;
+    private GestorTumi gestorTumi;
 
     private void Awake()
     {
@@ -37,7 +37,7 @@ public class UIControlador : MonoBehaviour
         }
 
         jugadorStats = jugador.GetComponent<PlayerStats>();
-        tumi = GameObject.FindGameObjectWithTag("Tumi").GetComponent<Tumi>();
+        gestorTumi = GameObject.FindGameObjectWithTag("GestorTumi").GetComponent<GestorTumi>();
     }
 
     private void Update()
@@ -60,10 +60,10 @@ public class UIControlador : MonoBehaviour
             barraResistencia.fillAmount = jugadorStats.ResistenciaActual() / jugadorStats.ResistenciaMaxima();
         }
 
-        if (tumi != null)
+        if (gestorTumi != null)
         {
             // Actualizar el texto de monedas
-            textoFragmentos.text = $"Fragmentos: 4/{tumi.ObtenerFragmentos()}";
+            textoFragmentos.text = $"Fragmentos: 4/{jugadorStats.FragmentosTumi()}";
         }
     }
 }
