@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3489381608688563103}
   - component: {fileID: 3178674627722380801}
   m_Layer: 0
-  m_Name: Pared01 (14)
+  m_Name: Pared01 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2008,7 +2008,7 @@ GameObject:
   - component: {fileID: 2272149794420772387}
   - component: {fileID: 3185770010146380628}
   m_Layer: 0
-  m_Name: Pared02 (6)
+  m_Name: Pared01 (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
