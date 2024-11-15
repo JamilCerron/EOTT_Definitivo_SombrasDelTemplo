@@ -51,7 +51,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1.33
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7561943444451461585
 GameObject:
@@ -66,8 +66,9 @@ GameObject:
   - component: {fileID: 457279113278737839}
   - component: {fileID: 3175717034466427985}
   - component: {fileID: 4447406486337732049}
-  - component: {fileID: 701040193249099147}
-  - component: {fileID: 1495231470571296101}
+  - component: {fileID: 3703315408325383536}
+  - component: {fileID: 689628872973316999}
+  - component: {fileID: 1238927736736627932}
   m_Layer: 0
   m_Name: Espectro
   m_TagString: Enemigo01
@@ -177,11 +178,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "corduraDa\xF1oEspecial": 20
-  "corduraDa\xF1o": 5
-  "vidaDa\xF1o": 5
+  "corduraDa\xF1o": 20
+  "vidaDa\xF1o": 10
   fovJugador: 90
-  tiempoEntreReducciones: 10
---- !u!114 &701040193249099147
+  jugadorObjeto: {fileID: 0}
+  tiempoEntreReducciones: 3
+--- !u!195 &3703315408325383536
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561943444451461585}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &689628872973316999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,28 +214,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 7561943444451461585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfb94f4e9c0053843b51a73d4507cde2, type: 3}
+  m_Script: {fileID: 11500000, guid: a7267040f5a4a44459f2f4709ec6170f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
-  rangoPersecucion: 5
-  velocidad: 5
-  velocidadActual: 0
-  rangoCordura: {fileID: 6356742564595434709}
-  tiempoEntreReducciones: 2
---- !u!114 &1495231470571296101
-MonoBehaviour:
+  jugador: {fileID: 0}
+--- !u!54 &1238927736736627932
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7561943444451461585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6afeb077db6374ca4bb9b122435d51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vidaMaxima: 100
-  vidaActual: 0
-  esEspectral: 1
-  particulasMuerte: {fileID: 0}
+  serializedVersion: 4
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -13,6 +13,11 @@ TagManager:
   - Enemigo01
   - GestorTumi
   - CajaDeMuerte
+  - PLAYER
+  - Guardian
+  - BULLET
+  - Jugador
+  - ENEMIGO
   layers:
   - Default
   - TransparentFX
@@ -45,7 +50,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Suelo
   m_SortingLayers:
   - name: Default
     uniqueID: 0
