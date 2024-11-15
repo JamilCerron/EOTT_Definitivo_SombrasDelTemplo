@@ -20,24 +20,24 @@ public class PerseguirJugador : MonoBehaviour
         if (jugador != null)
         {
             agente.SetDestination(jugador.position);
-
-            if (!agente.pathPending && agente.remainingDistance <= agente.stoppingDistance && !atacando && Mathf.Abs(agente.transform.position.y - jugador.transform.position.y) <= 2.0f)
-            {
-                StartCoroutine(RealizarAtaque());
-            }
-
         }
     }
 
-    IEnumerator RealizarAtaque()
+    private void OnTriggerEnter(Collider other)
+    {    
+        
+        if (other.CompareTag("Crucifijo")) 
+        {
+            Destroy(gameObject); 
+        }
+    }
+    
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Atacando");
-        atacando = true;
-        agente.isStopped = true; 
-
-        yield return new WaitForSeconds(1f);
-        espectroAtaque.AtaqueBasico();
-        agente.isStopped = false; 
-        atacando = false;
+        if (collision.gameObject.CompareTag("Jugador")) 
+        {
+            espectroAtaque.AtaqueBasico();
+            Destroy(gameObject); 
+        }
     }
 }
