@@ -66,7 +66,7 @@ public class CabezaSupay : MonoBehaviour
 
         
         golpesRecibidos += dano;
-        Debug.Log("Enemigo recibió un golpe. Golpes recibidos: " + golpesRecibidos);
+        Debug.Log("Enemigo recibiï¿½ un golpe. Golpes recibidos: " + golpesRecibidos);
 
         
         if (golpesRecibidos >= 3)
@@ -81,7 +81,7 @@ public class CabezaSupay : MonoBehaviour
             // Esperamos 10 segundos antes de que el enemigo vuelva a atacar
             yield return new WaitForSeconds(10f);
 
-            // Después de los 10 segundos, el enemigo puede volver a atacar
+            // Despuï¿½s de los 10 segundos, el enemigo puede volver a atacar
             puedeAtacar = true;
             Debug.Log("ENEMIGO VUELVE A ATACAR");
         }
@@ -96,11 +96,11 @@ public class CabezaSupay : MonoBehaviour
     {
         if (puedeAtacar)
         {
-            Debug.Log("El enemigo está atacando...");
+            Debug.Log("El enemigo estï¿½ atacando...");
         }
         else
         {
-            Debug.Log("El enemigo no puede atacar aún. Esperando...");
+            Debug.Log("El enemigo no puede atacar aï¿½n. Esperando...");
         }
     }
 

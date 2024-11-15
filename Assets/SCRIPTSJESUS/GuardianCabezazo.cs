@@ -49,12 +49,12 @@ public class GuardianCabezazo : MonoBehaviour
             Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
             if (playerRb != null)
             {
-                // Calcula la dirección de empuje solo en los ejes X y Z
+                // Calcula la direcciï¿½n de empuje solo en los ejes X y Z
                 Vector3 pushDirection = (collision.transform.position - transform.position);
                 pushDirection.y = 0; // Asegura que no haya empuje en el eje Y
-                pushDirection.Normalize(); // Normaliza la dirección para que tenga una magnitud de 1
+                pushDirection.Normalize(); // Normaliza la direcciï¿½n para que tenga una magnitud de 1
 
-                // Aplica más fuerza para comprobar el efecto
+                // Aplica mï¿½s fuerza para comprobar el efecto
                 float enhancedAttackForce = attackForce * 2; // Aumenta temporalmente para verificar el empuje
 
                 playerRb.AddForce(pushDirection * enhancedAttackForce, ForceMode.Impulse);
@@ -64,7 +64,7 @@ public class GuardianCabezazo : MonoBehaviour
 
     IEnumerator ResumeMovementAfterAttack()
     {
-        yield return new WaitForSeconds(1f); // Ajusta el tiempo según lo necesario
+        yield return new WaitForSeconds(1f); // Ajusta el tiempo segï¿½n lo necesario
         navMeshAgent.isStopped = false;
     }
 }
