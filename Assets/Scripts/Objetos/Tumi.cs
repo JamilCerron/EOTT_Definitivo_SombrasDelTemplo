@@ -5,22 +5,34 @@ using UnityEngine;
 public class Tumi : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueMark;
-    private GestorTumi gestorTumi;
+    [SerializeField] private int fragmentosTumi = 0;
 
     private void Awake()
     {
         dialogueMark.SetActive(false);
-        gestorTumi = GameObject.FindGameObjectWithTag("GestorTumi").GetComponent<GestorTumi>();
+    }
+
+    public void AñadirFragmentos(int cantidad)
+    {
+        if (fragmentosTumi >= 0 && fragmentosTumi <= 4)
+        {
+            fragmentosTumi += cantidad;
+        }
+
+        if (fragmentosTumi == 4)
+        {
+            GestorTumi.instancia.jugadorTieneTumiCompleto = true; // Marca que el jugador tiene el Tumi completo
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Bala"))
         {
             dialogueMark.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                gestorTumi.AñadirFragmentos(1);
+                AñadirFragmentos(1);
                 Destroy(gameObject); // Destruye el objeto Tumi en la escena
             }
         }
@@ -29,5 +41,10 @@ public class Tumi : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         dialogueMark.SetActive(false);
+    }
+
+    public int ObtenerFragmentos()
+    {
+        return fragmentosTumi;
     }
 }

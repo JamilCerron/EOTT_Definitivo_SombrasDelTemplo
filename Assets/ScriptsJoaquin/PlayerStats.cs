@@ -211,7 +211,7 @@ public class PlayerStats : MonoBehaviour
 
     void RecuperarResistencia()
     {
-        if (resistenciaActual < resistenciaMaxima && rb.velocity.x == 0)
+        if (resistenciaActual < resistenciaMaxima && rb.velocity.magnitude == 0)
         {
             resistenciaActual += resistenciaRecuperacion * Time.deltaTime;
         }
@@ -298,10 +298,7 @@ public class PlayerStats : MonoBehaviour
         return !EstaEnSuelo();
     }
 
-    public int FragmentosTumi()
-    {
-        return ContadorTumi;
-    }
+
 
 
     private void OnCollisionStay(Collision collision)
@@ -339,13 +336,6 @@ public class PlayerStats : MonoBehaviour
                 DentroAreaTumi = true;
             }
         }
-
-
-        //if (other.CompareTag("ZonaDeMuerte"))
-        //{
-        //    gameObject.SetActive(false);
-        //    SceneManager.LoadScene(escenaMuertePorCordura);
-        //}
     }
 
     private void OnTriggerExit(Collider other)

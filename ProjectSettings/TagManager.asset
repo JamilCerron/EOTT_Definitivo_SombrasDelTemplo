@@ -12,7 +12,6 @@ TagManager:
   - Bala
   - Enemigo01
   - GestorTumi
-  - CajaDeMuerte
   layers:
   - Default
   - TransparentFX
