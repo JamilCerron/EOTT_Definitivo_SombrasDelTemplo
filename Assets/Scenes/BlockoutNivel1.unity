@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 95575104}
   - component: {fileID: 95575103}
   m_Layer: 0
-  m_Name: Cube (6)
+  m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 179118751}
   - component: {fileID: 179118750}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1351,7 +1351,7 @@ GameObject:
   - component: {fileID: 653602812}
   - component: {fileID: 653602811}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 681251091}
   - component: {fileID: 681251090}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1788,6 +1788,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 707952322006444072, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 707952322006444072, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -1803,7 +1808,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1179102156850860948, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1179102156850860948, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377535203028808730, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
       value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 1377535203028808730, guid: 163008218fb20ed4194fd86623d525c2,
@@ -1833,6 +1848,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2430532349572849779, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2430532349572849779, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -1843,8 +1863,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2686073620737381741, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686073620737381741, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2801754230486875616, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 2801754230486875616, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
@@ -1858,8 +1888,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2978188330213323651, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978188330213323651, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069883809164814965, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 3069883809164814965, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
@@ -1870,6 +1910,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 8.93759
+      objectReference: {fileID: 0}
+    - target: {fileID: 3120412095285457566, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 3120412095285457566, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
@@ -1903,6 +1948,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3579232127218945903, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579232127218945903, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -1914,6 +1964,11 @@ PrefabInstance:
     - target: {fileID: 3745405535803450611, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
       propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917228674419327223, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
       value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 3917228674419327223, guid: 163008218fb20ed4194fd86623d525c2,
@@ -1948,12 +2003,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4674920567722764924, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674920567722764924, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 4691185841228426715, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
       propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4803343083618275908, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
       value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 4803343083618275908, guid: 163008218fb20ed4194fd86623d525c2,
@@ -1968,6 +2033,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4971388033598716200, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971388033598716200, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -1978,13 +2048,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5263821914994903700, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263821914994903700, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 5601363242879349962, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601363242879349962, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728797396915393603, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 5728797396915393603, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
@@ -1995,6 +2080,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918890827865661805, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 5918890827865661805, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
@@ -2009,6 +2099,11 @@ PrefabInstance:
     - target: {fileID: 6204128202882168312, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
       propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6246927537292047883, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
       value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 6246927537292047883, guid: 163008218fb20ed4194fd86623d525c2,
@@ -2043,6 +2138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6769895988305042351, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769895988305042351, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -2063,8 +2163,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6909068122233237803, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909068122233237803, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213654863751665285, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 7213654863751665285, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
@@ -2080,6 +2190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533416440192547616, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 7533416440192547616, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
@@ -2108,6 +2223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8131807182028803043, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131807182028803043, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -2123,8 +2243,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372004385822000292, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372004385822000292, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402955306628182801, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 8402955306628182801, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
@@ -2138,6 +2268,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535796775029203886, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535796775029203886, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -2145,6 +2280,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676461437604826901, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 8676461437604826901, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
@@ -2178,12 +2318,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9028587859097913527, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028587859097913527, guid: 163008218fb20ed4194fd86623d525c2,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6468756749243766380, guid: 163008218fb20ed4194fd86623d525c2, type: 3}
+    - {fileID: 5169735488586535223, guid: 163008218fb20ed4194fd86623d525c2, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 209194526621214477, guid: 163008218fb20ed4194fd86623d525c2,
         type: 3}
@@ -2560,7 +2706,7 @@ GameObject:
   - component: {fileID: 935251542}
   - component: {fileID: 935251541}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2660,10 +2806,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1183088556057625276, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
     - target: {fileID: 1324694931607213848, guid: 74ef6139d178c744ea8c321f59246b9d,
         type: 3}
       propertyPath: m_Name
       value: BlockoutJamil
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626469131213447521, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Puente
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366167058055077451, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619391005929514958, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498432073367101050, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694642357231590830, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Puente
+      objectReference: {fileID: 0}
+    - target: {fileID: 4369547404549821174, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 4759872497386174024, guid: 74ef6139d178c744ea8c321f59246b9d,
         type: 3}
@@ -2674,6 +2855,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.87349
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724118000019287661, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Puente
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106326336607008216, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Puente
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666121883737115513, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458330936313173420, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751572358390852493, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 8328466215461791602, guid: 74ef6139d178c744ea8c321f59246b9d,
         type: 3}
@@ -2724,6 +2930,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368085494311100695, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431791384650786138, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Puente
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940525410770101095, guid: 74ef6139d178c744ea8c321f59246b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2874,7 +3095,7 @@ GameObject:
   - component: {fileID: 1195664323}
   - component: {fileID: 1195664322}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3119,7 +3340,7 @@ GameObject:
   - component: {fileID: 1434720697}
   - component: {fileID: 1434720696}
   m_Layer: 0
-  m_Name: Cube (16)
+  m_Name: Techo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3224,7 +3445,7 @@ GameObject:
   - component: {fileID: 1462683624}
   - component: {fileID: 1462683623}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3337,7 +3558,7 @@ GameObject:
   - component: {fileID: 1600880113}
   m_Layer: 0
   m_Name: Virtual Camera
-  m_TagString: Untagged
+  m_TagString: VirtualCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3724,6 +3945,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 49087675282427859, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 49087675282427859, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -3746,6 +3972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 417612833606687310, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 417612833606687310, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
@@ -3794,13 +4025,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1514597839921941306, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514597839921941306, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 1568403621404659474, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1568403621404659474, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741715717998998031, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 1741715717998998031, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
@@ -3854,6 +4100,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3110779086357025702, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110779086357025702, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -3899,8 +4150,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3474985312750969962, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3474985312750969962, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546831362303802001, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 3546831362303802001, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
@@ -4014,13 +4275,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4699267783464632181, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699267783464632181, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 4735372704138832015, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735372704138832015, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881177892639525716, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 4881177892639525716, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
@@ -4074,6 +4350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5114238899994924725, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114238899994924725, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -4121,6 +4402,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240114078031412689, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428983756089373503, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536006421046005239, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 5536006421046005239, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
@@ -4184,6 +4480,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6316211848107428377, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316211848107428377, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -4216,6 +4517,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570814892590474431, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
+      propertyPath: m_Name
+      value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 6720964370014101720, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
@@ -4419,6 +4725,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7569052877209767900, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569052877209767900, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -4469,6 +4780,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8512467393320220951, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
+      propertyPath: m_Name
+      value: Techo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512467393320220951, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
       propertyPath: m_TagString
       value: Suelo
       objectReference: {fileID: 0}
@@ -4501,6 +4817,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883662193109327901, guid: be23d36b2354b894e9dcc8c1d334b314,
+        type: 3}
+      propertyPath: m_Name
+      value: Techo
       objectReference: {fileID: 0}
     - target: {fileID: 8883662193109327901, guid: be23d36b2354b894e9dcc8c1d334b314,
         type: 3}
@@ -4612,7 +4933,7 @@ GameObject:
   - component: {fileID: 1926169176}
   - component: {fileID: 1926169175}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4968,7 +5289,7 @@ GameObject:
   - component: {fileID: 2064005302}
   - component: {fileID: 2064005301}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Techo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5074,6 +5395,7 @@ GameObject:
   - component: {fileID: 2112549343}
   - component: {fileID: 2112549342}
   - component: {fileID: 2112549341}
+  - component: {fileID: 2112549344}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -5157,6 +5479,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2112549344
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112549339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &2134462033
 GameObject:
   m_ObjectHideFlags: 0

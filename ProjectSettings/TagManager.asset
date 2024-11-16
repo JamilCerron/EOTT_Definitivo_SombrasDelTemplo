@@ -20,6 +20,7 @@ TagManager:
   - BULLET
   - ENEMIGO
   - NPC
+  - VirtualCamera
   layers:
   - Default
   - TransparentFX

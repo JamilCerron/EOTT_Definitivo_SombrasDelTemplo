@@ -58,7 +58,7 @@ public class PlayerStats : MonoBehaviour
         resistenciaActual = resistenciaMaxima;
         rb = GetComponent<Rigidbody>();
 
-        camaraJugador = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        camaraJugador = GameObject.FindGameObjectWithTag("VirtualCamera").transform;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
