@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
     private float tiempoSinRecibirDaño;
     [SerializeField] private int vidaActual;
 
+    /*
     [Header("Objetos")]
     [SerializeField] public int ContadorCruz = 0;
     [SerializeField] public int ContadorTumi = 0;
@@ -20,7 +21,7 @@ public class PlayerStats : MonoBehaviour
     private bool DentroAreaTumi = false;            
 
     public CambioArma cambioArma; // Referencia a la clase CambioArma
-
+    */
 
     [Header("Cordura")]
     [SerializeField] private float corduraMaxima = 100f;
@@ -87,6 +88,7 @@ public class PlayerStats : MonoBehaviour
         //    }
         //}
 
+        /*
         if (DentroAreaCruz && Input.GetKeyDown(KeyCode.E))
         {
             // Incrementar el contador de la cruz
@@ -123,7 +125,9 @@ public class PlayerStats : MonoBehaviour
         {
             cambioArma.CambiarACrucifijo(); // Cambia al crucifijo
         }
+        */
     }
+    /*
     private void UsarCrucifijo()
     {
         if (ContadorCruz > 0)
@@ -134,7 +138,7 @@ public class PlayerStats : MonoBehaviour
             Debug.Log("Crucifijo activado. Tiempo de vida: " + tiempoDeVidaCrucifijo + " segundos.");
         }
     }
-
+    */
     void Movimiento()
     {
         float movimientoHorizontal = Input.GetAxis("Horizontal");
@@ -167,13 +171,12 @@ public class PlayerStats : MonoBehaviour
             rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
         }
     }
-
+    /*
     void Objeto(int value)
     {
         ContadorCruz += value;
-
     }
-
+    */
     void Agachar()
     {
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.C))
@@ -297,13 +300,12 @@ public class PlayerStats : MonoBehaviour
     {
         return !EstaEnSuelo();
     }
-
+    /*
     public int FragmentosTumi()
     {
         return ContadorTumi;
     }
-
-
+    */
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Suelo"))
@@ -319,7 +321,7 @@ public class PlayerStats : MonoBehaviour
             enSuelo = false;
         }
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Cruz"))
@@ -368,7 +370,7 @@ public class PlayerStats : MonoBehaviour
             }
         }
     }
-
+    */
 }
 
 

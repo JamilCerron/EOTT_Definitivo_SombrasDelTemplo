@@ -8,7 +8,7 @@ public class EspectroAtaque : MonoBehaviour
     [SerializeField] private float corduraDañoEspecial = 20f;
     [SerializeField] private float corduraDaño = 20f;
     [SerializeField] private float vidaDaño = 10f;
-    [SerializeField] private float fovJugador = 90f; 
+    //[SerializeField] private float fovJugador = 90f; 
     private Transform jugador;
     [SerializeField] private GameObject jugadorObjeto; 
 

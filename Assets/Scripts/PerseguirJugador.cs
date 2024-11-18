@@ -7,7 +7,7 @@ public class PerseguirJugador : MonoBehaviour
     public Transform jugador;
     private NavMeshAgent agente;
     private EspectroAtaque espectroAtaque;
-    private bool atacando = false;
+    //private bool atacando = false;
 
     void Start()
     {

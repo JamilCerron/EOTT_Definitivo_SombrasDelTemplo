@@ -46,7 +46,7 @@ public class CambioArma : MonoBehaviour
         {
             CambiarACrucifijo();
         }
-
+        /*
         // Cambiar de arma con la rueda del mouse
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll > 0f && armaSeleccionada < 1 && playerStats.ContadorCruz > 0)
@@ -63,12 +63,13 @@ public class CambioArma : MonoBehaviour
         {
             CambiarAEscopeta(); // Cambia automáticamente a escopeta
         }
-
+        */
         SeleccionarArma();
     }
 
     public void CambiarACrucifijo()
     {
+        /*
         Debug.Log("Intentando cambiar a Crucifijo. ContadorCruz: " + playerStats.ContadorCruz);
         if (playerStats.ContadorCruz > 0)
         {
@@ -83,6 +84,7 @@ public class CambioArma : MonoBehaviour
                 Debug.Log("Usando el Crucifijo. ContadorCruz restante: " + playerStats.ContadorCruz);
             }
         }
+        */
     }
 
     public void CambiarAEscopeta()

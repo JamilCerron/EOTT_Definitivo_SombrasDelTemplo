@@ -15,6 +15,7 @@ public class SistemaDeCordura : MonoBehaviour
     private PlayerStats playerStats;
     [SerializeField] private CinemachineImpulseSource impulseSource;
 
+
     public static SistemaDeCordura Instance
     {
         get 
@@ -53,10 +54,7 @@ public class SistemaDeCordura : MonoBehaviour
 
     private void ShakeCamera()
     {
-        if (impulseSource != null)
-        {
-            impulseSource.GenerateImpulse(Vector3.up * 2f);
-        }
+        
     }
 
     private void ReproducirSonido(AudioClip clip)

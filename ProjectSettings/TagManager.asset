@@ -21,6 +21,11 @@ TagManager:
   - ENEMIGO
   - NPC
   - VirtualCamera
+  - CrucifijoEfecto
+  - Crucifijo
+  - Escopeta
+  - RangoCrucifijo
+  - RangoEscopeta
   layers:
   - Default
   - TransparentFX
