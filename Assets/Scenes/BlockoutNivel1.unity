@@ -1213,6 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c4b0f24b8525c47b5a7a6424f159cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camaraJugador: {fileID: 1600880111}
   offsetEscopeta: {x: 0.5, y: -0.5, z: 1}
   offsetCrucifijo: {x: 0.5, y: -0.5, z: 0.65}
 --- !u!1 &166491004
@@ -2061,6 +2062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c4b0f24b8525c47b5a7a6424f159cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camaraJugador: {fileID: 0}
   offsetEscopeta: {x: 0.5, y: -0.5, z: 1}
   offsetCrucifijo: {x: 0.5, y: -0.5, z: 0.65}
 --- !u!1 &372608547
