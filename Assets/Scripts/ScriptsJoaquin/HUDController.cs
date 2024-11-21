@@ -13,7 +13,7 @@ public class HUDController : MonoBehaviour
 
     void Awake()
     {
-        if (playerStats == null)
+        if (playerStats != null)
         {
             playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         }

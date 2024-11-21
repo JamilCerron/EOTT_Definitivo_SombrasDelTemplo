@@ -46,6 +46,7 @@ public class Codigo_Pausa : MonoBehaviour
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
         isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void PauseGame()
