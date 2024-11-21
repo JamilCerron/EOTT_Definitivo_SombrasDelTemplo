@@ -11,7 +11,10 @@ public class SistemaLlave : MonoBehaviour
 
     private void Start()
     {
-        señalInteractiva.SetActive(false);
+        if (señalInteractiva != null)
+        {
+            señalInteractiva.SetActive(false);
+        }
         gestorLlaves = GestorLlaves.instancia; // Conexión con el gestor de llaves
     }
 

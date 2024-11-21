@@ -22,8 +22,15 @@ public class SistemaPuerta : MonoBehaviour
 
     private void Start()
     {
-        textoTemporizador.gameObject.SetActive(false);
-        señalInteractiva.SetActive(false);
+        if (textoTemporizador != null)
+        {
+            textoTemporizador.gameObject.SetActive(false);
+        }
+
+        if (señalInteractiva != null)
+        {
+            señalInteractiva.SetActive(false);
+        }
         gestorLlaves = GestorLlaves.instancia; // Conexión con el gestor de llaves
     }
 
