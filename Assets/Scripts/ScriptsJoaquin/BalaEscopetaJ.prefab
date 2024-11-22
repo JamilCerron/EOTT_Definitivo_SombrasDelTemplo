@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 157151603668505937}
   m_Layer: 0
   m_Name: BalaEscopetaJ
-  m_TagString: Untagged
+  m_TagString: Bala
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15a21216ce0307418fceb6563482ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 20
+  direction: {x: 0, y: 0, z: 0}
+  tiempoDeVida: 5
 --- !u!65 &8796111996958102782
 BoxCollider:
   m_ObjectHideFlags: 0
