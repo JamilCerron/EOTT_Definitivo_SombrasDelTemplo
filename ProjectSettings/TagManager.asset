@@ -26,6 +26,7 @@ TagManager:
   - Escopeta
   - RangoCrucifijo
   - RangoEscopeta
+  - Muro
   layers:
   - Default
   - TransparentFX
