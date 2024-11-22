@@ -9,12 +9,15 @@ public class HUDController : MonoBehaviour
     [SerializeField] private Image barraResistencia;
     [SerializeField] private TextMeshProUGUI textoCordura;
     [SerializeField] private GameObject fuegoCordura; // Objeto visual del fuego azul
-    
+    [SerializeField] private TextMeshProUGUI municionActual;
+    [SerializeField] private TextMeshProUGUI municionRecarga;
+
     [Header("Cara del jugador")]
     [SerializeField] private Animator caraAnimator;
 
     [Header("Referencia")]
     [SerializeField] private PlayerStats playerStats;
+    [SerializeField] private DisparoEscopetaJ disparoEscopetaJ;
 
     private float corduraActual;
     private float corduraMaxima;
@@ -24,6 +27,11 @@ public class HUDController : MonoBehaviour
         if (playerStats != null)
         {
             playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        }
+
+        if (playerStats != null)
+        {
+            disparoEscopetaJ = GameObject.FindGameObjectWithTag("Player").GetComponent<DisparoEscopetaJ>();
         }
 
         corduraMaxima = playerStats.CorduraMaxima();
@@ -39,6 +47,8 @@ public class HUDController : MonoBehaviour
         // Actualizamos las barras de vida, cordura y resistencia
         barraVida.fillAmount = (float)playerStats.VidaActual() / playerStats.VidaMaxima();
         barraResistencia.fillAmount = playerStats.ResistenciaActual() / playerStats.ResistenciaMaxima();
+        municionActual.text = $"{disparoEscopetaJ.EstadoMunicionActual()}/{disparoEscopetaJ.EstadoMunicionMaxima()}";
+        municionRecarga.text = $"{disparoEscopetaJ.EstadoMunicionRecarga()}";
 
         // Actualizamos la cordura actual
         corduraActual = playerStats.CorduraActual();
