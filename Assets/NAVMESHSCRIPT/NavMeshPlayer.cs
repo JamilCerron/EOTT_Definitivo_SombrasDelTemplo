@@ -10,8 +10,13 @@ public class NavMeshPlayer : MonoBehaviour
     public GameObject bolaDestino;
     private Camera cinemachineCamera;
 
+    public int maxHealth = 100; 
+    public int currentHealth;
+
     void Start()
     {
+        currentHealth = maxHealth;
+
         CinemachineBrain brain = FindObjectOfType<CinemachineBrain>();
 
         if (brain != null && brain.OutputCamera != null)
@@ -47,5 +52,23 @@ public class NavMeshPlayer : MonoBehaviour
                 navMeshAgent.destination = hit.point; 
             }
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        
+        currentHealth -= damage;
+
+        
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("El jugador ha muerto.");
     }
 }
