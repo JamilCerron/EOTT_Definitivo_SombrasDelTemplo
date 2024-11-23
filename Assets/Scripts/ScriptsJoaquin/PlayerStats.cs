@@ -191,24 +191,27 @@ public class PlayerStats : MonoBehaviour
 
     void Camara()
     {
-        float movimientoHorizontal = Input.GetAxis("Mouse X");
-        float movimientoVertical = Input.GetAxis("Mouse Y");
-
-        if (movimientoHorizontal != 0)
+        if (Time.timeScale != 0)
         {
-            transform.Rotate(Vector3.up, movimientoHorizontal * sensibilidad.x);
-        }
+            float movimientoHorizontal = Input.GetAxis("Mouse X");
+            float movimientoVertical = Input.GetAxis("Mouse Y");
 
-        if (movimientoVertical != 0)
-        {
-            float angulo = (camaraJugador.localEulerAngles.x - movimientoVertical * sensibilidad.y + 360) % 360;
-
-            if (angulo > 180)
+            if (movimientoHorizontal != 0)
             {
-                angulo -= 360;
+                transform.Rotate(Vector3.up, movimientoHorizontal * sensibilidad.x);
             }
-            angulo = Mathf.Clamp(angulo, -80, 80); // Limitar el ángulo de rotación vertical
-            camaraJugador.localEulerAngles = Vector3.right * angulo;
+
+            if (movimientoVertical != 0)
+            {
+                float angulo = (camaraJugador.localEulerAngles.x - movimientoVertical * sensibilidad.y + 360) % 360;
+
+                if (angulo > 180)
+                {
+                    angulo -= 360;
+                }
+                angulo = Mathf.Clamp(angulo, -80, 80); // Limitar el ángulo de rotación vertical
+                camaraJugador.localEulerAngles = Vector3.right * angulo;
+            }
         }
     }
 

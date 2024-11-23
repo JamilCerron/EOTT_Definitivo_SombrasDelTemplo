@@ -19,7 +19,7 @@ public class CabezaSupay : MonoBehaviour
 
     void Start()
     {
-        jugador = GameObject.FindGameObjectWithTag("Jugador").transform;
+        jugador = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()

@@ -13,7 +13,8 @@ public class SistemaDeCordura : MonoBehaviour
     [SerializeField] private AudioClip cordura50;
     [SerializeField] private AudioClip cordura15;
     private PlayerStats playerStats;
-    [SerializeField] private CinemachineImpulseSource impulseSource;
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private NoiseSettings noiseSettings;
 
 
     public static SistemaDeCordura Instance
@@ -54,7 +55,7 @@ public class SistemaDeCordura : MonoBehaviour
 
     private void ShakeCamera()
     {
-        
+        virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_NoiseProfile = noiseSettings;
     }
 
     private void ReproducirSonido(AudioClip clip)

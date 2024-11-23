@@ -18,6 +18,9 @@ public class EscopetaApuntarJ : MonoBehaviour
     {
         // Genera un rayo desde el centro de la cámara hacia adelante
         Ray ray = camaraJugador.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)); // Centro de la pantalla
+        //transform.rotation = Quaternion.LookRotation(ray.direction);
+        //transform.rotation = camaraJugador.transform.rotation;
+        return;
         RaycastHit hit;
 
         // Comprueba si el rayo impacta algo (sin filtro de capas)

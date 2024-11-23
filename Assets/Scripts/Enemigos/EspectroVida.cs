@@ -23,10 +23,6 @@ public class EspectroVida : MonoBehaviour
 
     private void Muerte()
     {
-        if (particulasMuerte != null)
-        {
-            Instantiate(particulasMuerte, transform.position, Quaternion.identity);
-        }
         Destroy(gameObject);
     }
 }
