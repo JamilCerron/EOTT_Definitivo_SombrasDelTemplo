@@ -7,7 +7,6 @@ public class EscopetaApuntarJ : MonoBehaviour
     [Header("Configuración")]
     [SerializeField] private Transform puntoDisparo; // Punto desde donde se disparan las balas
     [SerializeField] private Camera camaraJugador;  // La cámara principal o virtual del jugador
-    [SerializeField] private float distanciaMaxima = 100f; // Distancia máxima para el rayo
 
     private void Update()
     {
@@ -21,6 +20,7 @@ public class EscopetaApuntarJ : MonoBehaviour
         //transform.rotation = Quaternion.LookRotation(ray.direction);
         //transform.rotation = camaraJugador.transform.rotation;
         return;
+        /*
         RaycastHit hit;
 
         // Comprueba si el rayo impacta algo (sin filtro de capas)
@@ -34,5 +34,6 @@ public class EscopetaApuntarJ : MonoBehaviour
             // Si no impacta nada, apunta hacia la dirección de la cámara
             transform.rotation = Quaternion.LookRotation(ray.direction);
         }
+        */
     }
 }
