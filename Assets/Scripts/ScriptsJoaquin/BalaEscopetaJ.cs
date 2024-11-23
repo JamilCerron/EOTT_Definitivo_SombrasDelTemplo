@@ -42,9 +42,16 @@ public class BalaEscopetaJ : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
         else
         {
             Debug.Log($"La bala chocó con un objeto inesperado: {collision.gameObject.name}");
+        }
+
+        if (collision.gameObject.CompareTag("Enemigo"))
+        {
+            var EspectroVida = collision.GetComponent<EspectroVida>();
+            EspectroVida.RecibirDaño(25);
         }
     }
 }

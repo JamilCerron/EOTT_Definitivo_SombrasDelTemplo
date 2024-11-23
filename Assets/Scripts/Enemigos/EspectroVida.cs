@@ -11,7 +11,7 @@ public class EspectroVida : MonoBehaviour
         vidaActual = vidaMaxima;
     }
 
-    public void RecibirDaño(float cantidad, bool esCrucifijo)
+    public void RecibirDaño(float cantidad)
     {
         vidaActual -= cantidad;
 
