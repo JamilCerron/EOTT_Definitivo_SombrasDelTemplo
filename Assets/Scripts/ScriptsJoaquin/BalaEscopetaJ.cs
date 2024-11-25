@@ -38,7 +38,7 @@ public class BalaEscopetaJ : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Muro") || collision.gameObject.CompareTag("Techo"))
+        if (collision.gameObject.CompareTag("Suelo"))
         {
             Destroy(gameObject);
         }

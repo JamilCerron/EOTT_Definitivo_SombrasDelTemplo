@@ -9,6 +9,11 @@ public class EscopetaRecogibleJ : MonoBehaviour
 
     private void Start()
     {
+        if (escopeta == null)
+        {
+            escopeta = GameObject.FindGameObjectWithTag("Escopeta");
+        }
+
         if (señalInteractiva != null)
         {
             señalInteractiva.SetActive(false);
