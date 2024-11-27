@@ -15,6 +15,9 @@ public class SupayMover: MonoBehaviour
     [SerializeField] private float meleeDamage = 20f;
     [SerializeField] private float meleeSpeed = 2f;
     [SerializeField] private float meleeRange = 3f;
+    [SerializeField] private float chargeSpeed = 15f; // Velocidad de la embestida
+    [SerializeField] private float chargeDuration = 5f; // Duración de la embestida
+    [SerializeField] private Transform arenaCenter; // Centro de la arena
 
 
     private float nextShotTime;
@@ -22,6 +25,8 @@ public class SupayMover: MonoBehaviour
     private bool isPhaseTwo = false;
     private bool isPhaseThree = false;
     private bool isJumpingToGround = false;
+
+    private Vector3 chargeTargetPosition;
 
     private void Start()
     {
@@ -82,6 +87,13 @@ public class SupayMover: MonoBehaviour
 
     private void JumpToGround()
     {
+
+        // Desactiva el NavMeshAgent para permitir el movimiento manual
+        if (navMeshAgent != null)
+        {
+            navMeshAgent.enabled = false;
+        }
+
         // Mover al Supay hacia la posición en el suelo (y = 0)
         Vector3 targetPosition = new Vector3(transform.position.x, 0f, transform.position.z);
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, jumpSpeed * Time.deltaTime);
@@ -90,6 +102,11 @@ public class SupayMover: MonoBehaviour
         if (transform.position.y <= 0.1f)
         {
             isJumpingToGround = false;
+            // Reactivar el NavMeshAgent una vez que el salto haya terminado
+            if (navMeshAgent != null)
+            {
+                navMeshAgent.enabled = true;
+            }
         }
     }
 
@@ -120,7 +137,80 @@ public class SupayMover: MonoBehaviour
     {
         isPhaseThree = true;
         Debug.Log("Supay ha entrado en la Fase 3");
+        StartCoroutine(PhaseThreeBehavior());
         // Implementa el comportamiento de la Fase 3 aquí
+    }
+
+    private IEnumerator PhaseThreeBehavior()
+    {
+        while (isPhaseThree)
+        {
+            // 1. Mover al centro de la arena
+            Debug.Log("Moviendo al centro de la arena...");
+            navMeshAgent.SetDestination(arenaCenter.position);
+            while (Vector3.Distance(transform.position, arenaCenter.position) > 0.1f)
+            {
+                yield return null;
+            }
+            // Detener el NavMeshAgent en el centro para evitar interferencias
+            navMeshAgent.isStopped = true;
+
+            // 2. Apuntado
+            Debug.Log("Supay está apuntando al jugador...");
+            chargeTargetPosition = player.position; // Guardar la última posición del jugador
+            yield return new WaitForSeconds(3f);
+
+            // 3. Embestida
+            Debug.Log("Supay realiza una embestida");
+
+            // Desactiva el NavMeshAgent
+            if (navMeshAgent.enabled)
+            {
+                navMeshAgent.isStopped = true;
+                navMeshAgent.enabled = false;
+            }
+
+
+            float chargeTime = 0f;
+            while (chargeTime < chargeDuration)
+            {
+                Debug.Log("Embestida en curso...");
+                Rigidbody rb = GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    Vector3 targetPosition = Vector3.MoveTowards(transform.position, chargeTargetPosition, chargeSpeed * Time.deltaTime);
+                    rb.MovePosition(targetPosition);
+                }
+                // Verificar si impacta al jugador durante la embestida
+                if (Vector3.Distance(transform.position, player.position) <= meleeRange)
+                {
+                    Debug.Log("El jugador fue impactado por la embestida.");
+                    DealMeleeDamage();
+                    break; // Terminar embestida al impactar
+                }
+                chargeTime += Time.deltaTime;
+                yield return null;
+            }
+
+            // 4. Volver al centro de la arena
+            Debug.Log("Supay regresa al centro de la arena.");
+
+            // Reactivar el NavMeshAgent después de la embestida
+            if (navMeshAgent.enabled == false)
+            {
+                navMeshAgent.isStopped = false;
+                navMeshAgent.enabled = true;
+            }
+            navMeshAgent.SetDestination(arenaCenter.position);
+            while (Vector3.Distance(transform.position, arenaCenter.position) > 0.1f)
+            {
+                yield return null; // Esperar hasta que llegue al centro
+            }
+
+            yield return null; // Reiniciar el ciclo
+
+        }
+
     }
 
     public void TakeDamage(float damage)
@@ -137,6 +227,19 @@ public class SupayMover: MonoBehaviour
     {
         Debug.Log("Supay ha sido derrotado");
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("PLAYER"))
+        {
+            JugadorHealth playerScript = collision.gameObject.GetComponent<JugadorHealth>();
+            if (playerScript != null)
+            {
+                Debug.Log("El jugador fue impactado por la embestida.");
+                playerScript.TakeDamage(meleeDamage);
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()
