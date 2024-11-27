@@ -19,10 +19,21 @@ public class JugadorDisparo : MonoBehaviour
         }
     }
 
-    private void Shoot()
+private void Shoot()
     {
+        // Buscar el objeto Supay
+        SupayMover supay = FindObjectOfType<SupayMover>();
+        if (supay == null)
+        {
+            Debug.LogWarning("No se encontró el Supay, no se puede disparar.");
+            return; // Salir del método si no hay enemigo
+        }
+
+        // Crear la bala
         GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
-        Vector3 direction = (FindObjectOfType<SupayMover>().transform.position - shootingPoint.position).normalized;
+
+        // Calcular la dirección
+        Vector3 direction = (supay.transform.position - shootingPoint.position).normalized;
         bullet.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
     }
 }
