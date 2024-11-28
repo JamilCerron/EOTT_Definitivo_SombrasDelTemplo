@@ -424,7 +424,7 @@ Transform:
   m_GameObject: {fileID: 85303228}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 101.4, y: 2.42, z: 16.5}
+  m_LocalPosition: {x: 98.114, y: 0.35, z: 18.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1154,7 +1154,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2016,6 +2016,7 @@ GameObject:
   - component: {fileID: 1304282857}
   - component: {fileID: 1304282860}
   - component: {fileID: 1304282859}
+  - component: {fileID: 1304282861}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: PLAYER
@@ -2179,6 +2180,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!54 &1304282861
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304282852}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1375347883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3287,7 +3315,6 @@ SceneRoots:
   - {fileID: 1826928842}
   - {fileID: 1600412695}
   - {fileID: 892509638}
-  - {fileID: 651333696}
   - {fileID: 1858024843}
   - {fileID: 1860213648}
   - {fileID: 463542866}
@@ -3306,3 +3333,4 @@ SceneRoots:
   - {fileID: 1061068631}
   - {fileID: 863483161}
   - {fileID: 85303229}
+  - {fileID: 651333696}
