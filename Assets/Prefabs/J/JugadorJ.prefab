@@ -294,11 +294,12 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1678969191799771783, guid: a20510191b315fb4785e926245d7199d,
     type: 3}
   bulletSpawn: {fileID: 8706578640122055516}
-  bulletSpeed: 15
+  bulletSpeed: 25
   municionMaxima: 16
   municionActual: 0
   municionRecarga: 0
   tieneEscopeta: 0
+  tiempoEntreDisparos: 1
 --- !u!1 &6996612769929325834
 GameObject:
   m_ObjectHideFlags: 0

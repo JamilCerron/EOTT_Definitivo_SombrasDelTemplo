@@ -16,6 +16,10 @@ public class DisparoEscopetaJ : MonoBehaviour
     [SerializeField] private int municionRecarga = 0;
     [SerializeField] private bool tieneEscopeta = false;
 
+    [Header("Cooldown")]
+    [SerializeField] private float tiempoEntreDisparos = 0.5f; // Tiempo entre disparos
+    private float siguienteDisparo = 0f; // Tiempo para el próximo disparo permitido
+
     private void Awake()
     {
         municionActual = municionMaxima;
@@ -24,9 +28,10 @@ public class DisparoEscopetaJ : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1") && tieneEscopeta && municionActual > 0)
+        if (Input.GetButtonDown("Fire1") && tieneEscopeta && Time.time >= siguienteDisparo && municionActual > 0)
         {
             Disparar();
+            siguienteDisparo = Time.time + tiempoEntreDisparos; // Actualizar tiempo para el próximo disparo
         }
 
         if (Input.GetKeyDown(KeyCode.R) && tieneEscopeta)
@@ -43,7 +48,7 @@ public class DisparoEscopetaJ : MonoBehaviour
 
         municionActual--;
 
-        Debug.Log("ADAJDAKDA");
+        Debug.Log("Disparo realizado. Munición actual: " + municionActual);
     }
 
     public void EquiparEscopeta()
@@ -60,6 +65,7 @@ public class DisparoEscopetaJ : MonoBehaviour
     public void AumentarMunicion(int cantidad)
     {
         municionRecarga += cantidad;
+        Debug.Log("Munición aumentada. Munición de recarga: " + municionRecarga);
     }
 
     private void Recargar()
@@ -71,6 +77,10 @@ public class DisparoEscopetaJ : MonoBehaviour
                 municionActual = Mathf.Min(municionActual + 4, municionMaxima); ; // Llena la munición al máximo
                 municionRecarga -= 4;
                 Debug.Log("Recargado: " + municionActual + " balas.");
+            }
+            else
+            {
+                Debug.Log("Sin munición para recargar.");
             }
         }
         else

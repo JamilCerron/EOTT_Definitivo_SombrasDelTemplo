@@ -15,7 +15,9 @@ public class MainMenuController : MonoBehaviour
 
     [Header("Botones")]
     [SerializeField] private Button playButton;
+    [SerializeField] private string playName;
     [SerializeField] private Button creditsButton;
+    [SerializeField] private string creditsName;
     [SerializeField] private Button OptionsButton;
     [SerializeField] private Button backButton;
     [SerializeField] private Button quitButton;
@@ -47,7 +49,7 @@ public class MainMenuController : MonoBehaviour
     private void PlayGame()
     {
         PlaySoundButton();
-        SceneManager.LoadScene("Context");
+        SceneManager.LoadScene(playName);
     }
 
     private void Options()
@@ -67,7 +69,7 @@ public class MainMenuController : MonoBehaviour
     private void Credits()
     {
         PlaySoundButton();
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene(creditsName);
     }
 
     private void QuitGame()
