@@ -18,7 +18,7 @@ public class SupayMover: MonoBehaviour
     [SerializeField] private float chargeSpeed = 15f; // Velocidad de la embestida
     [SerializeField] private float chargeDuration = 5f; // Duración de la embestida
     [SerializeField] private Transform arenaCenter; // Centro de la arena
-    
+    private Transform targetTransform; // Declaración de targetTransform
 
 
     private float nextShotTime;
@@ -37,6 +37,7 @@ public class SupayMover: MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("PLAYER").transform;
+        targetTransform = GameObject.FindGameObjectWithTag("PLAYER").transform; // Asigna al jugador
     }
 
     private void Update()
@@ -78,6 +79,8 @@ public class SupayMover: MonoBehaviour
 
     private void HandlePhaseThreeBehavior(float distanceToPlayer)
     {
+        if (player == null) return;  // Asegurarse de que el jugador no sea null antes de continuar
+
         if (!hasArrivedAtCenter)
         {
             // Mover al centro de la arena si aún no hemos llegado
@@ -114,19 +117,22 @@ public class SupayMover: MonoBehaviour
         if (rb != null)
         {
             float chargeTime = 0f;
-            Vector3 chargeDirection = (player.position - transform.position).normalized;
+            Vector3 chargeDirection = (player != null) ? (player.position - transform.position).normalized : Vector3.zero;  // Verifica si 'player' es null
 
             while (chargeTime < chargeDuration)
             {
-                // Mover al enemigo en la dirección de la embestida
-                rb.velocity = chargeDirection * chargeSpeed;
-
-                // Verificar si impacta al jugador
-                if (Vector3.Distance(transform.position, player.position) <= meleeRange)
+                if(player != null)
                 {
-                    Debug.Log("El jugador fue impactado por la embestida.");
-                    DealMeleeDamage();
-                    break;
+                    // Mover al enemigo en la dirección de la embestida
+                    rb.velocity = chargeDirection * chargeSpeed;
+
+                    // Verificar si impacta al jugador
+                    if (Vector3.Distance(transform.position, player.position) <= meleeRange)
+                    {
+                        Debug.Log("El jugador fue impactado por la embestida.");
+                        DealMeleeDamage();
+                        break;
+                    }
                 }
 
                 chargeTime += Time.deltaTime;
@@ -154,6 +160,8 @@ public class SupayMover: MonoBehaviour
         {
             isPlayerHit = true;
             Debug.Log("El jugador fue impactado por la embestida.");
+
+
             JugadorHealth playerScript = collision.gameObject.GetComponent<JugadorHealth>();
             if (playerScript != null)
             {
@@ -214,14 +222,24 @@ public class SupayMover: MonoBehaviour
 
     private void PhaseTwoBehavior(float distanceToPlayer)
     {
-        // Persigue al jugador lentamente
-        Vector3 directionToPlayer = (player.position - transform.position).normalized;
-        transform.position += directionToPlayer * meleeSpeed * Time.deltaTime;
-
-        // Si está dentro del rango melee, inflige daño al jugador
-        if (distanceToPlayer <= meleeRange)
+        // Verificar si el player existe (ya está hecho con player != null en Update)
+        if (player != null)
         {
-            DealMeleeDamage();
+            // Verificar que el player transform no es null
+            if (targetTransform != null)
+            {
+                Vector3 targetPosition = targetTransform.position; // Obtienes la posición del jugador
+
+                // Persigue al jugador lentamente
+                Vector3 directionToPlayer = (targetPosition - transform.position).normalized;
+                transform.position += directionToPlayer * meleeSpeed * Time.deltaTime;
+
+                // Si está dentro del rango melee, inflige daño al jugador
+                if (distanceToPlayer <= meleeRange)
+                {
+                    DealMeleeDamage();
+                }
+            }
         }
     }
 
