@@ -19,7 +19,7 @@ public class JugadorBal : MonoBehaviour
         if (other.CompareTag("ENEMIGO")) // Asegúrate de usar el mismo tag para tus enemigos
         {
             // Aplicar daño al enemigo
-            SupayMover enemy = other.gameObject.GetComponent<SupayMover>();
+            SFase1 enemy = other.gameObject.GetComponent<SFase1>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damage); // Llama al método para reducir la vida del enemigo

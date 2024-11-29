@@ -1103,10 +1103,10 @@ GameObject:
   - component: {fileID: 863483160}
   - component: {fileID: 863483159}
   - component: {fileID: 863483158}
-  - component: {fileID: 863483157}
   - component: {fileID: 863483162}
   - component: {fileID: 863483163}
   - component: {fileID: 863483164}
+  - component: {fileID: 863483165}
   m_Layer: 0
   m_Name: Supay
   m_TagString: ENEMIGO
@@ -1114,32 +1114,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &863483157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863483156}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 878e36b88984bd34a95aca65df58060f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  shootingRange: 20
-  energyBallPrefab: {fileID: 5066330234152262031, guid: b7c845a90582bfd4dbf9a622fcea2edf,
-    type: 3}
-  shootingPoint: {fileID: 953476041}
-  shootingCooldown: 2
-  navMeshAgent: {fileID: 863483162}
-  jumpSpeed: 10
-  meleeDamage: 20
-  meleeSpeed: 2
-  meleeRange: 3
-  chargeSpeed: 15
-  chargeDuration: 5
-  arenaCenter: {fileID: 85303229}
 --- !u!136 &863483158
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1297,6 +1271,21 @@ MonoBehaviour:
   firePoint: {fileID: 953476041}
   fireRate: 1.5
   energyBallSpeed: 10
+--- !u!114 &863483165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863483156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73d743ad5ca8df4eb4c0ca99c886534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  meleeRange: 3
+  jumpHeight: 5
 --- !u!1 &892509634
 GameObject:
   m_ObjectHideFlags: 0

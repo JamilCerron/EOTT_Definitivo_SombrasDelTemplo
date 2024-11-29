@@ -78,10 +78,19 @@ public class SFase1 : MonoBehaviour
     {
         isPhase2 = true;
         Debug.Log("Supay entra en Fase 2");
-        // Aquí puedes detener la Fase 1 y preparar las mecánicas de la Fase 2
-        StopAllCoroutines(); // Detener disparos de la Fase 1
-        navMeshAgent.isStopped = false; // Ejemplo: activar movimiento si es necesario en Fase 2
-        // Añade el comportamiento específico de la Fase 2 aquí.
+
+        //Detener Fase 1
+        StopAllCoroutines(); 
+
+        navMeshAgent.isStopped = false; // Reactivar Nav Mesh para moverse en Fase 2
+
+        // Activar el comportamiento de la Fase 2
+        SFase2 fase2Script = gameObject.AddComponent<SFase2>();
+        fase2Script.SetPlayer(player); // Pasar la referencia al jugador a la nueva fase
+        fase2Script.SetNavMeshAgent(navMeshAgent); // Pasar el NavMeshAgent a la fase 2
+
+        // Desactivar SFase1 sin destruir el objeto
+        this.enabled = false;
     }
 
     private void Die()
