@@ -83,11 +83,6 @@ public class SupayMover: MonoBehaviour
             // Mover al centro de la arena si aún no hemos llegado
             float distanceToCenter = Vector3.Distance(transform.position, arenaCenter.position);
 
-            // Imprimir las posiciones para verificar si es la correcta
-            Debug.Log($"Posición del Supay: {transform.position}");
-            Debug.Log($"Posición del centro de la arena: {arenaCenter.position}");
-            Debug.Log($"Distancia al centro: {distanceToCenter}");
-
 
             if (distanceToCenter > 0.2f)
             {
@@ -114,8 +109,33 @@ public class SupayMover: MonoBehaviour
         // Desactivar el NavMeshAgent durante la embestida
         navMeshAgent.enabled = false;
 
-        // Espera la duración de la embestida
-        yield return new WaitForSeconds(chargeDuration);
+        // Usa Rigidbody para mover al enemigo durante la embestida
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            float chargeTime = 0f;
+            Vector3 chargeDirection = (player.position - transform.position).normalized;
+
+            while (chargeTime < chargeDuration)
+            {
+                // Mover al enemigo en la dirección de la embestida
+                rb.velocity = chargeDirection * chargeSpeed;
+
+                // Verificar si impacta al jugador
+                if (Vector3.Distance(transform.position, player.position) <= meleeRange)
+                {
+                    Debug.Log("El jugador fue impactado por la embestida.");
+                    DealMeleeDamage();
+                    break;
+                }
+
+                chargeTime += Time.deltaTime;
+                yield return null;
+            }
+
+            // Detener el Rigidbody al final de la embestida
+            rb.velocity = Vector3.zero;
+        }
 
         // Reactivar el NavMeshAgent después de la embestida
         navMeshAgent.enabled = true;
@@ -257,87 +277,20 @@ public class SupayMover: MonoBehaviour
                 }
             }
 
-            else
-            {
-                Debug.LogError("El NavMeshAgent no está habilitado o el Supay no está en una NavMesh.");
-
-                yield break;
-            }
-
-
             while (Vector3.Distance(transform.position, arenaCenter.position) > 0.1f)
             {
                 yield return null;
             }
-           
 
-            // 2. Apuntado
-            Debug.Log("Supay está apuntando al jugador...");
-            Vector3 chargeDirection = (player.position - transform.position).normalized;
-            yield return new WaitForSeconds(3f);
-
-            // 3. Embestida
-            //Debug.Log("Supay realiza una embestida");
-            //Rigidbody rb = GetComponent<Rigidbody>();
-            //if (rb != null)
-            //{
-            //    float chargeTime = 0f;
-            //    while (chargeTime < chargeDuration)
-            //    {
-            //        // Mover al enemigo hacia la dirección del jugador
-            //        rb.velocity = chargeDirection * chargeSpeed;
-
-            //        // Verificar colisiones con el jugador durante la embestida
-            //        if (Vector3.Distance(transform.position, player.position) <= meleeRange)
-            //        {
-            //            Debug.Log("El jugador fue impactado por la embestida.");
-            //            DealMeleeDamage();
-            //            break; // Detener la embestida si impacta al jugador
-            //        }
-
-            //        chargeTime += Time.deltaTime;
-            //        yield return null;
-            //    }
-            //}
-
-            // 4. Detener la embestida y regresar al centro
-            Debug.Log("Supay regresa al centro de la arena.");
-            //if (rb != null)
-            //{
-            //    rb.velocity = Vector3.zero; // Detener el movimiento
-            //}
-
-            ///*if*/ (navMeshAgent.enabled && navMeshAgent.isOnNavMesh)
-            {
-                navMeshAgent.destination = arenaCenter.position; // O la posición que estés asignando
-            }
-           //// else
-           // {
-           //     Debug.LogError("El NavMeshAgent no está habilitado o el Supay no está en una NavMesh.");
-               
-           //     NavMeshHit hit;
-           //     if (NavMesh.SamplePosition(transform.position, out hit, 1.0f, NavMesh.AllAreas))
-           //     {
-           //         transform.position = hit.position; // Coloca al enemigo en una posición válida
-           //         navMeshAgent.enabled = true; // Habilita el agente
-           //     }
-           //     else
-           //     {
-           //         Debug.LogError("No se encontró una posición válida en la NavMesh para el Supay.");
-           //     }
-           // } 
+            // Realizar la embestida
+            yield return new WaitForSeconds(3f); // Espera antes de embestir
+            StartCoroutine(ChargeAttack()); // Iniciar la embestida
 
 
-            while (Vector3.Distance(transform.position, arenaCenter.position) > 0.1f)
-            {
-                yield return null;
-            }
 
         }
 
     }
-
-   
 
     public void TakeDamage(float damage)
     {
@@ -355,19 +308,7 @@ public class SupayMover: MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("PLAYER") && isCharging && !isPlayerHit)
-        {
-            isPlayerHit = true;
-            Debug.Log("El jugador fue impactado por la embestida.");
-            JugadorHealth playerScript = collision.gameObject.GetComponent<JugadorHealth>();
-            if (playerScript != null)
-            {
-                playerScript.TakeDamage(meleeDamage); // Aplicar el daño
-            }
-        }
-    }
+   
 
     private void OnDrawGizmosSelected()
     {

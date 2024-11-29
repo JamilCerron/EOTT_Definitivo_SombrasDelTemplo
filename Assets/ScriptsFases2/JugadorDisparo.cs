@@ -22,7 +22,7 @@ public class JugadorDisparo : MonoBehaviour
 private void Shoot()
     {
         // Buscar el objeto Supay
-        SFase1 supay = FindObjectOfType<SFase1>();
+        SupayMover supay = FindObjectOfType<SupayMover>();
         if (supay == null)
         {
             Debug.LogWarning("No se encontró el Supay, no se puede disparar.");
