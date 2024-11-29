@@ -1106,6 +1106,7 @@ GameObject:
   - component: {fileID: 863483157}
   - component: {fileID: 863483162}
   - component: {fileID: 863483163}
+  - component: {fileID: 863483164}
   m_Layer: 0
   m_Name: Supay
   m_TagString: ENEMIGO
@@ -1120,7 +1121,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863483156}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 878e36b88984bd34a95aca65df58060f, type: 3}
   m_Name: 
@@ -1221,7 +1222,7 @@ Transform:
   m_GameObject: {fileID: 863483156}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.25, y: 19.39, z: 16.6}
+  m_LocalPosition: {x: 27.25, y: 19.29, z: 16.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1273,10 +1274,29 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &863483164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863483156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e296bdc84fb484f91611f4429fcaf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 198
+  detectionRange: 21
+  energyBallPrefab: {fileID: 5066330234152262031, guid: b7c845a90582bfd4dbf9a622fcea2edf,
+    type: 3}
+  firePoint: {fileID: 953476041}
+  fireRate: 1.5
+  energyBallSpeed: 10
 --- !u!1 &892509634
 GameObject:
   m_ObjectHideFlags: 0

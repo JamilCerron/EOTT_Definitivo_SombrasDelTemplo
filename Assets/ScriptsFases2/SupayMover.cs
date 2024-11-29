@@ -277,55 +277,55 @@ public class SupayMover: MonoBehaviour
             yield return new WaitForSeconds(3f);
 
             // 3. Embestida
-            Debug.Log("Supay realiza una embestida");
-            Rigidbody rb = GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                float chargeTime = 0f;
-                while (chargeTime < chargeDuration)
-                {
-                    // Mover al enemigo hacia la dirección del jugador
-                    rb.velocity = chargeDirection * chargeSpeed;
+            //Debug.Log("Supay realiza una embestida");
+            //Rigidbody rb = GetComponent<Rigidbody>();
+            //if (rb != null)
+            //{
+            //    float chargeTime = 0f;
+            //    while (chargeTime < chargeDuration)
+            //    {
+            //        // Mover al enemigo hacia la dirección del jugador
+            //        rb.velocity = chargeDirection * chargeSpeed;
 
-                    // Verificar colisiones con el jugador durante la embestida
-                    if (Vector3.Distance(transform.position, player.position) <= meleeRange)
-                    {
-                        Debug.Log("El jugador fue impactado por la embestida.");
-                        DealMeleeDamage();
-                        break; // Detener la embestida si impacta al jugador
-                    }
+            //        // Verificar colisiones con el jugador durante la embestida
+            //        if (Vector3.Distance(transform.position, player.position) <= meleeRange)
+            //        {
+            //            Debug.Log("El jugador fue impactado por la embestida.");
+            //            DealMeleeDamage();
+            //            break; // Detener la embestida si impacta al jugador
+            //        }
 
-                    chargeTime += Time.deltaTime;
-                    yield return null;
-                }
-            }
+            //        chargeTime += Time.deltaTime;
+            //        yield return null;
+            //    }
+            //}
 
             // 4. Detener la embestida y regresar al centro
             Debug.Log("Supay regresa al centro de la arena.");
-            if (rb != null)
-            {
-                rb.velocity = Vector3.zero; // Detener el movimiento
-            }
+            //if (rb != null)
+            //{
+            //    rb.velocity = Vector3.zero; // Detener el movimiento
+            //}
 
-            if (navMeshAgent.enabled && navMeshAgent.isOnNavMesh)
+            ///*if*/ (navMeshAgent.enabled && navMeshAgent.isOnNavMesh)
             {
                 navMeshAgent.destination = arenaCenter.position; // O la posición que estés asignando
             }
-            else
-            {
-                Debug.LogError("El NavMeshAgent no está habilitado o el Supay no está en una NavMesh.");
+           //// else
+           // {
+           //     Debug.LogError("El NavMeshAgent no está habilitado o el Supay no está en una NavMesh.");
                
-                NavMeshHit hit;
-                if (NavMesh.SamplePosition(transform.position, out hit, 1.0f, NavMesh.AllAreas))
-                {
-                    transform.position = hit.position; // Coloca al enemigo en una posición válida
-                    navMeshAgent.enabled = true; // Habilita el agente
-                }
-                else
-                {
-                    Debug.LogError("No se encontró una posición válida en la NavMesh para el Supay.");
-                }
-            }
+           //     NavMeshHit hit;
+           //     if (NavMesh.SamplePosition(transform.position, out hit, 1.0f, NavMesh.AllAreas))
+           //     {
+           //         transform.position = hit.position; // Coloca al enemigo en una posición válida
+           //         navMeshAgent.enabled = true; // Habilita el agente
+           //     }
+           //     else
+           //     {
+           //         Debug.LogError("No se encontró una posición válida en la NavMesh para el Supay.");
+           //     }
+           // } 
 
 
             while (Vector3.Distance(transform.position, arenaCenter.position) > 0.1f)
