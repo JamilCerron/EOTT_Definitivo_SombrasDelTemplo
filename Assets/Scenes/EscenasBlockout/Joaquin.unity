@@ -1267,7 +1267,7 @@ Transform:
   m_GameObject: {fileID: 539625410}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: -0.5, z: -20}
+  m_LocalPosition: {x: -5, y: -0.5, z: -50}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3563,14 +3563,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900095543}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 528e7f425ca73a8418c74e14f8e24314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configuracionesVersiones:
-  - {fileID: 11400000, guid: d4bd7b90a869f0c478cb982ec8255f73, type: 2}
-  - {fileID: 11400000, guid: 65a347488e1306e46ad6d1f221a3c36d, type: 2}
+  configuracionesVersiones: []
   generadorProcedural: {fileID: 2033136556}
 --- !u!4 &1900095545
 Transform:
@@ -4272,6 +4270,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6493362495312307522, guid: 8d8f55ee53641c945b7274bc2da9e05a,
         type: 3}
+      propertyPath: esPuerta
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6493362495312307522, guid: 8d8f55ee53641c945b7274bc2da9e05a,
+        type: 3}
       propertyPath: plataforma
       value: 
       objectReference: {fileID: 539625414}
@@ -4279,7 +4282,7 @@ PrefabInstance:
         type: 3}
       propertyPath: puertaAsociada
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7343824031059375389}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4703,11 +4706,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puntoRotacion: {fileID: 3165030489014720064}
   anguloApertura: 90
-  velocidadApertura: 2
-  velocidadCierre: 5
-  automatico: 0
-  abierta: 0
-  colliderCerrado: {fileID: 1547821020}
+  duracionApertura: 2
+  duracionCierre: 0.5
+  "se\xF1alInteractiva": {fileID: 687009231951023104}
+  permitirCerradoAutomatico: 1
+  esPlataforma: 0
 --- !u!1001 &7528014882130732958
 PrefabInstance:
   m_ObjectHideFlags: 0

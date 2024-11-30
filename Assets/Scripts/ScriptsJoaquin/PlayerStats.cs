@@ -71,74 +71,8 @@ public class PlayerStats : MonoBehaviour
         RecuperarVida();
         Saltar();
         Agachar();
-
-        //// Reducir el tiempo de vida del crucifijo si está activo
-        //if (crucifijoActivo && tiempoDeVidaCrucifijo > 0)
-        //{
-        //    tiempoDeVidaCrucifijo -= Time.deltaTime;
-
-        //    // Cambiar automáticamente a la escopeta cuando el tiempo se agote
-        //    if (tiempoDeVidaCrucifijo <= 0)
-        //    {
-        //        crucifijoActivo = false; // Desactivar el crucifijo
-        //        tiempoDeVidaCrucifijo = 0; // Asegúrate de que no haya tiempo residual
-        //        Debug.Log("El crucifijo ha expirado, cambiando a la escopeta.");
-        //        cambioArma.armaSeleccionada = 0; // Cambia al arma correspondiente
-        //        cambioArma.SeleccionarArma(); // Asegúrate de llamar a la función para seleccionar el arma
-        //    }
-        //}
-
-        /*
-        if (DentroAreaCruz && Input.GetKeyDown(KeyCode.E))
-        {
-            // Incrementar el contador de la cruz
-            ContadorCruz++;
-
-            
-            // Destruir el objeto "Cruz"
-            Destroy(GameObject.FindGameObjectWithTag("Cruz"));
-
-            DentroAreaCruz = false;
-        }
-        else if (DentroAreaTumi && Input.GetKeyDown(KeyCode.E))
-        {
-            // Incrementar el contador de Tumi
-            ContadorTumi++;
-
-            Debug.Log("Contador de Tumi incrementado a: " + ContadorTumi);
-
-            // Destruir el objeto "Tumi"
-            Destroy(GameObject.FindGameObjectWithTag("Tumi"));
-
-            DentroAreaTumi = false;
-        }
-
-
-        // Cambiar de arma con las teclas 1 y 2
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            cambioArma.armaSeleccionada = 0; // Escopeta
-            cambioArma.SeleccionarArma();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            cambioArma.CambiarACrucifijo(); // Cambia al crucifijo
-        }
-        */
     }
-    /*
-    private void UsarCrucifijo()
-    {
-        if (ContadorCruz > 0)
-        {
-            tiempoDeVidaCrucifijo = tiempoMaximoCrucifijo; // Restablecer el tiempo
-            crucifijoActivo = true; // Activar el crucifijo
-            ContadorCruz--; // Decrementar el contador de cruz
-            Debug.Log("Crucifijo activado. Tiempo de vida: " + tiempoDeVidaCrucifijo + " segundos.");
-        }
-    }
-    */
+
     void Movimiento()
     {
         float movimientoHorizontal = Input.GetAxis("Horizontal");
@@ -171,12 +105,7 @@ public class PlayerStats : MonoBehaviour
             rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
         }
     }
-    /*
-    void Objeto(int value)
-    {
-        ContadorCruz += value;
-    }
-    */
+    
     void Agachar()
     {
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.C))
@@ -303,12 +232,7 @@ public class PlayerStats : MonoBehaviour
     {
         return !EstaEnSuelo();
     }
-    /*
-    public int FragmentosTumi()
-    {
-        return ContadorTumi;
-    }
-    */
+    
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Suelo"))
@@ -324,56 +248,6 @@ public class PlayerStats : MonoBehaviour
             enSuelo = false;
         }
     }
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Cruz"))
-        {    
-              // Verificar si el objeto tiene la etiqueta "Cruz"
-              if (other.CompareTag("Cruz"))
-              {
-                 DentroAreaCruz = true;
-              }
-        }
-
-        if (other.gameObject.CompareTag("Tumi"))
-        {
-            // Verificar si el objeto tiene la etiqueta "Cruz"
-            if (other.CompareTag("Tumi"))
-            {
-                DentroAreaTumi = true;
-            }
-        }
-
-
-        //if (other.CompareTag("ZonaDeMuerte"))
-        //{
-        //    gameObject.SetActive(false);
-        //    SceneManager.LoadScene(escenaMuertePorCordura);
-        //}
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Cruz"))
-        {
-            // Verificar si el objeto tiene la etiqueta "Cruz"
-            if (other.CompareTag("Cruz"))
-            {
-                DentroAreaCruz = false;
-            }
-        }
-
-        if(other.gameObject.CompareTag("Tumi"))
-        {
-            // Verificar si el objeto tiene la etiqueta "Cruz"
-            if (other.CompareTag("Tumi"))
-            {
-                DentroAreaTumi = false;
-            }
-        }
-    }
-    */
 }
 
 

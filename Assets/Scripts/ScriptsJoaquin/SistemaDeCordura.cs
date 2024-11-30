@@ -8,22 +8,23 @@ public class SistemaDeCordura : MonoBehaviour
 {
     private static SistemaDeCordura instance;
 
+    [Header("Audio Configuración")]
     [SerializeField] private AudioSource fxSource;
     [SerializeField] private AudioClip cordura75;
     [SerializeField] private AudioClip cordura50;
     [SerializeField] private AudioClip cordura15;
-    private PlayerStats playerStats;
+    [SerializeField] private float volumenAudio = 0.25f;
+
+    [Header("Cinemachine Configuración")]
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private NoiseSettings noiseSettings;
 
+    private PlayerStats playerStats;
 
-    public static SistemaDeCordura Instance
-    {
-        get 
-        { 
-            return instance; 
-        }
-    }
+    private bool isShaking = false; // Control del estado de shake
+    private float lastCorduraState = 100f; // Guarda el último rango de cordura para evitar duplicados
+
+    public static SistemaDeCordura Instance => instance;
 
     private void Awake()
     {
@@ -37,33 +38,60 @@ public class SistemaDeCordura : MonoBehaviour
 
         if (corduraActual <= 75 && corduraActual > 50)
         {
-            ReproducirSonido(cordura50);
+            ReproducirSonido(cordura75);
         }
-        else if (corduraActual <= 50 && corduraActual > 20)
+        else if (corduraActual <= 50 && corduraActual > 25)
         {
             ReproducirSonido(cordura50);
         }
-        else if (corduraActual <= 20 && corduraActual > 15)
+        else if (corduraActual <= 25 && corduraActual > 15)
         {
-            ShakeCamera();
+            if (!isShaking)
+            {
+                ShakeCamera();
+            }
         }
         else if (corduraActual <= 15)
         {
             ReproducirSonido(cordura15);
         }
+
+        // Detener ShakeCamera si cordura está fuera del rango [15, 25]
+        if ((corduraActual > 25 || corduraActual <= 15) && isShaking)
+        {
+            StopShakeCamera();
+        }
+
+        lastCorduraState = corduraActual;
     }
 
     private void ShakeCamera()
     {
-        virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_NoiseProfile = noiseSettings;
+        var perlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        if (perlin != null)
+        {
+            perlin.m_NoiseProfile = noiseSettings;
+            isShaking = true;
+        }
+    }
+
+    private void StopShakeCamera()
+    {
+        var perlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        if (perlin != null)
+        {
+            perlin.m_NoiseProfile = null; // Elimina el perfil de ruido
+            isShaking = false;
+        }
     }
 
     private void ReproducirSonido(AudioClip clip)
     {
-        // Solo reproduce el sonido si no hay uno en curso
-        if (!fxSource.isPlaying)
+        if (fxSource.clip != clip || !fxSource.isPlaying)
         {
             fxSource.clip = clip;
+            fxSource.volume = volumenAudio; // Ajusta el volumen desde el inspector
+            fxSource.loop = true; // Activa el loop para los clips
             fxSource.Play();
         }
     }

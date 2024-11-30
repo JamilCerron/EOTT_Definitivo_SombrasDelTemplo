@@ -14,7 +14,10 @@ public class BalaEscopetaJ : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        scriptEspectroVida = GameObject.FindGameObjectWithTag("Enemigo").GetComponent<EspectroVida>();
+        if (scriptEspectroVida != null)
+        {
+            scriptEspectroVida = GameObject.FindGameObjectWithTag("Enemigo").GetComponent<EspectroVida>();
+        }
     }
 
     private void Start()
@@ -40,6 +43,11 @@ public class BalaEscopetaJ : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+        if (collision.CompareTag("Player") || collision.CompareTag("Escopeta"))
+        {
+            return; // Ignorar colisiones con el jugador o el arma
+        }
+
         if (collision.gameObject.CompareTag("Suelo"))
         {
             Destroy(gameObject);

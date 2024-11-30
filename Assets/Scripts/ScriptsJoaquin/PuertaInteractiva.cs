@@ -7,9 +7,9 @@ public class PuertaInteractiva : MonoBehaviour
     [Header("Configuración de la Puerta")]
     [SerializeField] private Transform puntoRotacion; // Centro de rotación
     [SerializeField] private float anguloApertura = 90f; // Ángulo de apertura
-    [SerializeField] private float anguloAperturaAutomatico = 45f; // Ángulo para cierre automático
     [SerializeField] private float duracionApertura = 2f; // Duración para abrir la puerta
     [SerializeField] private float duracionCierre = 0.5f; // Duración para cerrar automáticamente (rápido)
+
     [SerializeField] private GameObject señalInteractiva; // Indicación visual para interactuar
 
     [Header("Configuración de Cierre Automático")]
@@ -21,14 +21,12 @@ public class PuertaInteractiva : MonoBehaviour
 
     private Quaternion rotacionInicial;
     private Quaternion rotacionFinal;
-    private Quaternion rotacionFinalAutomatico;
 
     private void Start()
     {
         // Configuración inicial
         rotacionInicial = transform.rotation;
         rotacionFinal = rotacionInicial * Quaternion.Euler(0, anguloApertura, 0);
-        rotacionFinalAutomatico = rotacionInicial * Quaternion.Euler(0, anguloAperturaAutomatico, 0);
 
         if (señalInteractiva != null)
         {
@@ -40,7 +38,21 @@ public class PuertaInteractiva : MonoBehaviour
     {
         if (enRango && Input.GetKeyDown(KeyCode.E)) // Detecta si está cerca y se presiona 'E'
         {
+            IntentarAbrir();
+        }
+    }
+
+    public void IntentarAbrir()
+    {
+        if (permitirCerradoAutomatico) return; // No hace nada si ya está abierta
+
+        if (!abierta)
+        {
             StartCoroutine(AbrirPuertaGradualmente());
+        }
+        else
+        {
+            StartCoroutine(CerrarPuertaRapidamente());
         }
     }
 
@@ -49,38 +61,30 @@ public class PuertaInteractiva : MonoBehaviour
         abierta = true;
         float tiempo = 0f;
 
-        // Animación de apertura
-        Quaternion destino = permitirCerradoAutomatico && !esPlataforma ? rotacionFinalAutomatico : rotacionFinal;
-
         while (tiempo < duracionApertura)
         {
             tiempo += Time.deltaTime;
-            transform.rotation = Quaternion.Lerp(rotacionInicial, destino, tiempo / duracionApertura);
+            transform.rotation = Quaternion.Lerp(rotacionInicial, rotacionFinal, tiempo / duracionApertura);
             yield return null;
         }
 
-        // Si se permite el cerrado automático y no es una plataforma, cerramos después de 1 segundo
-        if (permitirCerradoAutomatico && !esPlataforma)
-        {
-            yield return new WaitForSeconds(1f);
-            StartCoroutine(CerrarPuertaRapidamente());
-        }
+        Debug.Log("Puerta abierta.");
+
     }
 
     private IEnumerator CerrarPuertaRapidamente()
     {
+        abierta = false;
         float tiempo = 0f;
 
-        // Animación de cierre rápido
         while (tiempo < duracionCierre)
         {
             tiempo += Time.deltaTime;
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotacionInicial, tiempo / duracionCierre);
+            transform.rotation = Quaternion.Lerp(rotacionFinal, rotacionInicial, tiempo / duracionCierre);
             yield return null;
         }
 
-        abierta = false;
-        Debug.Log("Puerta cerrada rápidamente.");
+        Debug.Log("Puerta cerrada.");
     }
 
     public void EstablecerEsPlataforma(bool valor)
