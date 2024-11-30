@@ -10,8 +10,10 @@ public class PerseguirJugador : MonoBehaviour
     private float velocidadBase;
     private float tiempoAcumulado = 0f; // Temporizador para incremento de velocidad
 
+   
     void Start()
     {
+        jugador = GameObject.FindGameObjectWithTag("Player").transform;
         agente = GetComponent<NavMeshAgent>();
         espectroAtaque = GetComponent<EspectroAtaque>();
         velocidadBase = agente.speed; // Guardar la velocidad inicial
@@ -25,11 +27,12 @@ public class PerseguirJugador : MonoBehaviour
             float distanciaAlJugador = Vector3.Distance(transform.position, jugador.position);
 
             // Continuar persiguiendo al jugador
-            agente.SetDestination(jugador.position);
+            
 
             // Aumentar velocidad si está dentro del rango
             if (distanciaAlJugador <= distanciaCriterio)
             {
+                agente.SetDestination(jugador.position);
                 tiempoAcumulado += Time.deltaTime;
                 if (tiempoAcumulado >= 5f)
                 {
@@ -43,14 +46,6 @@ public class PerseguirJugador : MonoBehaviour
                 tiempoAcumulado = 0f;
                  // Restaurar velocidad base
             }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Crucifijo"))
-        {
-            Destroy(gameObject);
         }
     }
 

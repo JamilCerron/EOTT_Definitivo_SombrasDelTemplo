@@ -23,7 +23,7 @@ public class EspectroAtaque : MonoBehaviour
         }
         jugador = jugadorObjeto?.transform;
 
-        
+       
     }
 
     public void AtaqueBasico()

@@ -9,10 +9,12 @@ public class BalaEscopetaJ : MonoBehaviour
     [SerializeField] private float speed = 20f; // Velocidad de la bala
     [SerializeField] private Vector3 direction; // Dirección de la bala
     [SerializeField] private float tiempoDeVida = 5f; // Tiempo máximo antes de destruir la bala automáticamente
+    private EspectroVida scriptEspectroVida;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        scriptEspectroVida = GameObject.FindGameObjectWithTag("Enemigo").GetComponent<EspectroVida>();
     }
 
     private void Start()
@@ -50,8 +52,7 @@ public class BalaEscopetaJ : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemigo"))
         {
-            var EspectroVida = collision.GetComponent<EspectroVida>();
-            EspectroVida.RecibirDaño(25);
+            scriptEspectroVida.RecibirDaño(25);
         }
     }
 }
