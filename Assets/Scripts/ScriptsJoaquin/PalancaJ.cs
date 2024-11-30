@@ -16,6 +16,10 @@ public class PalancaJ : MonoBehaviour
     [SerializeField] private Vector3 posicionFinal; // Posición final de la plataforma
     [SerializeField] private float velocidadMovimiento = 2f; // Velocidad de movimiento
 
+    [Header("Configuración de la puerta")]
+    [SerializeField] private PuertaInteractiva puertaAsociada; // Referencia a la puerta controlada por esta palanca
+    [SerializeField] private bool esPuerta = false;
+
     private bool activada = false; // Controla si la palanca ha sido activada
     private Vector3 posicionInicialPlataforma; // Posición inicial de la plataforma
     private Quaternion rotacionInicialMango; // Rotación inicial del mango
@@ -61,6 +65,17 @@ public class PalancaJ : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 activada = !activada; // Alterna entre activada y desactivada
+                if (esPuerta)
+                {
+                    if (puertaAsociada != null)
+                    {
+                        puertaAsociada.EstablecerEsPlataforma(activada);
+                    }
+                    else
+                    {
+                        Debug.Log("Agregar referencia de puerta en el inspector");
+                    }
+                }
             }
         }
     }
