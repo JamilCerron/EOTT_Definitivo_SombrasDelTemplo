@@ -29,6 +29,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private Vector2 sensibilidad;
     private Transform camaraJugador;
     private Rigidbody rb;
+    public bool haSidoGolpeado=false;
+    public Vector3 velocidad;
 
     [Header("Muerte")]
     [SerializeField] private string escenaMuertePorCordura;
@@ -63,7 +65,12 @@ public class PlayerStats : MonoBehaviour
     {
         float movimientoHorizontal = Input.GetAxis("Horizontal");
         float movimientoVertical = Input.GetAxis("Vertical");
-        Vector3 velocidad = Vector3.zero;
+
+        if (haSidoGolpeado) return;
+        {
+            velocidad = Vector3.zero;
+        }
+        
 
         if (movimientoHorizontal != 0 || movimientoVertical != 0)
         {

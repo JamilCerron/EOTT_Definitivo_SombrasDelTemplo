@@ -6,11 +6,14 @@ public class GuardianCabezazo : MonoBehaviour
 {
     public float attackForce = 10f;
     private bool canAttack = false;
-    private NavMeshAgent navMeshAgent;
+    private NavMeshAgent navMeshAgent;  
+    PlayerStats stats;
 
+   
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        stats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
     }
 
     void Update()
@@ -45,6 +48,7 @@ public class GuardianCabezazo : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            StartCoroutine(RecargaLayer());
             AttemptAttack();
             Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
             if (playerRb != null)
@@ -62,10 +66,27 @@ public class GuardianCabezazo : MonoBehaviour
         }
     }
 
+    //void CambiadorDelayer()
+    //{
+    //    float distancia = Vector3.Distance(stats.transform.position,transform.position);
+
+
+    //}
+
     IEnumerator ResumeMovementAfterAttack()
     {
-        yield return new WaitForSeconds(1f); // Ajusta el tiempo seg�n lo necesario
+        yield return new WaitForSeconds(2f); // Ajusta el tiempo seg�n lo necesario
         navMeshAgent.isStopped = false;
     }
+
+    IEnumerator RecargaLayer()
+    {
+        stats.haSidoGolpeado = true;
+        gameObject.layer = LayerMask.NameToLayer("Traspasable");
+        yield return new WaitForSeconds(2);
+        stats.haSidoGolpeado = false;
+        gameObject.layer = LayerMask.NameToLayer("Guardian");
+    }
+
 }
 
