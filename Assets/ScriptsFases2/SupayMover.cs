@@ -18,7 +18,8 @@ public class SupayMover: MonoBehaviour
     [SerializeField] private float chargeSpeed = 15f; // Velocidad de la embestida
     [SerializeField] private float chargeDuration = 5f; // Duración de la embestida
     [SerializeField] private Transform arenaCenter; // Centro de la arena
-    private Transform targetTransform; // Declaración de targetTransform
+    [SerializeField] private float attackRange = 5f; // Rango de embestida
+
 
 
     private float nextShotTime;
@@ -28,16 +29,30 @@ public class SupayMover: MonoBehaviour
     private bool isJumpingToGround = false;
     private bool isCharging = false;  // Para evitar iniciar la embestida más de una vez
     private bool hasArrivedAtCenter = false;
-    private bool isPlayerHit = false;
+    private float jumpStartHeight; // Altura inicial del salto
+    private float jumpStartTime;   // Tiempo en que comenzó el salto
+    private float jumpDuration = 1.5f; // Duración total del salto
+    private bool hasChargedOnce = false; // Evitar que se embista repetidamente en una sola embestida
+    private bool isAttacking = false;
+
+    private Vector3 centerPosition = new Vector3(0, 0, 0); // Definir la posición del centro, ajusta esto según sea necesario
 
 
 
-  
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("PLAYER").transform;
-        targetTransform = GameObject.FindGameObjectWithTag("PLAYER").transform; // Asigna al jugador
+        // Validar que el NavMeshAgent esté activo
+        if (navMeshAgent == null)
+        {
+            navMeshAgent = GetComponent<NavMeshAgent>();
+        }
+
+        if (!navMeshAgent.isOnNavMesh)
+        {
+            Debug.LogError("El NavMeshAgent no está en una NavMesh al inicio.");
+        }
     }
 
     private void Update()
@@ -62,114 +77,77 @@ public class SupayMover: MonoBehaviour
 
         if (isPhaseThree)
         {
-            HandlePhaseThreeBehavior(distanceToPlayer);
-           
+            StartCoroutine(PhaseThreeBehavior());
+
         }
 
         else if (isPhaseTwo)
         {
             PhaseTwoBehavior(distanceToPlayer);
         }
-        else if (!isPhaseTwo && distanceToPlayer <= shootingRange)
+        else if ( distanceToPlayer <= shootingRange)
         {
             ShootAtPlayer();
         }
+
+        // Comienza la embestida si está en fase 3 y el jugador está dentro del rango de embestida
+        if (isPhaseThree && !isAttacking && distanceToPlayer <= shootingRange)  // Puedes usar meleeRange o shootingRange dependiendo de tu lógica
+        {
+            StartCoroutine(ChargeAttack());
+            isAttacking = true;
+        }
     }
 
-
-    private void HandlePhaseThreeBehavior(float distanceToPlayer)
+    private void MoveToCenter()
     {
-        if (player == null) return;  // Asegurarse de que el jugador no sea null antes de continuar
-
-        if (!hasArrivedAtCenter)
-        {
-            // Mover al centro de la arena si aún no hemos llegado
-            float distanceToCenter = Vector3.Distance(transform.position, arenaCenter.position);
-
-
-            if (distanceToCenter > 0.2f)
-            {
-                Debug.Log("Moviéndose al centro de la arena...");
-                navMeshAgent.destination = arenaCenter.position;
-            }
-            else 
-            {
-                // Asegurarnos de que hemos llegado al centro
-                Debug.Log("Supay ya está en el centro de la arena.");
-                navMeshAgent.isStopped = true;  // Detener el agente
-                transform.position = arenaCenter.position;
-                hasArrivedAtCenter = true;  // Marcar que ha llegado
-                StartCoroutine(ChargeAttack()); // Iniciar la embestida
-            }
-        }
+        // Asegúrate de que el Supay se mueva al centro
+        Vector3 directionToCenter = (centerPosition - transform.position).normalized;
+        transform.position = Vector3.MoveTowards(transform.position, centerPosition, 5f * Time.deltaTime); 
     }
 
     private IEnumerator ChargeAttack()
     {
-        isCharging = true;  // Activar el estado de embestida
-        isPlayerHit = false; // Resetear el estado de daño
+        // Aseguramos que no haya múltiples embestidas simultáneas
+        if (isCharging || isAttacking) yield break;
 
-        // Desactivar el NavMeshAgent durante la embestida
-        navMeshAgent.enabled = false;
-
-        // Usa Rigidbody para mover al enemigo durante la embestida
+        isCharging = true; // Activar el estado de embestida
         Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb != null)
+        Vector3 chargeDirection = (player.position - transform.position).normalized;
+        float chargeTime = 0f;
+        float chargeDuration = 2f; // Duración de la embestida, ajusta según sea necesario
+
+        // Iniciar embestida
+        while (chargeTime < chargeDuration)
         {
-            float chargeTime = 0f;
-            Vector3 chargeDirection = (player != null) ? (player.position - transform.position).normalized : Vector3.zero;  // Verifica si 'player' es null
-
-            while (chargeTime < chargeDuration)
-            {
-                if(player != null)
-                {
-                    // Mover al enemigo en la dirección de la embestida
-                    rb.velocity = chargeDirection * chargeSpeed;
-
-                    // Verificar si impacta al jugador
-                    if (Vector3.Distance(transform.position, player.position) <= meleeRange)
-                    {
-                        Debug.Log("El jugador fue impactado por la embestida.");
-                        DealMeleeDamage();
-                        break;
-                    }
-                }
-
-                chargeTime += Time.deltaTime;
-                yield return null;
-            }
-
-            // Detener el Rigidbody al final de la embestida
-            rb.velocity = Vector3.zero;
+            rb.velocity = chargeDirection * chargeSpeed; // Ajusta la velocidad de la embestida
+            chargeTime += Time.deltaTime;
+            yield return null;
         }
 
-        // Reactivar el NavMeshAgent después de la embestida
-        navMeshAgent.enabled = true;
+        rb.velocity = Vector3.zero; // Detener la velocidad al finalizar la embestida
 
-        // Al finalizar la embestida, reinicia el estado
+        // Regresar al centro después de embestir
+        MoveToCenter();
+
         isCharging = false;
-
-        // Reiniciar el estado para que pueda ir al centro si es necesario
-        hasArrivedAtCenter = false;
-
     }
 
-    private void OnTriggerEnter(Collider collision )
+
+    private void ApplyDamageToPlayer()
     {
-        if (collision.gameObject.CompareTag("PLAYER") && isCharging && !isPlayerHit)
+        if (player != null)
         {
-            isPlayerHit = true;
-            Debug.Log("El jugador fue impactado por la embestida.");
-
-
-            JugadorHealth playerScript = collision.gameObject.GetComponent<JugadorHealth>();
+            JugadorHealth playerScript = player.GetComponent<JugadorHealth>();
             if (playerScript != null)
             {
-                playerScript.TakeDamage(meleeDamage); // Aplicar el daño
+                playerScript.TakeDamage(20); // Aplicar daño al jugador
+            }
+            else
+            {
+                Debug.LogError("No se encontró el script JugadorHealth en el jugador.");
             }
         }
     }
-
 
 
     private void ShootAtPlayer()
@@ -191,55 +169,58 @@ public class SupayMover: MonoBehaviour
     {
         isPhaseTwo = true;
         isJumpingToGround = true; // Activar el salto al suelo
+        jumpStartHeight = transform.position.y; // Altura inicial del salto
+        jumpStartTime = Time.time; // Tiempo inicial del salto
         Debug.Log("Supay ha entrado en la Fase 2");
-        
+
     }
 
     private void JumpToGround()
     {
-
-        // Desactiva el NavMeshAgent para permitir el movimiento manual
-        if (navMeshAgent != null)
+        if (navMeshAgent.enabled)
         {
-            navMeshAgent.enabled = false;
+            navMeshAgent.isStopped = true; // Asegúrate de que esté detenido
+            navMeshAgent.enabled = false; // Desactiva completamente el NavMeshAgent
         }
 
-        // Mover al Supay hacia la posición en el suelo (y = 0)
-        Vector3 targetPosition = new Vector3(transform.position.x, 0f, transform.position.z);
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, jumpSpeed * Time.deltaTime);
+        float elapsedTime = Time.time - jumpStartTime; // Tiempo transcurrido desde el inicio del salto
+        float normalizedTime = elapsedTime / jumpDuration; // Normalizar entre 0 y 1
 
-        // Detener el salto al suelo cuando llegue
-        if (transform.position.y <= 0.1f)
+        if (normalizedTime >= 1f) // Si el tiempo normalizado supera 1, el salto termina
         {
-            isJumpingToGround = false;
-            // Reactivar el NavMeshAgent una vez que el salto haya terminado
-            if (navMeshAgent != null)
-            {
-                navMeshAgent.enabled = true;
-            }
+            isJumpingToGround = false; // Desactivar estado de salto
+            navMeshAgent.enabled = true; // Reactivar el NavMeshAgent
+            navMeshAgent.isStopped = false; // Asegúrate de que pueda moverse
+            transform.position = new Vector3(transform.position.x, 0f, transform.position.z); // Asegurar que esté en el suelo
+
+            Debug.Log("Supay ha aterrizado y comenzará a perseguir al jugador.");
+            return;
         }
+
+        // Movimiento parabólico del salto
+        float newY = Mathf.Lerp(jumpStartHeight, 0f, normalizedTime) + Mathf.Sin(normalizedTime * Mathf.PI) * 2f;
+        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 
     private void PhaseTwoBehavior(float distanceToPlayer)
     {
-        // Verificar si el player existe (ya está hecho con player != null en Update)
-        if (player != null)
+        if (isJumpingToGround) return; // No perseguir al jugador si está saltando
+
+        if (!navMeshAgent.isOnNavMesh)
         {
-            // Verificar que el player transform no es null
-            if (targetTransform != null)
-            {
-                Vector3 targetPosition = targetTransform.position; // Obtienes la posición del jugador
+            PlaceOnNavMesh();
+        }
 
-                // Persigue al jugador lentamente
-                Vector3 directionToPlayer = (targetPosition - transform.position).normalized;
-                transform.position += directionToPlayer * meleeSpeed * Time.deltaTime;
+        navMeshAgent.isStopped = false; // Asegúrate de que el agente pueda moverse
 
-                // Si está dentro del rango melee, inflige daño al jugador
-                if (distanceToPlayer <= meleeRange)
-                {
-                    DealMeleeDamage();
-                }
-            }
+
+        if (distanceToPlayer <= meleeRange)
+        {
+            DealMeleeDamage();
+        }
+        else
+        {
+            navMeshAgent.destination = player.position; // Perseguir al jugador
         }
     }
 
@@ -256,59 +237,52 @@ public class SupayMover: MonoBehaviour
     private void ActivatePhaseThree()
     {
         isPhaseThree = true;
+        hasArrivedAtCenter = false;  // Asegurarse de que el Supay regrese al centro al entrar en fase 3
         Debug.Log("Supay ha entrado en la Fase 3");
-        StartCoroutine(PhaseThreeBehavior());
-        // Implementa el comportamiento de la Fase 3 aquí
+
+        // Iniciar movimiento hacia el centro inmediatamente al activar la fase 3
+        MoveToCenter();
     }
 
     private IEnumerator PhaseThreeBehavior()
     {
-       
-        while (isPhaseThree)
+        // Primero, mueve al Supay al centro si no ha llegado
+        if (!hasArrivedAtCenter)
         {
-            // 1. Mover al centro de la arena
-            Debug.Log("Moviendo al centro de la arena...");
-
-            if (navMeshAgent != null && navMeshAgent.enabled)
-            {
-                // Verificar si el NavMeshAgent está sobre una NavMesh válida
-                if (navMeshAgent.isOnNavMesh)
-                {
-                    navMeshAgent.destination = arenaCenter.position; // O la posición que estés asignando
-                }
-                else
-                {
-                    Debug.LogError("El Supay no está en una NavMesh.");
-                    // Intentar reposicionar el Supay en una NavMesh válida
-                    NavMeshHit hit;
-                    if (NavMesh.SamplePosition(transform.position, out hit, 1.0f, NavMesh.AllAreas))
-                    {
-                        transform.position = hit.position; // Coloca al enemigo en una posición válida
-                        navMeshAgent.enabled = true; // Asegúrate de que el agente esté habilitado
-                        navMeshAgent.destination = arenaCenter.position; // Asigna el destino después de haber corregido la posición
-                    }
-                    else
-                    {
-                        Debug.LogError("No se encontró una posición válida en la NavMesh para el Supay.");
-                        yield break; // Termina la ejecución si no se puede corregir la posición
-                    }
-                }
-            }
-
-            while (Vector3.Distance(transform.position, arenaCenter.position) > 0.1f)
-            {
-                yield return null;
-            }
-
-            // Realizar la embestida
-            yield return new WaitForSeconds(3f); // Espera antes de embestir
-            StartCoroutine(ChargeAttack()); // Iniciar la embestida
-
-
-
+            MoveToCenter();
+            hasArrivedAtCenter = true;  // Solo permitir que se mueva al centro una vez
+            yield return new WaitForSeconds(1f); // Espera para asegurarte de que haya llegado al centro
         }
 
+        // Luego, intenta la embestida solo si el jugador está dentro del rango
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        if (distanceToPlayer <= attackRange && !isCharging && !isAttacking)
+        {
+            StartCoroutine(ChargeAttack());
+            yield return new WaitForSeconds(chargeDuration); // Espera que termine la embestida
+
+            // Después de la embestida, regresa al centro si es necesario
+            MoveToCenter();
+        }
+
+
     }
+
+
+    private void PlaceOnNavMesh()
+    {
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(transform.position, out hit, 1.0f, NavMesh.AllAreas))
+        {
+            transform.position = hit.position;
+       
+        }
+        else
+        {
+            Debug.LogError("No se encontró una posición válida en la NavMesh.");
+        }
+    }
+
 
     public void TakeDamage(float damage)
     {
