@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32aea48da2b7e2149b58b535de2063b0, type: 3}
+  m_Name: Version1Nivel2
+  m_EditorClassIdentifier: 
+  tiposDeObjetos:
+  - {fileID: 1698599841514295464, guid: c384843e78820384da784bf019cc6d70, type: 3}
+  - {fileID: 7408410361898104266, guid: ff8c8a0006f90e54ab4d9a3b03a7a37c, type: 3}
+  - {fileID: 2620270468575629338, guid: ddf1b7d033835a74fb0885af838a170b, type: 3}
+  - {fileID: 2620270468575629338, guid: ddf1b7d033835a74fb0885af838a170b, type: 3}
+  - {fileID: 2620270468575629338, guid: ddf1b7d033835a74fb0885af838a170b, type: 3}
+  - {fileID: 2620270468575629338, guid: ddf1b7d033835a74fb0885af838a170b, type: 3}
+  - {fileID: 2620270468575629338, guid: ddf1b7d033835a74fb0885af838a170b, type: 3}
+  - {fileID: 2620270468575629338, guid: ddf1b7d033835a74fb0885af838a170b, type: 3}
+  - {fileID: 2620270468575629338, guid: ddf1b7d033835a74fb0885af838a170b, type: 3}
+  - {fileID: 2620270468575629338, guid: ddf1b7d033835a74fb0885af838a170b, type: 3}
+  - {fileID: 2620270468575629338, guid: ddf1b7d033835a74fb0885af838a170b, type: 3}
+  - {fileID: 2620270468575629338, guid: ddf1b7d033835a74fb0885af838a170b, type: 3}
+  - {fileID: 2620270468575629338, guid: ddf1b7d033835a74fb0885af838a170b, type: 3}
+  - {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6, type: 3}
+  - {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6, type: 3}
+  - {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6, type: 3}
+  - {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6, type: 3}
+  - {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6, type: 3}
+  - {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6, type: 3}
+  - {fileID: 2847868001232052020, guid: 4c24f049bcbe7a247980305fa8e0e105, type: 3}
+  - {fileID: 2847868001232052020, guid: 4c24f049bcbe7a247980305fa8e0e105, type: 3}
+  posiciones:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}

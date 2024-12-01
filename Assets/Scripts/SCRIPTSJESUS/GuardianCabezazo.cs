@@ -17,7 +17,7 @@ public class GuardianCabezazo : MonoBehaviour
     {
         if (canAttack)
         {
-            Vector3 direction = (GameObject.FindWithTag("Jugador").transform.position - transform.position).normalized;
+            Vector3 direction = (GameObject.FindWithTag("Player").transform.position - transform.position).normalized;
             direction.y = 0; // Ignora el eje Y para el empuje
             navMeshAgent.isStopped = true;
             Rigidbody rb = GetComponent<Rigidbody>();
@@ -43,7 +43,7 @@ public class GuardianCabezazo : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Jugador"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             AttemptAttack();
             Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
