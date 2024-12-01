@@ -7,29 +7,15 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int vidaMaxima = 100;
     [SerializeField] private float tiempoParaRecuperacion = 10f;
     private float tiempoSinRecibirDaño;
-    [SerializeField] private int vidaActual;
-
-    /*
-    [Header("Objetos")]
-    [SerializeField] public int ContadorCruz = 0;
-    [SerializeField] public int ContadorTumi = 0;
-    [SerializeField] public float tiempoDeVidaCrucifijo = 0f; // Tiempo de vida actual del crucifijo
-    public int tiempoMaximoCrucifijo = 5; // Tiempo máximo que dura el crucifijo
-    public bool crucifijoActivo = false; // Estado del crucifijo
-  //  [SerializeField] public int ContadorTumi = 0;
-    private bool DentroAreaCruz = false;
-    private bool DentroAreaTumi = false;            
-
-    public CambioArma cambioArma; // Referencia a la clase CambioArma
-    */
+    [SerializeField] private static int vidaActual;
 
     [Header("Cordura")]
     [SerializeField] private float corduraMaxima = 100f;
-    [SerializeField] private float corduraActual;
+    [SerializeField] private static float corduraActual;
 
     [Header("Resistencia")]
     [SerializeField] private float resistenciaMaxima = 100f;
-    [SerializeField] private float resistenciaActual;
+    [SerializeField] private static float resistenciaActual;
     [SerializeField] private float resistenciaRecuperacion = 10f; // Cuanta resistencia se recupera al no correr
     [SerializeField] private float resistenciaCorrer = 10f; // Cuanta resistencia se consume al correr
 
