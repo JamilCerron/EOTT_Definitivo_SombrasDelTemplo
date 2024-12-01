@@ -7,41 +7,62 @@ public class GestorTumi : MonoBehaviour
 {
     public static GestorTumi instancia;
 
-    private Tumi tumi;
     private bool tumiCompleto = false;
 
     [SerializeField] private string escenaVictoriaConTumi;
-    [SerializeField] private string escenaVictoriaSinTumi;
-    [SerializeField] private int fragmentosTumi = 0;
+
+    // Escenas donde los fragmentos deben conservarse
+    [SerializeField] private string nivel1;
+    [SerializeField] private string nivel2;
+
+    // Fragmentos estáticos
+    private static int fragmentosTumi;
 
     private void Awake()
     {
-        if (tumi != null)
-        {
-            tumi = GameObject.FindGameObjectWithTag("Tumi").GetComponent<Tumi>();
-        }
-
         if (instancia == null)
         {
             instancia = this;
-            DontDestroyOnLoad(gameObject); // Mantiene el GameManager entre escenas
         }
-        else
+        else if (instancia != this)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Elimina duplicados
         }
+    }
+
+    private void Start()
+    {
+        // Si no estamos en una escena permitida, reinicia fragmentos
+        string escenaActual = SceneManager.GetActiveScene().name;
+        if (escenaActual != nivel1 && escenaActual != nivel2)
+        {
+            ReiniciarFragmentos();
+        }
+    }
+
+    private void ReiniciarFragmentos()
+    {
+        fragmentosTumi = 0;
+        tumiCompleto = false;
+        Debug.Log("Fragmentos de Tumi reiniciados.");
     }
 
     public void AñadirFragmentos(int cantidad)
     {
-        if (fragmentosTumi >= 0 && fragmentosTumi <= 4)
+        if (fragmentosTumi < 4)
         {
             fragmentosTumi += cantidad;
-        }
+            GestorMensajes.Instance.MostrarMensaje($"Fragmentos recogidos: {fragmentosTumi}/4");
 
-        if (fragmentosTumi == 4)
+            if (fragmentosTumi == 4)
+            {
+                tumiCompleto = true;
+                GestorMensajes.Instance.MostrarMensaje("¡Tumi completo!");
+            }
+        }
+        else
         {
-            tumiCompleto = true; // Marca que el jugador tiene el Tumi completo
+            Debug.Log("Ya tienes todos los fragmentos del Tumi.");
         }
     }
 
@@ -53,15 +74,7 @@ public class GestorTumi : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(escenaVictoriaSinTumi);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            ComprobarVictoria();
+            GestorMensajes.Instance.MostrarMensaje("No tienes todas las piezas del Tumi.");
         }
     }
 

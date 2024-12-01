@@ -5,7 +5,6 @@ using UnityEngine;
 public class EscopetaApuntarJ : MonoBehaviour
 {
     [Header("Configuración")]
-    [SerializeField] private Transform puntoDisparo; // Punto desde donde se disparan las balas
     [SerializeField] private Camera camaraJugador;  // La cámara principal o virtual del jugador
 
     private void Update()
