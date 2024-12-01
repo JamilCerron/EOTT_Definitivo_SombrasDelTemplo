@@ -92,7 +92,7 @@ public class PuertaInteractiva : MonoBehaviour
         esPlataforma = valor; // Controlado por la palanca
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player")) // Detecta al jugador
         {
