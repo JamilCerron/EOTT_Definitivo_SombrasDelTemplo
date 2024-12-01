@@ -12,9 +12,7 @@ public class PuertaInteractiva : MonoBehaviour
 
     [SerializeField] private GameObject señalInteractiva; // Indicación visual para interactuar
 
-    [Header("Configuración de Cierre Automático")]
-    [SerializeField] private bool permitirCerradoAutomatico = false; // Si la puerta se cierra automáticamente
-    [SerializeField] private bool esPlataforma = false; // Controlado por una palanca externa
+    private bool bloqueada = false; // Nueva variable para manejar el estado de bloqueo
 
     private bool enRango = false;
     private bool abierta = false;
@@ -44,7 +42,7 @@ public class PuertaInteractiva : MonoBehaviour
 
     public void IntentarAbrir()
     {
-        if (permitirCerradoAutomatico) return; // No hace nada si ya está abierta
+        if (bloqueada) return; // Si está bloqueada, no se puede interactuar
 
         if (!abierta)
         {
@@ -72,7 +70,12 @@ public class PuertaInteractiva : MonoBehaviour
 
     }
 
-    private IEnumerator CerrarPuertaRapidamente()
+    public void CerrarPuertaPermanente()
+    {
+        StartCoroutine(CerrarPuertaRapidamente());
+    }
+
+    public IEnumerator CerrarPuertaRapidamente()
     {
         abierta = false;
         float tiempo = 0f;
@@ -87,9 +90,9 @@ public class PuertaInteractiva : MonoBehaviour
         Debug.Log("Puerta cerrada.");
     }
 
-    public void EstablecerEsPlataforma(bool valor)
+    public void VariarBloqueado(bool estado)
     {
-        esPlataforma = valor; // Controlado por la palanca
+        bloqueada = !estado; // Bloquea o desbloquea la puerta
     }
 
     private void OnTriggerStay(Collider other)
@@ -97,7 +100,10 @@ public class PuertaInteractiva : MonoBehaviour
         if (other.CompareTag("Player")) // Detecta al jugador
         {
             enRango = true;
-            señalInteractiva.SetActive(true); // Muestra la señal de interacción
+            if (!bloqueada)
+            {
+                señalInteractiva.SetActive(true);
+            }
         }
     }
 

@@ -62,6 +62,7 @@ public class PalancaJ : MonoBehaviour
         if (other.CompareTag("Player")) // Detecta interacción con el jugador
         {
             señalInteractiva.SetActive(true);
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 activada = !activada; // Alterna entre activada y desactivada
@@ -69,7 +70,7 @@ public class PalancaJ : MonoBehaviour
                 {
                     if (puertaAsociada != null)
                     {
-                        puertaAsociada.EstablecerEsPlataforma(activada);
+                        puertaAsociada.VariarBloqueado(true); // Desbloquea la puerta si la palanca está activada
                     }
                     else
                     {
