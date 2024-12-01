@@ -13,9 +13,28 @@ public class GuardianPersecucion : MonoBehaviour
 
     void Update()
     {
-        if (jugador != null)
+        if (jugador != null && Vector3.Distance(agente.destination, jugador.position) > 0.1f)
         {
             agente.SetDestination(jugador.position);
+        }
+
+        SubidonVelocidad();
+    }
+
+    void SubidonVelocidad()
+    {
+        if (jugador != null)
+        {
+            float distancia = Vector3.Distance(jugador.position, transform.position);
+
+            if (distancia <= 6)
+            {
+                agente.speed = 30;
+            }
+            else
+            {
+                agente.speed = 5;
+            }
         }
     }
 
@@ -23,13 +42,21 @@ public class GuardianPersecucion : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Jugador"))
         {
-            GetComponent<GuardianCabezazo>().AttemptAttack();
+            var cabezazo = GetComponent<GuardianCabezazo>();
+            if (cabezazo != null)
+            {
+                cabezazo.AttemptAttack();
+            }
+            else
+            {
+                Debug.LogWarning("GuardianCabezazo no está asignado.");
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.CompareTag("Jugador"))
+        if (other.CompareTag("Jugador"))
         {
             agente.isStopped = false;
         }
@@ -37,7 +64,7 @@ public class GuardianPersecucion : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (gameObject.CompareTag("Jugador"))
+        if (other.CompareTag("Jugador"))
         {
             agente.isStopped = true;
         }

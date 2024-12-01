@@ -66,26 +66,20 @@ public class GuardianCabezazo : MonoBehaviour
         }
     }
 
-    //void CambiadorDelayer()
-    //{
-    //    float distancia = Vector3.Distance(stats.transform.position,transform.position);
-
-
-    //}
-
+  
     IEnumerator ResumeMovementAfterAttack()
     {
-        yield return new WaitForSeconds(2f); // Ajusta el tiempo seg�n lo necesario
+        yield return new WaitForSeconds(2f); 
         navMeshAgent.isStopped = false;
     }
 
     IEnumerator RecargaLayer()
     {
         stats.haSidoGolpeado = true;
-        gameObject.layer = LayerMask.NameToLayer("Traspasable");
         yield return new WaitForSeconds(2);
         stats.haSidoGolpeado = false;
-        gameObject.layer = LayerMask.NameToLayer("Guardian");
+        //gameObject.layer = LayerMask.NameToLayer("Traspasable");
+        //gameObject.layer = LayerMask.NameToLayer("Guardian");
     }
 
 }
