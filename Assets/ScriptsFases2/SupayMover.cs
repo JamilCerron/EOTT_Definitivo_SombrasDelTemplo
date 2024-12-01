@@ -34,6 +34,9 @@ public class SupayMover: MonoBehaviour
     private float jumpDuration = 1.5f; // Duración total del salto
     private bool hasChargedOnce = false; // Evitar que se embista repetidamente en una sola embestida
     private bool isAttacking = false;
+    private bool canChargeMultipleTimes = true;  // Para controlar las embestidas múltiples
+    private float timeBetweenCharges = 1.5f; // Tiempo entre cada embestida (en segundos)
+
 
     private Vector3 centerPosition = new Vector3(0, 0, 0); // Definir la posición del centro, ajusta esto según sea necesario
 
@@ -94,27 +97,27 @@ public class SupayMover: MonoBehaviour
         if (isPhaseThree && !isAttacking && distanceToPlayer <= shootingRange)  // Puedes usar meleeRange o shootingRange dependiendo de tu lógica
         {
             StartCoroutine(ChargeAttack());
-            isAttacking = true;
+            
         }
     }
 
     private void MoveToCenter()
     {
-        // Asegúrate de que el Supay se mueva al centro
-        Vector3 directionToCenter = (centerPosition - transform.position).normalized;
-        transform.position = Vector3.MoveTowards(transform.position, centerPosition, 5f * Time.deltaTime); 
+        // Usa arenaCenter como el centro real
+        Vector3 directionToCenter = (arenaCenter.position - transform.position).normalized;
+        transform.position = Vector3.MoveTowards(transform.position, arenaCenter.position, 5f * Time.deltaTime);
     }
 
     private IEnumerator ChargeAttack()
     {
         // Aseguramos que no haya múltiples embestidas simultáneas
-        if (isCharging || isAttacking) yield break;
+        if (isCharging || isAttacking ) yield break;
 
         isCharging = true; // Activar el estado de embestida
         Rigidbody rb = GetComponent<Rigidbody>();
         Vector3 chargeDirection = (player.position - transform.position).normalized;
         float chargeTime = 0f;
-        float chargeDuration = 2f; // Duración de la embestida, ajusta según sea necesario
+      
 
         // Iniciar embestida
         while (chargeTime < chargeDuration)
@@ -126,10 +129,17 @@ public class SupayMover: MonoBehaviour
 
         rb.velocity = Vector3.zero; // Detener la velocidad al finalizar la embestida
 
+       
         // Regresar al centro después de embestir
         MoveToCenter();
 
+        // Baja la vida del jugador por cada embestida
+        ApplyDamageToPlayer();
+
         isCharging = false;
+
+        // Espera un poco antes de permitir la próxima embestida
+        yield return new WaitForSeconds(timeBetweenCharges);
     }
 
 
@@ -255,14 +265,26 @@ public class SupayMover: MonoBehaviour
         }
 
         // Luego, intenta la embestida solo si el jugador está dentro del rango
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer <= attackRange && !isCharging && !isAttacking)
+        while (isPhaseThree) // Mantén el ciclo mientras la fase 3 esté activa
         {
-            StartCoroutine(ChargeAttack());
-            yield return new WaitForSeconds(chargeDuration); // Espera que termine la embestida
 
-            // Después de la embestida, regresa al centro si es necesario
-            MoveToCenter();
+            if (player == null)
+            {
+                // Si el jugador ha sido destruido, salimos del ciclo
+                yield break;
+            }
+
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            if (distanceToPlayer <= attackRange && !isCharging && !isAttacking)
+            {
+                StartCoroutine(ChargeAttack());
+                yield return new WaitForSeconds(chargeDuration); // Espera que termine la embestida
+                MoveToCenter(); // Regresar al centro después de cada embestida
+            }
+            else
+            {
+                yield return null; // Si el jugador está fuera del rango de embestida, espera
+            }
         }
 
 
