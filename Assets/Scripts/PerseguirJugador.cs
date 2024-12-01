@@ -10,7 +10,7 @@ public class PerseguirJugador : MonoBehaviour
     private float velocidadBase;
     private float tiempoAcumulado = 0f; // Temporizador para incremento de velocidad
 
-   
+
     void Start()
     {
         jugador = GameObject.FindGameObjectWithTag("Player").transform;
@@ -27,7 +27,7 @@ public class PerseguirJugador : MonoBehaviour
             float distanciaAlJugador = Vector3.Distance(transform.position, jugador.position);
 
             // Continuar persiguiendo al jugador
-            
+
 
             // Aumentar velocidad si está dentro del rango
             if (distanciaAlJugador <= distanciaCriterio)
@@ -44,7 +44,7 @@ public class PerseguirJugador : MonoBehaviour
             {
                 // Si está fuera del rango, restablecer temporizador (pero no detenerse)
                 tiempoAcumulado = 0f;
-                 // Restaurar velocidad base
+                // Restaurar velocidad base
             }
         }
     }

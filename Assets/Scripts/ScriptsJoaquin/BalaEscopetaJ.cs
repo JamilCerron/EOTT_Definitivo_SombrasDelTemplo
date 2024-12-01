@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BalaEscopetaJ : MonoBehaviour
@@ -52,7 +50,7 @@ public class BalaEscopetaJ : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+
         else
         {
             Debug.Log($"La bala chocó con un objeto inesperado: {collision.gameObject.name}");

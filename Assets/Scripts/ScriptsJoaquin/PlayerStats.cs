@@ -91,7 +91,7 @@ public class PlayerStats : MonoBehaviour
             rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
         }
     }
-    
+
     void Agachar()
     {
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.C))
@@ -218,7 +218,7 @@ public class PlayerStats : MonoBehaviour
     {
         return !EstaEnSuelo();
     }
-    
+
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Suelo"))

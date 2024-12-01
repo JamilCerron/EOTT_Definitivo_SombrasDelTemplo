@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -15,17 +13,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-       
+
         float movimientoHorizontal = Input.GetAxis("Horizontal");
         float movimientoVertical = Input.GetAxis("Vertical");
 
-      
+
         movimiento = new Vector3(movimientoHorizontal, 0, movimientoVertical).normalized;
     }
 
     void FixedUpdate()
     {
-        
+
         rb.MovePosition(rb.position + movimiento * velocidadMovimiento * Time.fixedDeltaTime);
     }
 

@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class CabezaSupay : MonoBehaviour
@@ -10,7 +8,7 @@ public class CabezaSupay : MonoBehaviour
     public float rangoDisparo = 20f;
     public float tiempoEntreDisparos = 1.5f;
     [SerializeField] float velocidadBala = 4f;
-     private Transform jugador;
+    private Transform jugador;
 
     private int golpesRecibidos = 0;
     private bool puedeAtacar = true;
@@ -54,7 +52,7 @@ public class CabezaSupay : MonoBehaviour
 
     public void RecibirGolpe(int dano)
     {
-        if (!golpeando)  
+        if (!golpeando)
         {
             StartCoroutine(RegistrarGolpe(dano));
         }
@@ -62,13 +60,13 @@ public class CabezaSupay : MonoBehaviour
 
     private IEnumerator RegistrarGolpe(int dano)
     {
-        golpeando = true;  
+        golpeando = true;
 
-        
+
         golpesRecibidos += dano;
         Debug.Log("Enemigo recibi� un golpe. Golpes recibidos: " + golpesRecibidos);
 
-        
+
         if (golpesRecibidos >= 3)
         {
             Debug.Log("Enemigo bajo la cabeza");
@@ -86,10 +84,10 @@ public class CabezaSupay : MonoBehaviour
             Debug.Log("ENEMIGO VUELVE A ATACAR");
         }
 
-        
-        yield return new WaitForSeconds(0.1f);  
 
-        golpeando = false;  
+        yield return new WaitForSeconds(0.1f);
+
+        golpeando = false;
     }
 
     public void IntentarAtacar()

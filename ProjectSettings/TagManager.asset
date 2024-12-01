@@ -28,6 +28,7 @@ TagManager:
   - RangoEscopeta
   - Muro
   - MuroInvisible
+  - Vasija
   layers:
   - Default
   - TransparentFX

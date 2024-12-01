@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class EspectroAtaque : MonoBehaviour
@@ -10,7 +9,7 @@ public class EspectroAtaque : MonoBehaviour
     [SerializeField] private float vidaDaño = 10f;
     //[SerializeField] private float fovJugador = 90f; 
     private Transform jugador;
-    [SerializeField] private GameObject jugadorObjeto; 
+    [SerializeField] private GameObject jugadorObjeto;
 
     [SerializeField] private float tiempoEntreReducciones = 3f;
     private bool enCooldown = false;
@@ -23,7 +22,7 @@ public class EspectroAtaque : MonoBehaviour
         }
         jugador = jugadorObjeto?.transform;
 
-       
+
     }
 
     public void AtaqueBasico()
@@ -50,7 +49,7 @@ public class EspectroAtaque : MonoBehaviour
         PlayerStats stats = jugadorObjeto.GetComponent<PlayerStats>();
         enCooldown = true;
         stats.ReducirCordura((int)3);
-        yield return new WaitForSeconds(tiempoEntreReducciones);  
+        yield return new WaitForSeconds(tiempoEntreReducciones);
         enCooldown = false;
     }
 
@@ -58,7 +57,7 @@ public class EspectroAtaque : MonoBehaviour
     {
         if (other.CompareTag("Player") && !enCooldown)
         {
-            StartCoroutine(ReducirCorduraConCooldown());       
+            StartCoroutine(ReducirCorduraConCooldown());
         }
     }
 }

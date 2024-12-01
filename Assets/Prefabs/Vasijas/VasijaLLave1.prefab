@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 820307188587232426}
   m_Layer: 0
   m_Name: VasijaLLave1
-  m_TagString: Untagged
+  m_TagString: Vasija
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,8 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cedfa0be950c34092e2457770ac3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crucifijoPrefab: {fileID: 5707487961688380503, guid: 80bd979034cace3468c2c6363a00e93c,
-    type: 3}
   municionPrefab: {fileID: 5707487961688380503, guid: 80bd979034cace3468c2c6363a00e93c,
     type: 3}
   probabilidadDeDrop: 0.5

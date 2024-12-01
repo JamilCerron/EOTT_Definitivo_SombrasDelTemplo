@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Guardian : MonoBehaviour
@@ -20,7 +18,7 @@ public class Guardian : MonoBehaviour
         guardianCabezazo = GetComponent<GuardianCabezazo>();
     }
 
-    
+
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);

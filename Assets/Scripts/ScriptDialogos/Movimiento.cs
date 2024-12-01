@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Movimiento : MonoBehaviour
 {
     [SerializeField] private float velocidad = 15f;
 
-     void Update()
+    void Update()
     {
         //Captura el movimiento del jugador
         float horizontal = Input.GetAxis("Horizontal");

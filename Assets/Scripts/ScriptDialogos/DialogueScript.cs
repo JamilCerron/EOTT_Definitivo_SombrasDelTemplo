@@ -1,7 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class DialogueScript : MonoBehaviour
 {
@@ -19,16 +18,16 @@ public class DialogueScript : MonoBehaviour
         dialoguePanel.SetActive(false);
     }
 
-    
+
     void Update()
     {
         if (playerInRange && Input.GetMouseButtonDown(0))
         {
-            if(dialogueText.text == Lines[index])
+            if (dialogueText.text == Lines[index])
             {
                 NextLine();
             }
-            else 
+            else
             {
                 StopAllCoroutines();
                 dialogueText.text = Lines[index];

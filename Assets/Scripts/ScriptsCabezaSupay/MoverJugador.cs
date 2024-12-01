@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoverJugador : MonoBehaviour
 {
-    public float velocidad = 10f; 
+    public float velocidad = 10f;
 
     private Rigidbody rb;
 
     public int salud = 100;
 
-    public GameObject balaPrefab;  
+    public GameObject balaPrefab;
     public Transform firePoint;
     [SerializeField] float velocidadBala = 4f;
     private Transform enemigoTransform;
@@ -41,7 +39,7 @@ public class MoverJugador : MonoBehaviour
         Vector3 movimiento = new Vector3(movimientoHorizontal, 0, movimientoVertical).normalized;
         transform.position += movimiento * velocidad * Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0))
         {
             Disparar();
         }

@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using static Unity.VisualScripting.Member;
+using UnityEngine.UI;
 
 public class Codigo_Pausa : MonoBehaviour
 {

@@ -20,7 +20,7 @@ public class Arma : MonoBehaviour
         {
             offsetActual = offsetEscopeta;
         }
-        else if (CompareTag("Crucifijo"))   
+        else if (CompareTag("Crucifijo"))
         {
             offsetActual = offsetCrucifijo;
         }
