@@ -29,6 +29,7 @@ public class EscopetaRecogibleJ : MonoBehaviour
             señalInteractiva.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
+                GestorMensajes.Instance.MostrarMensaje("¡Haz recogido la escopeta!");
                 escopeta.SetActive(true);
                 var disparoEscopeta = other.GetComponent<DisparoEscopetaJ>();
                 if (disparoEscopeta != null && !disparoEscopeta.TieneEscopeta())

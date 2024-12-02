@@ -21,7 +21,10 @@ public class DisparoEscopetaJ : MonoBehaviour
     private void Awake()
     {
         municionActual = municionMaxima;
-        escopetaIcono.SetActive(false);
+        if (tieneEscopeta == false)
+        {
+            escopetaIcono.SetActive(false);
+        }
     }
 
     private void Update()
