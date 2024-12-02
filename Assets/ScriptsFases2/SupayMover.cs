@@ -45,7 +45,7 @@ public class SupayMover: MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("PLAYER").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         // Validar que el NavMeshAgent esté activo
         if (navMeshAgent == null)
         {

@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbed19ec1c5bb14880cf930284071c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  probabilidad: 0.6
+  probabilidad: 0.25
 --- !u!114 &5346233443146602468
 MonoBehaviour:
   m_ObjectHideFlags: 0
