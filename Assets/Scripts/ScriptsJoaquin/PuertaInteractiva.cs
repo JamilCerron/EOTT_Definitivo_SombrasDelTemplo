@@ -85,12 +85,15 @@ public class PuertaInteractiva : MonoBehaviour
             transform.rotation = Quaternion.Lerp(rotacionFinal, rotacionInicial, tiempo / duracionCierre);
             yield return null;
         }
-
-        Debug.Log("Puerta cerrada.");
+        if (bloqueada != false)
+        {
+            GestorMensajes.Instance.MostrarMensaje("Puerta cerrada.");
+        }
     }
 
     public void VariarBloqueado(bool estado)
     {
+        GestorMensajes.Instance.MostrarMensaje("Se ha desbloqueado el acceso de una puerta.");
         bloqueada = !estado; // Bloquea o desbloquea la puerta
     }
 

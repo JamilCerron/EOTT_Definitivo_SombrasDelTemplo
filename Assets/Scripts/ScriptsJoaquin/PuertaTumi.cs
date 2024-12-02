@@ -4,29 +4,18 @@ using UnityEngine.UI;
 public class PuertaTumi : MonoBehaviour
 {
     private GestorTumi gestorTumi;
-    [SerializeField] private Button botonFinal;
 
     private void Start()
     {
         gestorTumi = FindObjectOfType<GestorTumi>();
 
-        if (botonFinal == null)
-        {
-            Debug.LogError("Botón Final no asignado en el inspector.");
-            return;
-        }
-
-        botonFinal.onClick.RemoveAllListeners(); // Elimina cualquier listener previo
-        botonFinal.onClick.AddListener(() =>
-        {
-            Debug.Log("Botón clickeado.");
-            ComprobarFinal();
-        });
     }
 
-        private void ComprobarFinal()
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Click");
-        gestorTumi.ComprobarVictoria();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            gestorTumi.ComprobarVictoria();
+        }
     }
 }
