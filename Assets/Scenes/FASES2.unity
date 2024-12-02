@@ -1277,6 +1277,7 @@ MonoBehaviour:
   chargeSpeed: 15
   chargeDuration: 5
   arenaCenter: {fileID: 85303229}
+  attackRange: 5
 --- !u!1 &892509634
 GameObject:
   m_ObjectHideFlags: 0

@@ -36985,53 +36985,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 99.99999, y: 100, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &826602462
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 826602464}
-  - component: {fileID: 826602463}
-  m_Layer: 0
-  m_Name: GestorDeVasijas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &826602463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826602462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd6c0c71c5b9ce4e81d20814378f38e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  padreVasijas: {fileID: 749026951}
-  prefabsEspecificos:
-  - {fileID: 1698599841514295464, guid: c384843e78820384da784bf019cc6d70, type: 3}
---- !u!4 &826602464
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826602462}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.698444, y: -4.7862115, z: 15.009348}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &828022790 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1220302249632859129, guid: fc7c115859d105243bf69d958c558983,
@@ -91894,6 +91847,79 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146158106}
   m_Mesh: {fileID: 2196846913274828970, guid: 997ea2b281c343046a3c29ae14a60bfa, type: 3}
+--- !u!1001 &2553553068584078651
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1145300717029638653, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.698444
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145300717029638653, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.7862115
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145300717029638653, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.009348
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145300717029638653, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145300717029638653, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145300717029638653, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145300717029638653, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145300717029638653, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145300717029638653, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145300717029638653, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638671553755620453, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: m_Name
+      value: GestorDeVasijas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069645623849065078, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d,
+        type: 3}
+      propertyPath: padreVasijas
+      value: 
+      objectReference: {fileID: 749026951}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b8d5887ca7e7474e94a4b94f82b9a0d, type: 3}
 --- !u!1001 &3060271120783237441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92185,7 +92211,7 @@ SceneRoots:
   - {fileID: 749026951}
   - {fileID: 4405764}
   - {fileID: 766315763}
-  - {fileID: 826602464}
+  - {fileID: 2553553068584078651}
   - {fileID: 2092828471}
   - {fileID: 1306496601}
   - {fileID: 1534251666}
