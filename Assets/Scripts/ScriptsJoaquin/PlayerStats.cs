@@ -58,7 +58,7 @@ public class PlayerStats : MonoBehaviour
         RecuperarResistencia();
         RecuperarVida();
         Saltar();
-        Agachar();
+        //Agachar();
     }
 
     void Movimiento()
@@ -99,17 +99,17 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void Agachar()
-    {
-        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.C))
-        {
-            transform.localScale = new Vector3(transform.localScale.x, escalaAgachar, transform.localScale.z);
-        }
-        else
-        {
-            transform.localScale = new Vector3(transform.localScale.x, 1f, transform.localScale.z);
-        }
-    }
+    //void Agachar()
+    //{
+    //    if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.C))
+    //    {
+    //        transform.localScale = new Vector3(transform.localScale.x, escalaAgachar, transform.localScale.z);
+    //    }
+    //    else
+    //    {
+    //        transform.localScale = new Vector3(transform.localScale.x, 1f, transform.localScale.z);
+    //    }
+    //}
 
     void Camara()
     {
