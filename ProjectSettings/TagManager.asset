@@ -30,6 +30,8 @@ TagManager:
   - MuroInvisible
   - Vasija
   - Espectro
+  - Supay
+  - CanvasFinal
   layers:
   - Default
   - TransparentFX

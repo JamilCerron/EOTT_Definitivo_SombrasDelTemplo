@@ -8,6 +8,7 @@ public class GestorTumi : MonoBehaviour
     private bool tumiCompleto = false;
 
     [SerializeField] private string escenaVictoriaConTumi = "VictoriaConTumi";
+    [SerializeField] private string escenaVictoriaSinTumi = "VictoriaSinTumi";
 
     // Escenas donde los fragmentos deben conservarse
     [SerializeField] private string nivel1 = "Nivel1Definitivo";
@@ -73,7 +74,7 @@ public class GestorTumi : MonoBehaviour
         }
         else
         {
-            GestorMensajes.Instance.MostrarMensaje("No tienes todas las piezas del Tumi.");
+            SceneManager.LoadScene(escenaVictoriaSinTumi);
         }
     }
 
