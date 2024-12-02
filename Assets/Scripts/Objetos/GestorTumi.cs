@@ -7,11 +7,12 @@ public class GestorTumi : MonoBehaviour
 
     private bool tumiCompleto = false;
 
-    [SerializeField] private string escenaVictoriaConTumi;
+    [SerializeField] private string escenaVictoriaConTumi = "VictoriaConTumi";
 
     // Escenas donde los fragmentos deben conservarse
-    [SerializeField] private string nivel1;
-    [SerializeField] private string nivel2;
+    [SerializeField] private string nivel1 = "Nivel1Definitivo";
+    [SerializeField] private string nivel2 = "Nivel2Definitivo";
+    [SerializeField] private string nivel3 = "Nivel3Definitivo";
 
     // Fragmentos estáticos
     private static int fragmentosTumi;
@@ -32,7 +33,7 @@ public class GestorTumi : MonoBehaviour
     {
         // Si no estamos en una escena permitida, reinicia fragmentos
         string escenaActual = SceneManager.GetActiveScene().name;
-        if (escenaActual != nivel1 && escenaActual != nivel2)
+        if (escenaActual != nivel1 && escenaActual != nivel2 && escenaActual != nivel3)
         {
             ReiniciarFragmentos();
         }
