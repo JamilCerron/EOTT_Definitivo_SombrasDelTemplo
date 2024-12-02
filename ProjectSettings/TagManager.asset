@@ -29,6 +29,7 @@ TagManager:
   - Muro
   - MuroInvisible
   - Vasija
+  - Espectro
   layers:
   - Default
   - TransparentFX

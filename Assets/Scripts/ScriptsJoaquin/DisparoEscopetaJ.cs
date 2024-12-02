@@ -46,7 +46,7 @@ public class DisparoEscopetaJ : MonoBehaviour
 
         municionActual--;
 
-        Debug.Log("Disparo realizado. Munición actual: " + municionActual);
+        //Debug.Log("Disparo realizado. Munición actual: " + municionActual);
     }
 
     public void EquiparEscopeta()

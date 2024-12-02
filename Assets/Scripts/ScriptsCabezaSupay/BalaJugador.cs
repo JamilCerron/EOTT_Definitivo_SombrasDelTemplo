@@ -20,7 +20,7 @@ public class BalaJugador : MonoBehaviour
             CabezaSupay enemigo = other.GetComponent<CabezaSupay>();
             if (enemigo != null)
             {
-                enemigo.RecibirGolpe(1);
+                //enemigo.RecibirGolpe(1);
             }
 
             // Destruye la bala después del impacto

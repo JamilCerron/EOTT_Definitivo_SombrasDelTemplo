@@ -5,13 +5,13 @@ public class Campana : MonoBehaviour
     private GestorCampana gestorJuego;
     private bool activada = false;
 
-    [SerializeField] private GameObject señal;
+    //[SerializeField] private GameObject señal;
     [SerializeField] private AudioSource fxSource;
     [SerializeField] private AudioClip clickSound;
 
     private void Start()
     {
-        señal.SetActive(false);
+        //señal.SetActive(false);
     }
 
     public void SetGestorJuego(GestorCampana gestor)
@@ -19,29 +19,28 @@ public class Campana : MonoBehaviour
         gestorJuego = gestor;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !activada)
+        if (other.CompareTag("Bala") && !activada)
         {
-            señal.SetActive(true);
+            //señal.SetActive(true);
+            Destroy(other.gameObject);
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                fxSource.PlayOneShot(clickSound);
-                activada = true;
-                Debug.Log("Campana activada.");
-                gestorJuego.ActivarCampana(this);
-            }
+            fxSource.PlayOneShot(clickSound);
+            activada = true;
+            Debug.Log("Campana activada.");
+            gestorJuego.ActivarCampana(this);
+
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            señal.SetActive(false);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        señal.SetActive(false);
+    //    }
+    //}
 
     public void Resetear()
     {

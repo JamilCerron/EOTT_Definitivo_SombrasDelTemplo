@@ -20,8 +20,8 @@ public class DisparoPlayer : Disparo
             GameObject balaObj = Instantiate(PrefabBala, ShootPoint.position, Quaternion.identity);
 
             // Obtener el componente Bala (o BalaPlayer) y establecer la dirección
-            Bala bala = balaObj.GetComponent<Bala>();
-            bala.SetDirection(ShootPoint.forward);  // Establecer la dirección hacia adelante desde el ShootPoint
+            //Bala bala = balaObj.GetComponent<Bala>();
+            //bala.SetDirection(ShootPoint.forward);  // Establecer la dirección hacia adelante desde el ShootPoint
 
             // Destruir la bala después de 3 segundos
             Destroy(balaObj, 3f);
