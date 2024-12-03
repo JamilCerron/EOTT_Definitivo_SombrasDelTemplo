@@ -382,6 +382,74 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 99.99999, y: 100, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3587846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3587849}
+  - component: {fileID: 3587848}
+  - component: {fileID: 3587847}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &3587847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &3587848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &3587849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587846}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4405759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3312,6 +3380,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -3326,6 +3404,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6685,6 +6768,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -6694,6 +6787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9467,6 +9565,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -9481,6 +9589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17072,6 +17185,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -17081,6 +17204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18046,6 +18174,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -18060,6 +18198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22294,6 +22437,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 385534433}
     m_Modifications:
+    - target: {fileID: 261781770507151827, guid: efc3fe7afc2589b44acfb9be832438d5,
+        type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 1220453381}
     - target: {fileID: 2628788045574831050, guid: efc3fe7afc2589b44acfb9be832438d5,
         type: 3}
       propertyPath: m_Name
@@ -22530,17 +22678,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 76d155033da56a0429472966d38ffa2f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.29
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 76d155033da56a0429472966d38ffa2f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.44
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 76d155033da56a0429472966d38ffa2f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33.84
+      value: 12.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 76d155033da56a0429472966d38ffa2f,
         type: 3}
@@ -22669,7 +22817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75029246ca274d48b465dc26f3c54e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: 10
+  stunDuration: 5
 --- !u!114 &578684627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24944,6 +25092,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -24958,6 +25116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29929,6 +30092,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -29943,6 +30116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33667,6 +33845,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -33676,6 +33864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36063,6 +36256,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -36077,6 +36280,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36868,6 +37076,7 @@ Transform:
   - {fileID: 197880797}
   - {fileID: 769092906}
   - {fileID: 200109580}
+  - {fileID: 1883942165}
   m_Father: {fileID: 430186762}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &824627620
@@ -37532,7 +37741,7 @@ Transform:
   m_GameObject: {fileID: 833628052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 28.91, y: 2.24, z: 2.4}
+  m_LocalPosition: {x: 30.705, y: 2.24, z: 1.372}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39169,13 +39378,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878191895}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &878191898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41678,6 +41887,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -41692,6 +41911,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -53980,6 +54204,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -53994,6 +54228,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -54452,7 +54691,7 @@ PrefabInstance:
     - target: {fileID: 2933888638117295081, guid: b12e615fc0f3d8746800fbf1c8541a9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.91
+      value: 30.705
       objectReference: {fileID: 0}
     - target: {fileID: 2933888638117295081, guid: b12e615fc0f3d8746800fbf1c8541a9d,
         type: 3}
@@ -54462,7 +54701,7 @@ PrefabInstance:
     - target: {fileID: 2933888638117295081, guid: b12e615fc0f3d8746800fbf1c8541a9d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.4
+      value: 1.372
       objectReference: {fileID: 0}
     - target: {fileID: 2933888638117295081, guid: b12e615fc0f3d8746800fbf1c8541a9d,
         type: 3}
@@ -54534,6 +54773,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3899427805800801504, guid: b12e615fc0f3d8746800fbf1c8541a9d,
+        type: 3}
+      propertyPath: fxSource
+      value: 
+      objectReference: {fileID: 425019574}
     - target: {fileID: 3975426155198788650, guid: b12e615fc0f3d8746800fbf1c8541a9d,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -60155,6 +60399,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -60169,6 +60423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -61662,6 +61921,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -61671,6 +61940,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -63304,10 +63578,25 @@ PrefabInstance:
       propertyPath: jugador
       value: 
       objectReference: {fileID: 1220453381}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -76876,6 +77165,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -76890,6 +77189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78586,6 +78890,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -78600,6 +78914,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85586,6 +85905,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -85600,6 +85929,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -86170,6 +86504,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -86184,6 +86528,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -87519,7 +87868,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -88195,6 +88544,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -88209,6 +88568,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -92053,6 +92417,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "vidaDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1o"
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: m_Name
@@ -92062,6 +92436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Espectro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7375942515898882696, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: probabilidad
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -92798,5 +93177,5 @@ SceneRoots:
   - {fileID: 1443291960}
   - {fileID: 1184484380}
   - {fileID: 1851113579}
-  - {fileID: 1330639602}
   - {fileID: 2015506095}
+  - {fileID: 3587849}

@@ -62,6 +62,7 @@ public class GuardianCabezazo : MonoBehaviour
                 float enhancedAttackForce = attackForce * 2; // Aumenta temporalmente para verificar el empuje
 
                 playerRb.AddForce(pushDirection * enhancedAttackForce, ForceMode.Impulse);
+                collision.gameObject.GetComponent<PlayerStats>().RecibirDaño(10);
             }
         }
     }
