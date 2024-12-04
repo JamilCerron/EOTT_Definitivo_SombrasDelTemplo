@@ -2339,7 +2339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9d48802677ba64ab1bc87bd0dd48e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  botonFinal: {fileID: 367920470}
 --- !u!114 &1352941307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3251,7 +3250,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60.000004
   orthographic: 0
@@ -4318,3 +4317,5 @@ SceneRoots:
   - {fileID: 289273595}
   - {fileID: 1715725351}
   - {fileID: 1352941310}
+  - {fileID: 189693168}
+  - {fileID: 1205434663}
