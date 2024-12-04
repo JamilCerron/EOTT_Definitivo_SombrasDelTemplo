@@ -6,27 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MenuPrincipal.unity
+    path: Assets/ESCENAS/MenuPrincipal.unity
     guid: 82445eff435d91c4382fc1442e2f1b59
   - enabled: 1
-    path: Assets/Scenes/NivelesDefinitivos/Nivel1Definitivo.unity
+    path: Assets/ESCENAS/NivelesDefinitivos/Nivel1Definitivo.unity
     guid: ea1fe39773e0136458759234f8b89765
   - enabled: 1
-    path: Assets/Scenes/NivelesDefinitivos/Nivel2Definitivo.unity
+    path: Assets/ESCENAS/NivelesDefinitivos/Nivel2Definitivo.unity
     guid: 1f0345277ef6a9945ab946d8b4eafdc9
   - enabled: 1
-    path: "Assets/Scenes/PantallaDeCr\xE9ditos.unity"
+    path: "Assets/ESCENAS/PantallaDeCr\xE9ditos.unity"
     guid: 57af0b625cb5b094ab308a4c60bac701
   - enabled: 1
-    path: Assets/Scenes/VictoriaConTumi.unity
+    path: Assets/ESCENAS/VictoriaConTumi.unity
     guid: f4a9634a8bf3de842a1b25dbdecb3689
   - enabled: 1
-    path: Assets/Scenes/VictoriaSinTumi.unity
+    path: Assets/ESCENAS/VictoriaSinTumi.unity
     guid: 1286d0ffa5150f5419edb7573e9fd432
   - enabled: 1
-    path: Assets/Scenes/DerrotaPorCordura.unity
+    path: Assets/ESCENAS/DerrotaPorCordura.unity
     guid: 93fae511a9de98d41860029edf379849
   - enabled: 1
-    path: Assets/Scenes/DerrotaPorVida.unity
+    path: Assets/ESCENAS/DerrotaPorVida.unity
     guid: 315a82ce214ac4648be099d7b14e07a9
   m_configObjects: {}
