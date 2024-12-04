@@ -125,11 +125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c790faa38bd9724a91f15bd9541e80d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangoAtaque: 15
+  rangoAtaque: 10
   "corduraDa\xF1oEspecial": 20
-  "corduraDa\xF1o": 20
+  "corduraDa\xF1o": 10
   "vidaDa\xF1o": 10
-  tiempoEntreReducciones: 3
+  tiempoEntreReducciones: 1
 --- !u!135 &615195124276194193
 SphereCollider:
   m_ObjectHideFlags: 0
