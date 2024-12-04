@@ -16,10 +16,8 @@ public class SFase2 : MonoBehaviour
    
     void Start()
     {
-        void Start()
-        {
+       
             rb = GetComponent<Rigidbody>();
-        }
     }
 
     public void SetPlayer(Transform playerTransform)

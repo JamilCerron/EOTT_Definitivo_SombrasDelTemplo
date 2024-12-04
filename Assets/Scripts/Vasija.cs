@@ -4,17 +4,17 @@ public class Vasija : MonoBehaviour
 {
     [SerializeField] private GameObject municionPrefab;   // Prefab de la munición de escopeta
     [SerializeField] private float probabilidadDeDrop = 0.7f;  // 70% de probabilidad de soltar munición
-    private GestorDeVasijas gestor;
+    public GestorDeVasijas gestor;
 
     private void Start()
     {
         // Encontrar al gestor en la escena
-        gestor = FindObjectOfType<GestorDeVasijas>();
+        //gestor = FindObjectOfType<GestorDeVasijas>();
 
-        if (gestor == null)
-        {
-            Debug.LogError("No se encontró un GestorDeVasijas en la escena.");
-        }
+        //if (gestor == null)
+        //{
+        //    Debug.LogError("No se encontró un GestorDeVasijas en la escena.");
+        //}
     }
 
     private void SoltarObjeto(Vector3 posicion)
