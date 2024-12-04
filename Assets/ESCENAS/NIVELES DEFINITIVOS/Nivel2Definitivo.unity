@@ -382,6 +382,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -491,6 +496,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -588,6 +598,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -1108,6 +1123,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1209,6 +1229,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -1425,7 +1450,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -1653,6 +1688,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1861,6 +1901,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1962,6 +2007,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -2474,7 +2524,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -3010,7 +3070,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -3111,6 +3181,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -3214,6 +3289,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -3687,6 +3767,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3772,6 +3857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Vasija (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3965,6 +4055,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4130,6 +4225,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4221,6 +4321,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -4623,6 +4728,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4846,7 +4956,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -5102,7 +5222,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -5217,6 +5347,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -5308,6 +5443,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -5423,6 +5563,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -5595,6 +5740,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -5691,6 +5841,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -5918,6 +6073,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -6025,6 +6185,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -6911,7 +7076,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -7751,6 +7926,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -7840,7 +8020,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -8130,6 +8320,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -8231,6 +8426,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -8592,6 +8792,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -8685,6 +8890,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -8774,7 +8984,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -9181,6 +9401,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -9357,7 +9582,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -9474,6 +9709,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -10007,6 +10247,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -10292,13 +10537,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878191895}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &878191898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10769,6 +11014,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -10924,7 +11174,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -11175,6 +11435,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -11282,6 +11547,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -11595,6 +11865,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -11692,6 +11967,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -11857,6 +12137,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -11966,6 +12251,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -12067,6 +12357,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -12256,6 +12551,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -12349,6 +12649,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -12440,6 +12745,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -12767,6 +13077,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -13070,6 +13385,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -13485,6 +13805,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -13574,7 +13899,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -14265,6 +14600,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -14356,6 +14696,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -14540,6 +14885,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -14996,7 +15346,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -15140,6 +15500,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -15348,6 +15713,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -15464,7 +15834,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -15677,6 +16057,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -15801,6 +16186,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -16006,7 +16396,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -16240,6 +16640,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -16545,6 +16950,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -16988,6 +17398,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -17079,6 +17494,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -17548,6 +17968,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -17676,6 +18101,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -18050,6 +18480,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -18180,6 +18615,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -18271,6 +18711,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -18488,7 +18933,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -18746,6 +19201,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -18835,7 +19295,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -19250,6 +19720,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -19341,6 +19816,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -19814,6 +20294,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -19905,6 +20390,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -20104,6 +20594,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -20413,6 +20908,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -20502,7 +21002,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -20775,7 +21285,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -21304,7 +21824,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
@@ -22147,6 +22677,11 @@ PrefabInstance:
       objectReference: {fileID: 749026951}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
       propertyPath: reemplazoPrefabs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -22238,6 +22773,11 @@ PrefabInstance:
       propertyPath: padreVasijas
       value: 
       objectReference: {fileID: 749026951}
+    - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
+        type: 3}
+      propertyPath: probabilidadDeDrop
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5346233443146602468, guid: 33509a3a4bf539049bec897d8d765e91,
         type: 3}
       propertyPath: reemplazoPrefabs.Array.size
@@ -22410,7 +22950,17 @@ PrefabInstance:
     - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
       propertyPath: "corduraDa\xF1o"
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: "corduraDa\xF1oEspecial"
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800992674108161902, guid: dab3f00e771a7774eb7630b38eaa76a6,
+        type: 3}
+      propertyPath: tiempoEntreReducciones
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910471980728338252, guid: dab3f00e771a7774eb7630b38eaa76a6,
         type: 3}
