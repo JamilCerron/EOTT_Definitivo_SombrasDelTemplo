@@ -59,7 +59,7 @@ public class EspectroAtaque : MonoBehaviour
 
         if (jugadorStats != null)
         {
-            jugadorStats.ReducirCordura(3);
+            jugadorStats.ReducirCordura(2);
         }
 
         yield return new WaitForSeconds(tiempoEntreReducciones);

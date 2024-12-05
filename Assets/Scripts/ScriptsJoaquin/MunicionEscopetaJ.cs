@@ -9,7 +9,7 @@ public class MunicionEscopetaJ : MonoBehaviour
             var disparoEscopeta = other.GetComponent<DisparoEscopetaJ>();
             if (disparoEscopeta != null)
             {
-                disparoEscopeta.AumentarMunicion(8);
+                disparoEscopeta.AumentarMunicion(6);
                 Destroy(gameObject);
             }
         }

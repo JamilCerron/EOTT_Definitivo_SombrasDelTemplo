@@ -75,8 +75,8 @@ public class DisparoEscopetaJ : MonoBehaviour
         {
             if (municionRecarga > 0)
             {
-                municionActual = Mathf.Min(municionActual + 4, municionMaxima); ; // Llena la munición al máximo
-                municionRecarga -= 4;
+                municionActual = Mathf.Min(municionActual + 6, municionMaxima); ; // Llena la munición al máximo
+                municionRecarga -= 6;
                 Debug.Log("Recargado: " + municionActual + " balas.");
             }
             else

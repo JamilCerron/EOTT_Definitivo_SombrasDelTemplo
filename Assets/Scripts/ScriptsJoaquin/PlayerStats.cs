@@ -31,6 +31,7 @@ public class PlayerStats : MonoBehaviour
     private Rigidbody rb;
     public bool haSidoGolpeado=false;
     public Vector3 velocidad;
+    private float tiempoSinShift = 0f;
 
     [Header("Muerte")]
     [SerializeField] private string escenaMuertePorCordura;
@@ -139,17 +140,28 @@ public class PlayerStats : MonoBehaviour
 
     void RecuperarResistencia()
     {
-        if (resistenciaActual < resistenciaMaxima && rb.velocity.x == 0)
+        // Verificar si Shift está presionado
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            tiempoSinShift = 0f; // Reiniciar el temporizador si Shift está presionado
+        }
+        else
+        {
+            tiempoSinShift += Time.deltaTime; // Incrementar el tiempo sin presionar Shift
+        }
+
+       
+        if (tiempoSinShift >= 2f && resistenciaActual < resistenciaMaxima )
         {
             resistenciaActual += resistenciaRecuperacion * Time.deltaTime;
-        }
 
-        else if (resistenciaActual > resistenciaMaxima)
-        {
-            resistenciaActual = resistenciaMaxima;
+            // Limitar resistencia al máximo
+            if (resistenciaActual > resistenciaMaxima)
+            {
+                resistenciaActual = resistenciaMaxima;
+            }
         }
     }
-
     private void RecuperarVida()
     {
         tiempoSinRecibirDaño += Time.deltaTime;
