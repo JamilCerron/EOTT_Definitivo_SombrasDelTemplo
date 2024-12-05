@@ -1,43 +1,67 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class PerseguirJugador : MonoBehaviour
 {
-    public Transform jugador;
+    public Transform jugador; // Referencia al jugador
+    public float distanciaCriterio = 10f; // Distancia para activar aumento de velocidad
     private NavMeshAgent agente;
     private EspectroAtaque espectroAtaque;
-    private bool atacando = false;
+    private float velocidadBase;
+    private float tiempoAcumulado = 0f; // Temporizador para incremento de velocidad
+
 
     void Start()
     {
+        jugador = GameObject.FindGameObjectWithTag("Player").transform;
         agente = GetComponent<NavMeshAgent>();
         espectroAtaque = GetComponent<EspectroAtaque>();
+        velocidadBase = agente.speed; // Guardar la velocidad inicial
     }
 
     void Update()
     {
         if (jugador != null)
         {
-            agente.SetDestination(jugador.position);
+            // Calcular la distancia al jugador
+            float distanciaAlJugador = Vector3.Distance(transform.position, jugador.position);
+
+            // Continuar persiguiendo al jugador
+
+
+            // Aumentar velocidad si está dentro del rango
+            if (distanciaAlJugador <= distanciaCriterio)
+            {
+                agente.SetDestination(jugador.position);
+                tiempoAcumulado += Time.deltaTime;
+                if (tiempoAcumulado >= 5f)
+                {
+                    agente.speed += 0.5f; // Incrementar velocidad
+                    tiempoAcumulado = 0f; // Reiniciar temporizador
+                }
+            }
+            else
+            {
+                // Si está fuera del rango, restablecer temporizador (pero no detenerse)
+                tiempoAcumulado = 0f;
+                // Restaurar velocidad base
+            }
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {    
-        
-        if (other.CompareTag("Crucifijo")) 
-        {
-            Destroy(gameObject); 
-        }
-    }
-    
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Jugador")) 
+        if (collision.gameObject.CompareTag("Player"))
         {
             espectroAtaque.AtaqueBasico();
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
+    }
+
+    // Dibujar un gizmo para visualizar el rango en el editor
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red; // Color del gizmo
+        Gizmos.DrawWireSphere(transform.position, distanciaCriterio); // Dibuja un círculo en el rango
     }
 }

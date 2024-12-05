@@ -1,64 +1,68 @@
 using System.Collections;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class EspectroAtaque : MonoBehaviour
 {
     [Header("Configuración del ataque del Espectro")]
+    [SerializeField] private float rangoAtaque = 5f; // Distancia para atacar al jugador
     [SerializeField] private float corduraDañoEspecial = 20f;
     [SerializeField] private float corduraDaño = 20f;
     [SerializeField] private float vidaDaño = 10f;
-    [SerializeField] private float fovJugador = 90f; 
-    private Transform jugador;
-    [SerializeField] private GameObject jugadorObjeto; 
-
     [SerializeField] private float tiempoEntreReducciones = 3f;
+
+    private Transform jugador;
+    private PlayerStats jugadorStats;
     private bool enCooldown = false;
 
     void Start()
     {
-        if (jugadorObjeto == null)
+        GameObject jugadorObjeto = GameObject.FindGameObjectWithTag("Player");
+        if (jugadorObjeto != null)
         {
-            jugadorObjeto = GameObject.FindGameObjectWithTag("Player");
+            jugador = jugadorObjeto.transform;
+            jugadorStats = jugadorObjeto.GetComponent<PlayerStats>();
         }
-        jugador = jugadorObjeto?.transform;
+    }
 
-        
+    void Update()
+    {
+        if (jugador == null || jugadorStats == null) return;
+
+        float distancia = Vector3.Distance(transform.position, jugador.position);
+
+        if (distancia <= rangoAtaque && !enCooldown)
+        {
+            StartCoroutine(ReducirCorduraConCooldown());
+        }
     }
 
     public void AtaqueBasico()
     {
-        PlayerStats stats = jugadorObjeto.GetComponent<PlayerStats>();
-        if (stats != null)
+        if (jugadorStats != null)
         {
-            stats.RecibirDaño((int)vidaDaño);
-            stats.ReducirCordura((int)corduraDaño);
+            jugadorStats.RecibirDaño((int)vidaDaño);
+            jugadorStats.ReducirCordura((int)corduraDaño);
         }
     }
 
     public void AtaqueEspecial()
     {
-        PlayerStats stats = jugadorObjeto.GetComponent<PlayerStats>();
-        if (stats != null)
+        if (jugadorStats != null)
         {
-            stats.ReducirCordura(corduraDañoEspecial);
+            jugadorStats.ReducirCordura(corduraDañoEspecial);
         }
     }
 
-    IEnumerator ReducirCorduraConCooldown()
+    private IEnumerator ReducirCorduraConCooldown()
     {
-        PlayerStats stats = jugadorObjeto.GetComponent<PlayerStats>();
         enCooldown = true;
-        stats.ReducirCordura((int)3);
-        yield return new WaitForSeconds(tiempoEntreReducciones);  
-        enCooldown = false;
-    }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player") && !enCooldown)
+        if (jugadorStats != null)
         {
-            StartCoroutine(ReducirCorduraConCooldown());
+            jugadorStats.ReducirCordura(2);
         }
+
+        yield return new WaitForSeconds(tiempoEntreReducciones);
+        enCooldown = false;
     }
 }

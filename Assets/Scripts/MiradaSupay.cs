@@ -23,7 +23,7 @@ public class MiradaSupay : MonoBehaviour
         direccionHaciaJugador.y = 0;  // Mantener la rotación solo en el eje Y
 
         // Solo si hay alguna diferencia significativa en la dirección
-        if (direccionHaciaJugador.magnitude > 0.1f)
+        if (direccionHaciaJugador.magnitude <= 16)
         {
             // Rotación suave hacia el jugador
             Quaternion rotacionObjetivo = Quaternion.LookRotation(direccionHaciaJugador);

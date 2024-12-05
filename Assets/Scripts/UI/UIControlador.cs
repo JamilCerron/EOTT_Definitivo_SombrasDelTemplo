@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -59,11 +57,12 @@ public class UIControlador : MonoBehaviour
             cantidadResistencia.text = $"Resistencia: {(int)jugadorStats.ResistenciaActual()}";
             barraResistencia.fillAmount = jugadorStats.ResistenciaActual() / jugadorStats.ResistenciaMaxima();
         }
-
+        /*
         if (gestorTumi != null)
         {
             // Actualizar el texto de monedas
             textoFragmentos.text = $"Fragmentos: 4/{jugadorStats.FragmentosTumi()}";
         }
+        */
     }
 }

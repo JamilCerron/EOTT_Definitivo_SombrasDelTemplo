@@ -11,7 +11,7 @@ public class EspectroVida : MonoBehaviour
         vidaActual = vidaMaxima;
     }
 
-    public void RecibirDaño(float cantidad, bool esCrucifijo)
+    public void RecibirDaño(float cantidad)
     {
         vidaActual -= cantidad;
 
@@ -23,10 +23,6 @@ public class EspectroVida : MonoBehaviour
 
     private void Muerte()
     {
-        if (particulasMuerte != null)
-        {
-            Instantiate(particulasMuerte, transform.position, Quaternion.identity);
-        }
         Destroy(gameObject);
     }
 }
