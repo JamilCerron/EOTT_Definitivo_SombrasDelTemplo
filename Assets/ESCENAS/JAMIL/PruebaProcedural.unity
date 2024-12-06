@@ -264,8 +264,8 @@ MonoBehaviour:
     type: 3}
   finalPrefab: {fileID: 7020633820917809579, guid: 25804f50b42b9c642a786e9db649d6b6,
     type: 3}
-  ancho: 8
-  alto: 8
+  ancho: 12
+  alto: 12
   "tama\xF1oPared": 4
 --- !u!1 &1956904222
 GameObject:

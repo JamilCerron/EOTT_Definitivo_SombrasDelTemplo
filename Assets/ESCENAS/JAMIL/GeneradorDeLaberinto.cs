@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Linq; // Necesario para usar LINQ
 
 public class GeneradorDeLaberinto : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class GeneradorDeLaberinto : MonoBehaviour
     void Start()
     {
         InicializarEstructuras();
-        GenerarLaberinto(0, 0, ancho, alto);
+        GenerarLaberintoDFS(0, 0); // Generación del laberinto con DFS
         DefinirInicioYFinal();
         ConstruirLaberinto();
     }
@@ -42,99 +43,35 @@ public class GeneradorDeLaberinto : MonoBehaviour
         }
     }
 
-    void EliminarParedesInteriores()
+    void GenerarLaberintoDFS(int x, int y)
     {
-        // Eliminar paredes horizontales interiores
-        for (int x = 1; x < ancho - 1; x++)
+        celdas[x, y] = true; // Marca la celda como visitada
+
+        // Direcciones aleatorias
+        Vector2Int[] direcciones = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
+        System.Random rng = new System.Random();
+        direcciones = direcciones.OrderBy(d => rng.Next()).ToArray();
+
+        foreach (var dir in direcciones)
         {
-            for (int y = 1; y < alto; y++)
+            int nx = x + dir.x;
+            int ny = y + dir.y;
+
+            // Verifica si la celda vecina está dentro de los límites y no ha sido visitada
+            if (nx >= 0 && nx < ancho && ny >= 0 && ny < alto && !celdas[nx, ny])
             {
-                if (paredesHorizontales[x, y] && Random.Range(0f, 1f) < 0.5f)
-                {
-                    paredesHorizontales[x, y] = false;
-                }
+                // Elimina la pared entre las celdas
+                if (dir == Vector2Int.up) paredesHorizontales[x, y + 1] = false;
+                else if (dir == Vector2Int.down) paredesHorizontales[x, y] = false;
+                else if (dir == Vector2Int.left) paredesVerticales[x, y] = false;
+                else if (dir == Vector2Int.right) paredesVerticales[x + 1, y] = false;
+
+                // Llama recursivamente a la celda vecina
+                GenerarLaberintoDFS(nx, ny);
             }
-        }
-
-        // Eliminar paredes verticales interiores
-        for (int x = 1; x < ancho; x++)
-        {
-            for (int y = 1; y < alto - 1; y++)
-            {
-                if (paredesVerticales[x, y] && Random.Range(0f, 1f) < 0.5f)
-                {
-                    paredesVerticales[x, y] = false;
-                }
-            }
-        }
-
-        // Asegúrate de eliminar las paredes en las celdas del punto de inicio
-        paredesHorizontales[puntoInicio.x, puntoInicio.y] = false;
-        if (puntoInicio.y > 0)
-        {
-            paredesHorizontales[puntoInicio.x, puntoInicio.y - 1] = false;
-            paredesHorizontales[puntoInicio.x-1, puntoInicio.y - 1] = false;
-            paredesHorizontales[puntoInicio.x + 1, puntoInicio.y - 1] = false;
-        }
-        if (puntoInicio.x > 0)
-        {
-            paredesVerticales[puntoInicio.x - 1, puntoInicio.y] = false;
-            paredesVerticales[puntoInicio.x-1 , puntoInicio.y-1] = false;
-            paredesVerticales[puntoInicio.x - 1, puntoInicio.y + 1] = false;
-        }
-
-        // Asegúrate de eliminar las paredes en las celdas del punto final
-        paredesHorizontales[puntoFinal.x, puntoFinal.y] = false;
-        if (puntoFinal.y < alto)
-        {
-            paredesHorizontales[puntoFinal.x, puntoFinal.y + 1] = false;
-        }
-        if (puntoFinal.x < ancho)
-        {
-            paredesVerticales[puntoFinal.x + 1, puntoFinal.y] = false;
         }
     }
 
-
-
-
-    void GenerarLaberinto(int x, int y, int ancho, int alto)
-    {
-        if (ancho <= 1 || alto <= 1)
-            return;
-
-        bool dividirHorizontal = Random.Range(0, 2) == 0;
-
-        if (ancho > alto)
-            dividirHorizontal = false;
-        else if (alto > ancho)
-            dividirHorizontal = true;
-
-        if (dividirHorizontal)
-        {
-            int fila = y + Random.Range(1, alto);
-            for (int i = x; i < x + ancho; i++)
-                paredesHorizontales[i, fila] = true;
-
-            int hueco = x + Random.Range(0, ancho);
-            paredesHorizontales[hueco, fila] = false;
-
-            GenerarLaberinto(x, y, ancho, fila - y);
-            GenerarLaberinto(x, fila, ancho, y + alto - fila);
-        }
-        else
-        {
-            int columna = x + Random.Range(1, ancho);
-            for (int i = y; i < y + alto; i++)
-                paredesVerticales[columna, i] = true;
-
-            int hueco = y + Random.Range(0, alto);
-            paredesVerticales[columna, hueco] = false;
-
-            GenerarLaberinto(x, y, columna - x, alto);
-            GenerarLaberinto(columna, y, x + ancho - columna, alto);
-        }
-    }
     void DefinirInicioYFinal()
     {
         puntoInicio = new Vector2Int(0, 0);
@@ -147,12 +84,6 @@ public class GeneradorDeLaberinto : MonoBehaviour
 
     void ConstruirLaberinto()
     {
-        // Primero genera el laberinto
-        GenerarLaberinto(0, 0, ancho, alto);
-
-        // Luego elimina las paredes interiores
-        EliminarParedesInteriores();
-
         // Instancia las paredes en la escena
         for (int x = 0; x < ancho; x++)
         {
@@ -185,6 +116,4 @@ public class GeneradorDeLaberinto : MonoBehaviour
         Vector3 posicionFinal = new Vector3(puntoFinal.x * tamañoPared, 0, puntoFinal.y * tamañoPared);
         Instantiate(finalPrefab, posicionFinal, Quaternion.identity, transform);
     }
-
 }
-
