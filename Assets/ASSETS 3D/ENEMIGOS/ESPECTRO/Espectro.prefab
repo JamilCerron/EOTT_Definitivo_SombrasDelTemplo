@@ -58,7 +58,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1.29
+  m_BaseOffset: 1.97
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!136 &2623889498162878175
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: {fileID: 0}
-  distanciaCriterio: 25
+  distanciaCriterio: 19
 --- !u!114 &3360095564800628920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6afeb077db6374ca4bb9b122435d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMaxima: 100
+  vidaMaxima: 75
   vidaActual: 0
   particulasMuerte: {fileID: 0}
 --- !u!114 &4800992674108161902
@@ -128,8 +128,8 @@ MonoBehaviour:
   rangoAtaque: 10
   "corduraDa\xF1oEspecial": 20
   "corduraDa\xF1o": 10
-  "vidaDa\xF1o": 10
-  tiempoEntreReducciones: 1
+  "vidaDa\xF1o": 5
+  tiempoEntreReducciones: 6
 --- !u!135 &615195124276194193
 SphereCollider:
   m_ObjectHideFlags: 0
