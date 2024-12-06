@@ -36,22 +36,12 @@ public class Vasija : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bala"))
         {
-            Destroy(gameObject);  // Destruir la vasija al ser alcanzada por la bala
+           
             SoltarObjeto(transform.position);  // Soltar munición en la posición de la vasija
+            Destroy(gameObject);  // Destruir la vasija al ser alcanzada por la bala
         }
     }
 
-    private void OnDestroy()
-    {
-        // Notificar al gestor que esta vasija fue destruida
-        if (gestor != null)
-        {
-            Debug.Log($"Vasija {name} destruida. Notificando al gestor.");
-        }
-        else
-        {
-            Debug.LogWarning("No se pudo notificar la destrucción de la vasija porque el gestor no existe.");
-        }
-    }
+ 
 }
 

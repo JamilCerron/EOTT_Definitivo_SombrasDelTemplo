@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Linq;
+using System.Collections.Generic; // Asegúrate de incluir esto para usar List
 
 public class GeneradorDeLaberinto : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GeneradorDeLaberinto : MonoBehaviour
     public GameObject finalPrefab; // Prefab para marcar el final
     public GameObject enemigoPrefab; // Prefab del enemigo
     public GameObject vasijaPrefab; // Prefab de las vasijas
+    public GameObject vasijaConLlavePrefab; // Prefab de la vasija con la llave
     public int cantidadEnemigos = 5; // Cantidad de enemigos a generar
     public int ancho = 10; // Anchura del laberinto
     public int alto = 10; // Altura del laberinto
@@ -17,6 +19,7 @@ public class GeneradorDeLaberinto : MonoBehaviour
     private bool[,] celdas; // Celdas del laberinto
     private bool[,] paredesHorizontales; // Paredes horizontales
     private bool[,] paredesVerticales; // Paredes verticales
+    private List<Vector3> posicionesVasijas; // Lista para almacenar posiciones de las vasijas
 
     public Vector2Int puntoInicio = new Vector2Int(0, 0); // Posición del inicio
     public Vector2Int puntoFinal = new Vector2Int(9, 9); // Posición del final
@@ -29,6 +32,7 @@ public class GeneradorDeLaberinto : MonoBehaviour
         CrearEntradaYSalida(); // Crear una entrada y salida para el laberinto
         ConstruirLaberinto();
         GenerarEnemigos(); // Generar enemigos en el laberinto
+        ReemplazarVasijaConLlave(); // Reemplazar una vasija con la vasija que tiene la llave
     }
 
     void ValidarPosiciones()
@@ -50,6 +54,7 @@ public class GeneradorDeLaberinto : MonoBehaviour
         celdas = new bool[ancho, alto];
         paredesHorizontales = new bool[ancho, alto + 1];
         paredesVerticales = new bool[ancho + 1, alto];
+        posicionesVasijas = new List<Vector3>(); // Inicializar la lista de posiciones de vasijas
 
         for (int x = 0; x < ancho; x++)
         {
@@ -116,6 +121,10 @@ public class GeneradorDeLaberinto : MonoBehaviour
     {
         Vector3 posicionBase = transform.position;
 
+        // Definir un margen desde el perímetro
+        int margen = 1; // Cambia este valor según el tamaño del laberinto
+
+        // Generar paredes horizontales
         for (int x = 0; x < ancho; x++)
         {
             for (int y = 0; y <= alto; y++)
@@ -124,11 +133,11 @@ public class GeneradorDeLaberinto : MonoBehaviour
                 {
                     Vector3 posicion = posicionBase + new Vector3(x * tamañoCelda, 0, y * tamañoCelda - grosorPared / 2);
                     CrearPared(posicion, Quaternion.identity);
-                    InstanciarVasija(posicion + new Vector3(0, 0, grosorPared / 2 + 0.5f)); // Ajustar la posición de la vasija
                 }
             }
         }
 
+        // Generar paredes verticales
         for (int x = 0; x <= ancho; x++)
         {
             for (int y = 0; y < alto; y++)
@@ -137,7 +146,20 @@ public class GeneradorDeLaberinto : MonoBehaviour
                 {
                     Vector3 posicion = posicionBase + new Vector3(x * tamañoCelda - grosorPared / 2, 0, y * tamañoCelda);
                     CrearPared(posicion, Quaternion.Euler(0, 90, 0));
-                    InstanciarVasija(posicion + new Vector3(grosorPared / 2 + 0.5f, 0, 0)); // Ajustar la posición de la vasija
+                }
+            }
+        }
+
+        // Instanciar vasijas solo en celdas internas
+        for (int x = margen; x < ancho - margen; x++)
+        {
+            for (int y = margen; y < alto - margen; y++)
+            {
+                // Verificar si hay un pasillo en la celda
+                if (celdas[x, y]) // Asegúrate de que 'celdas' contenga información sobre pasillos
+                {
+                    Vector3 posicionVasija = posicionBase + new Vector3(x * tamañoCelda, 0, y * tamañoCelda);
+                    InstanciarVasija(posicionVasija); // Ajustar la posición de la vasija
                 }
             }
         }
@@ -146,7 +168,30 @@ public class GeneradorDeLaberinto : MonoBehaviour
     {
         // Asegúrate de que la posición Y sea 0 para que la vasija esté sobre el suelo
         posicion.y = 0; // Ajustar la altura de la vasija al nivel del suelo
-        Instantiate(vasijaPrefab, posicion + new Vector3(0,2.1f,0), Quaternion.identity, transform);
+        Instantiate(vasijaPrefab, posicion + new Vector3(0, 2.1f, 0), Quaternion.identity, transform);
+        posicionesVasijas.Add(posicion); // Agregar la posición de la vasija a la lista
+    }
+
+    void ReemplazarVasijaConLlave()
+    {
+        if (posicionesVasijas.Count > 0)
+        {
+            // Seleccionar una posición aleatoria de la lista de vasijas
+            int indiceAleatorio = Random.Range(0, posicionesVasijas.Count);
+            Vector3 posicionVasijaConLlave = posicionesVasijas[indiceAleatorio];
+
+            // Instanciar la vasija con la llave en la posición seleccionada
+            Instantiate(vasijaConLlavePrefab, posicionVasijaConLlave + new Vector3(0, 2.1f, 0), Quaternion.identity, transform);
+
+            Debug.Log("Vasija con llave instanciada en: " + posicionVasijaConLlave);
+
+            // Opcional: eliminar la posición de la vasija original de la lista si es necesario
+            posicionesVasijas.RemoveAt(indiceAleatorio);
+        }
+        else
+        {
+            Debug.LogWarning("No hay posiciones de vasijas disponibles para reemplazar.");
+        }
     }
 
     void CrearPared(Vector3 posicion, Quaternion rotacion)

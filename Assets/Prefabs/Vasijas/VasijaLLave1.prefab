@@ -99,7 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   municionPrefab: {fileID: 5707487961688380503, guid: 80bd979034cace3468c2c6363a00e93c,
     type: 3}
-  probabilidadDeDrop: 0.5
+  probabilidadDeDrop: 1
+  gestor: {fileID: 0}
 --- !u!65 &820307188587232426
 BoxCollider:
   m_ObjectHideFlags: 0
