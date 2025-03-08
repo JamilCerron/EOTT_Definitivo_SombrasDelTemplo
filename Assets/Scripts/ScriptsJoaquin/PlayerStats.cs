@@ -132,7 +132,7 @@ public class PlayerStats : MonoBehaviour
                 {
                     angulo -= 360;
                 }
-                angulo = Mathf.Clamp(angulo, -80, 80); // Limitar el ángulo de rotación vertical
+                angulo = Mathf.Clamp(angulo, -25, 25); // Limitar el ángulo de rotación vertical
                 camaraJugador.localEulerAngles = Vector3.right * angulo;
             }
         }
